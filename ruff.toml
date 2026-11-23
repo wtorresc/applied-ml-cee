@@ -1,0 +1,63 @@
+# Lint and format settings for the course code (figure scripts, tools, scripts, notebooks).
+# Run without adding a dependency:
+#   pixi exec --spec ruff ruff check .
+#   pixi exec --spec ruff ruff format .
+line-length = 100
+target-version = "py312"
+# Python files only: ruff would otherwise reformat the code blocks in Markdown (slide listings
+# are laid out by hand for a 75-character slide).
+include = ["*.py"]
+# Keep the cache out of the repository root.
+cache-dir = ".pixi/ruff-cache"
+extend-exclude = [
+    "lectures/build",
+    "ipynb",
+    ".pixi",
+    "data",
+    "slides",
+    "book",
+]
+
+[lint]
+select = [
+    "E", "W", "F", "I", "N", "D", "UP", "B", "SIM", "ANN", "PTH", "NPY", "RUF", "PL", "C4",
+    "PERF", "ERA", "RET", "ARG", "ICN", "PIE", "DTZ", "BLE", "S",
+]
+ignore = [
+    # Google style allows short names that match the mathematical notation (X, K, Sigma).
+    "N803", "N806",
+    # The U+2212 minus sign, ×, and ≤ in labels and docstrings are deliberate typography.
+    "RUF001", "RUF002", "RUF003",
+    # int(round(x)) states the intended type even where NumPy's round already returns int.
+    "RUF046",
+    # Descriptive docstrings ("Returns the ...") are allowed by Google style.
+    "D401",
+    # Teaching scripts state thresholds and constants inline, next to the slide they serve.
+    "PLR2004", "TRY003",
+    # Plot and markup helpers take several keyword options; positional counts stay checked.
+    "PLR0913",
+    # Asserts are the verification mechanism; subprocess calls take fixed argument lists.
+    "S101", "S603", "S607",
+    # Local, trusted XML (pptx parts) only.
+    "S314",
+]
+
+[lint.per-file-ignores]
+# marimo cells: each cell is `def _(...)`, ends with `return`, imports inside cells, and
+# shows its last expression. np.random.seed covers libraries that draw from NumPy's global
+# RNG; the notebooks' own draws use np.random.default_rng.
+"notebooks/*.py" = [
+    "F811", "ANN", "D", "B018", "PLR1711", "PLC0415", "PLR0913", "PLR0917", "PLR0912",
+    "PLR0915", "NPY002", "E501",
+]
+
+[lint.pydocstyle]
+convention = "google"
+
+[lint.isort]
+# Modules next to the scripts (lectures/figures, lectures/tools) form the local import group.
+known-first-party = [
+    "aml_style", "bridges", "buildings", "camels", "common", "concrete", "crack3d", "craslab",
+    "ltown",
+    "math_fallback", "osha", "probes", "sdnet", "spacenet8", "title_art",
+]

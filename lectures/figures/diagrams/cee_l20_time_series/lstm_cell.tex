@@ -1,0 +1,55 @@
+% CEE Lecture 20: one LSTM step. The cell state c runs along the top like a store of water: the
+% forget gate keeps part of yesterday's store, the input gate adds part of today's candidate,
+% and the output gate decides how much of the store shows as h. Gate order as PyTorch's (i, f,
+% g, o); the equations are on the slide.
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\begin{document}
+\begin{tikzpicture}[
+    gate/.style={op, minimum width=1.3cm, minimum height=1.0cm, inner xsep=4pt},
+    mix/.style={circle, draw=navy, line width=1.2pt, fill=white, minimum size=0.75cm,
+      inner sep=0pt, font=\fontsize{16}{18}\selectfont},
+  ]
+  % The store: c_{t-1} -> x f -> + i g -> c_t
+  \node[data] (cin) at (0,4.2) {$c_{t-1}$};
+  \node[mix] (times) at (3.6,4.2) {$\times$};
+  \node[mix] (plus) at (7.6,4.2) {$+$};
+  \node[data] (cout) at (15.6,4.2) {$c_t$};
+  \draw[flow, line width=2.2pt] (cin) -- (times);
+  \draw[flow, line width=2.2pt] (times) -- (plus);
+  \draw[flow, line width=2.2pt] (plus) -- (cout);
+
+  % Inputs: yesterday's hidden state and today's weather
+  \node[data] (hin) at (0,0) {$h_{t-1}$};
+  \node[data] (x) at (2.3,-1.6) {$x_t$: today's weather};
+  \coordinate (bus) at (2.3,0);
+  \draw[line width=1.3pt, draw=navy] (hin) -- (11.9,0);
+  \draw[line width=1.3pt, draw=navy] (x) -- (bus);
+
+  % Gates, each a layer on [h_{t-1}, x_t]
+  \node[gate] (f) at (3.6,1.9) {forget\\$\sigma$};
+  \node[gate] (i) at (6.1,1.9) {input\\$\sigma$};
+  \node[gate] (g) at (9.1,1.9) {candidate\\$\tanh$};
+  \node[gate] (o) at (11.9,1.9) {output\\$\sigma$};
+  \foreach \n in {f,i,g,o} {\draw[flow] (\n |- 0,0) -- (\n);}
+  \draw[flow] (f) -- node[right, text=ink] {$f_t$} (times);
+  \node[mix] (ig) at (7.6,3.0) {$\times$};
+  \draw[flow] (i) |- node[pos=0.25, left, text=ink] {$i_t$} (ig);
+  \draw[flow] (g) |- node[pos=0.25, right, text=ink] {$g_t$} (ig);
+  \draw[flow] (ig) -- (plus);
+
+  % What shows: h_t = o * tanh(c_t)
+  \node[gate, minimum width=1.1cm] (tanh) at (13.9,3.0) {$\tanh$};
+  \node[mix] (oh) at (13.9,1.9) {$\times$};
+  \draw[flow] (13.9,4.2) -- (tanh);  % branch of the store
+  \draw[flow] (tanh) -- (oh);
+  \draw[flow] (o) -- node[above, text=ink] {$o_t$} (oh);
+  \node[data] (hout) at (15.6,0.6) {$h_t$};
+  \draw[flow] (oh) |- (hout);
+
+  % Notes
+  \node[note, anchor=south west] at (0,5.0) {\textbf{the store} $c$: what the river remembers};
+  \node[note, anchor=north west, text=muted] at (5.2,-0.9)
+    {four gates, one weight matrix:\ $4H \times (H + C)$};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,77 @@
+% CEE Lecture 4, "one picture": the course picture with PCA's encoder as the focus step. The target
+% is the input itself (its shape). The inset follows building Q; numbers and the two mini charts
+% come from numbers.tex (figures/cee_l04_load_profiles.py).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+% Draw a line through coordinates stored in a macro (plot coordinates does not expand macros).
+\newcommand{\plotline}[2]{\edef\plotcmd{\noexpand\draw[#1] plot coordinates {#2};}\plotcmd}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes; the encoder is this lecture's focus.
+  \node[data] (x) at (1.3,0) {day $\mathbf{x}$\\24 h, kW};
+  \node[focus, minimum width=3.9cm] (enc) at (5.4,0)
+    {encoder\\$\mathbf{p}=\mathbf{x}/\bar{x}$\\$\mathbf{z}=V_r^{\top}(\mathbf{p}-\boldsymbol{\mu})$};
+  \node[data] (z) at (9.05,0) {$\mathbf{z}\in\mathbb{R}^{\R}$};
+  \node[op, minimum width=3.4cm] (dec) at (12.35,0)
+    {decoder\\$\hat{\mathbf{p}}=\boldsymbol{\mu}+V_r\mathbf{z}$};
+  \node[data] (phat) at (15.1,0) {$\hat{\mathbf{p}}$};
+  \node[op, minimum width=2.7cm] (loss) at (17.5,0)
+    {loss\\$\lVert\mathbf{p}-\hat{\mathbf{p}}\rVert^{2}$};
+  \node[data] (y) at (20.5,0) {target $\mathbf{p}$};
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (dec);
+  \draw[flow] (dec) -- (phat);
+  \draw[flow] (phat) -- (loss);
+  \draw[flow] (y) -- (loss);
+
+  % The model: PCA with r modes.
+  \node[grouplabel, anchor=north] (mlabel) at ($(z.north)+(0,1.25)$) {PCA, $r=\R$};
+  \begin{scope}[on background layer]
+    \node[group, fit=(enc)(dec)(mlabel)] {};
+  \end{scope}
+
+  % Fitting: no gradient descent; the SVD solves it exactly.
+  \draw[train] (loss.north) -- ++(0,1.95) -| (dec.north);
+  \draw[train] ($(loss.north)+(0,1.95)$) -| (enc.north);
+  \node[text=alertc, anchor=south] at (11.5,2.75)
+    {fitting: SVD of the 2016 shapes on \NTrainSites{} other campuses (\NTrain{} buildings)};
+
+  % Worked example: building Q, column by column under the spine.
+  \node[insettitle] (ttl) at (0.0,-1.95) {Building Q, held-out campus};
+  \node[note, anchor=north west] (xv) at (0.0,-2.75)
+    {office\\size \key{\QKw{} kW}\\night \QNight{} kW\\afternoon \QDay{} kW};
+  % Mini chart 1: Q's shape against the mean shape, lines labelled at their right ends.
+  \begin{scope}[shift={(4.35,-5.15)}]
+    \draw[muted, line width=0.6pt] (0,0) -- (3.2,0);
+    \plotline{muted, dotted, line width=1.8pt}{\MeanShape}
+    \plotline{navy, line width=2pt}{\QShape}
+    \node[note, anchor=west, text=navy] at (3.25,0.95) {Q};
+    \node[note, anchor=west, text=muted] at (3.25,0.35) {mean};
+    \node[note, anchor=north west, text=muted] at (-0.1,-0.05) {\fontsize{12}{14}\selectfont 0 h};
+    \node[note, anchor=north east, text=muted] at (3.3,-0.05) {\fontsize{12}{14}\selectfont 23 h};
+  \end{scope}
+  \node[note, anchor=north, align=center] (zv) at (10.75,-2.75)
+    {$\mathbf{z}=(\ZOne,\ \ZTwo,\ \ZThree)$\\swing $z_1$ smaller than\\in \key{\ZOneFlatter\%} of \NTrainOffices{} offices};
+  % Mini chart 2: Q's shape and its reconstruction.
+  \begin{scope}[shift={(13.35,-5.15)}]
+    \draw[muted, line width=0.6pt] (0,0) -- (3.2,0);
+    \plotline{navy, line width=2pt}{\QShape}
+    \plotline{alertc, dashed, line width=1.8pt}{\QShapeHat}
+    \node[note, anchor=south west, text=alertc] at (3.2,0.95) {$\hat{\mathbf{p}}$};
+    \node[note, anchor=north west, text=navy] at (3.25,0.85) {Q};
+    \node[note, anchor=north west, text=muted] at (-0.1,-0.05) {\fontsize{12}{14}\selectfont 0 h};
+    \node[note, anchor=north east, text=muted] at (3.3,-0.05) {\fontsize{12}{14}\selectfont 23 h};
+  \end{scope}
+  \node[note, anchor=north west] (lv) at (17.55,-2.75)
+    {error \key{\Err\%} of $\bar{x}$\\nearest typical day:\\\TypicalDay\\nearest buildings:\\\ShapeNbrs};
+  \coordinate (bottom) at (0,-5.75);
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(xv)(zv)(lv)(y.east |- bottom)] {};
+  \end{scope}
+  \draw[leader] (z.south) -- (z.south |- 0,-2.7);
+  \draw[leader] (phat.south) -- (phat.south |- 0,-2.7);
+  \draw[leader] (loss.south) -- (loss.south |- 0,-2.7);
+\end{tikzpicture}
+\end{document}

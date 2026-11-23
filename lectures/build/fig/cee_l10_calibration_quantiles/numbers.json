@@ -1,0 +1,261 @@
+{
+  "tests_held_out": 7689,
+  "attempt": {
+    "below 30": {
+      "tests": 2537,
+      "sd": 5.8,
+      "q05": -10.3
+    },
+    "30 to 50": {
+      "tests": 3724,
+      "sd": 7.1,
+      "q05": -11.4
+    },
+    "above 50": {
+      "tests": 1357,
+      "sd": 10.7,
+      "q05": -15.6
+    },
+    "all": {
+      "tests": 7689,
+      "sd": 7.6,
+      "q05": -12.2
+    }
+  },
+  "coverage": {
+    "no model": {
+      "all": 5.2,
+      "by_band": {
+        "below 30": 12.9,
+        "30 to 50": 0.0,
+        "above 50": 0.0
+      },
+      "pinball": 1.4
+    },
+    "mean − 1.645σ": {
+      "all": 5.0,
+      "by_band": {
+        "below 30": 2.9,
+        "30 to 50": 3.4,
+        "above 50": 13.5
+      },
+      "pinball": 0.77
+    },
+    "quantile regression": {
+      "all": 5.5,
+      "by_band": {
+        "below 30": 7.6,
+        "30 to 50": 3.9,
+        "above 50": 6.4
+      },
+      "pinball": 0.75
+    }
+  },
+  "bootstrap": {
+    "resamples": 2000,
+    "designs": 315,
+    "no model": {
+      "all_ci95": [
+        3.7,
+        6.8
+      ],
+      "by_band_ci95": {
+        "below 30": [
+          9.4,
+          16.6
+        ],
+        "30 to 50": [
+          0.0,
+          0.0
+        ],
+        "above 50": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "mean − 1.645σ": {
+      "all_ci95": [
+        3.3,
+        6.9
+      ],
+      "by_band_ci95": {
+        "below 30": [
+          1.3,
+          4.8
+        ],
+        "30 to 50": [
+          2.0,
+          5.0
+        ],
+        "above 50": [
+          6.8,
+          21.5
+        ]
+      }
+    },
+    "quantile regression": {
+      "all_ci95": [
+        4.0,
+        7.3
+      ],
+      "by_band_ci95": {
+        "below 30": [
+          4.7,
+          10.7
+        ],
+        "30 to 50": [
+          2.2,
+          5.7
+        ],
+        "above 50": [
+          2.7,
+          11.1
+        ]
+      }
+    },
+    "pinball_gap": {
+      "normal_minus_qr": 0.023,
+      "ci95": [
+        -0.019,
+        0.066
+      ],
+      "none_minus_normal": {
+        "gap": 0.63,
+        "ci95": [
+          0.53,
+          0.73
+        ],
+        "ratio": 1.82
+      },
+      "none_minus_qr": {
+        "gap": 0.65,
+        "ci95": [
+          0.54,
+          0.75
+        ],
+        "ratio": 1.88
+      }
+    }
+  },
+  "constant_mean": 11.0,
+  "repeat_sd": 1.4,
+  "floor": 0.14,
+  "reliability": {
+    "mean ± zσ": {
+      "0.05": 5.0,
+      "0.1": 9.8,
+      "0.25": 22.7,
+      "0.5": 51.3,
+      "0.75": 75.7,
+      "0.9": 88.8,
+      "0.95": 93.8
+    },
+    "quantile regression": {
+      "0.05": 5.5,
+      "0.1": 10.3,
+      "0.25": 24.9,
+      "0.5": 48.9,
+      "0.75": 74.0,
+      "0.9": 88.6,
+      "0.95": 93.4
+    }
+  },
+  "reliability_max_gap": 2.3,
+  "verify": {
+    "train_tests": 746,
+    "max_abs_diff": 3e-13,
+    "train_below": 34,
+    "train_on_line": 7,
+    "train_at_or_below": 41,
+    "constant_minimizer": 10.76,
+    "order_statistic": 10.76,
+    "k": 38
+  },
+  "crossing": {
+    "tests": 1030,
+    "crossing": 32,
+    "crossing_pct": 3.1,
+    "max_gap": 1.5,
+    "low_median": 31,
+    "low_median_all_pct": 34.0,
+    "high_leverage": 16
+  },
+  "decision": {
+    "curves_cross_at": 419,
+    "margin_normal": 12.1,
+    "cement": {
+      "mean": 337,
+      "normal": 454,
+      "qr": 468
+    },
+    "wc": {
+      "mean": 0.55,
+      "normal": 0.41,
+      "qr": 0.4
+    },
+    "qr_margin_at_c": 13.1,
+    "mean_at_qr_cement": 48.1,
+    "band_at_qr_cement": "30 to 50",
+    "cement_max_tested": 540.0,
+    "splits": {
+      "n": 30,
+      "cement_median": {
+        "mean": 338.0,
+        "normal": 456.0,
+        "qr": 468.0
+      },
+      "cement_range": {
+        "mean": [
+          334.0,
+          344.0
+        ],
+        "normal": [
+          444.0,
+          468.0
+        ],
+        "qr": [
+          441.0,
+          491.0
+        ]
+      },
+      "qr_minus_normal_median": 13.0,
+      "qr_minus_normal_range": [
+        -12.0,
+        31.0
+      ],
+      "qr_more": 26
+    }
+  },
+  "trace": {
+    "mean": 39.77,
+    "sd": 7.34,
+    "q_normal": 27.7,
+    "q_qr": 28.88,
+    "y": 38.21,
+    "cement": 375.0,
+    "water": 186.0,
+    "train_tests": 746
+  },
+  "fan": {
+    "width_low_wb": 34.0,
+    "width_high_wb": 25.2
+  },
+  "pinball": {
+    "tests": 425,
+    "argmin": 15.4,
+    "q05": 15.4
+  },
+  "sheets": {
+    "qr_margin_range": [
+      2.9,
+      20.7
+    ]
+  },
+  "sharpness": {
+    "qr_min": -14.4,
+    "qr_p01": -3.3,
+    "qr_negative": 139,
+    "qr_negative_pct": 1.8
+  }
+}

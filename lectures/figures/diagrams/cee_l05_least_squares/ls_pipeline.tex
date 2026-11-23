@@ -1,0 +1,55 @@
+% CEE Lecture 5, "one picture": the course picture with a linear decoder, fitted by least squares,
+% as the focus step. The inset follows the attempt's proposed mix P (a held-out design) through
+% the six-group model of the first split; numbers from numbers.tex.
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes; the decoder is this lecture's focus.
+  \node[data] (x) at (0.95,0) {mix $\mathbf{x}$};
+  \node[op, minimum width=3.4cm] (enc) at (4.55,0) {encoder\\dimensionless groups};
+  \node[data] (z) at (7.7,0) {$\mathbf{z}$};
+  \node[focus, minimum width=3.7cm] (dec) at (11.1,0) {decoder: weighted\\sum $w_0+\mathbf{w}^{\top}\mathbf{z}$};
+  \node[data] (yhat) at (14.6,0) {$\hat{y}$};
+  \node[op, minimum width=2.5cm] (loss) at (17.4,0) {loss\\$(\hat{y}-y)^2$};
+  \node[data] (y) at (20.45,0) {measured $y$};
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (dec);
+  \draw[flow] (dec) -- (yhat);
+  \draw[flow] (yhat) -- (loss);
+  \draw[flow] (y) -- (loss);
+
+  % Least squares uses the training set and the loss once, to fix the weights.
+  \node[data] (train) at (5.6,1.85) {training set: \NTrain{} tests of \NTrainDesigns{} designs};
+  \draw[flow] (train.east) -| ([xshift=-0.9cm]dec.north);
+  \draw[train] (loss.north) |- ([xshift=0.9cm]dec.north |- train.east) -- ([xshift=0.9cm]dec.north);
+  \node[note, anchor=west, text=alertc] at ([xshift=4pt]loss.north |- train.east)
+    {least squares, once:\\\NWeights{} weights (QR)};
+
+  % Worked example: the proposed mix P, column by column under the spine.
+  \node[insettitle] (ttl) at (0.0,-1.85) {Proposed mix P (held out)};
+  \node[anchor=north west, inner sep=2pt] (xv) at (0.0,-2.5) {%
+    \renewcommand{\arraystretch}{1.05}%
+    \begin{tabular}{@{}l@{\hspace{7pt}}r@{\hspace{11pt}}l@{\hspace{7pt}}r@{}}
+      \multicolumn{4}{@{}l}{proportions in kg/m³}\\
+      cement & \XCement & coarse & \XCoarse\\
+      water & \XWater & fine & \XFine\\
+      slag & 0 & fly ash & 0\\
+      SP & 0 & age & 28 d\\
+    \end{tabular}};
+  \node[note, anchor=north] (zv) at (7.7,-2.5)
+    {$w/b$ = \ZWb\\agg.$/b$ = \ZAgg\\$\ln$ age = \ZLnAge\\3 more: 0};
+  \node[note, anchor=north] (nv) at (11.1,-2.5)
+    {$w_0$ = \WZero\\$w/b$ term \TWb\\agg.\ term \TAgg\\age term \TLnAge\\sum \key{\Pred}};
+  \node[note, anchor=north] (pv) at (14.6,-2.5) {$\hat{y}$ = \key{\Pred}\\MPa};
+  \node[note, anchor=north] (lv) at (18.5,-2.5) {$y$ = \Meas{} MPa\\error \Err{} MPa\\$f'_c$ = \FC{} MPa};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(xv)(zv)(nv)(pv)(lv)(y.east |- nv.south)] {};
+  \end{scope}
+  \draw[leader] (z.south) -- (zv.north);
+  \draw[leader] (dec.south) -- (nv.north);
+  \draw[leader] (yhat.south) -- (pv.north);
+\end{tikzpicture}
+\end{document}

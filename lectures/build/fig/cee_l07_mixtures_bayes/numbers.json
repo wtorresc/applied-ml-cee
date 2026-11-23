@@ -1,0 +1,525 @@
+{
+  "summary": {
+    "Glisan": {
+      "records": 17036,
+      "congested_pct": 10.1,
+      "first": "2011-09-15",
+      "last": "2011-11-14"
+    },
+    "Stark/Washington": {
+      "records": 17154,
+      "congested_pct": 13.1,
+      "first": "2011-09-15",
+      "last": "2011-11-14"
+    },
+    "scaled_records": 996,
+    "gap_miles": 0.8
+  },
+  "attempt": {
+    "14:00": {
+      "occupancy": 10.6,
+      "flow": 1550,
+      "speed": 55
+    },
+    "14:30": {
+      "occupancy": 11.1,
+      "flow": 1620,
+      "speed": 51
+    },
+    "14:45": {
+      "occupancy": 16.8,
+      "flow": 1460,
+      "speed": 30
+    },
+    "15:35": {
+      "occupancy": 24.9,
+      "flow": 1620,
+      "speed": 25
+    },
+    "18:20": {
+      "occupancy": 24.4,
+      "flow": 1400,
+      "speed": 23
+    },
+    "18:35": {
+      "occupancy": 6.0,
+      "flow": 1150,
+      "speed": 55
+    }
+  },
+  "hand_step": {
+    "r_cong": [
+      0.011,
+      0.989
+    ],
+    "ratio_at_20": 90,
+    "mu": [
+      4.1,
+      23.9
+    ],
+    "sd": [
+      1.3,
+      3.6
+    ],
+    "boundary": 9.6
+  },
+  "kde": {
+    "narrow": {
+      "h_mph": 0.2,
+      "peaks": 42
+    },
+    "Scott's rule": {
+      "h_mph": 1.4,
+      "peaks": 3,
+      "peak_mph": [
+        25.0,
+        45.3,
+        57.9
+      ],
+      "valley_mph": [
+        41.8,
+        46.8
+      ]
+    },
+    "wide": {
+      "h_mph": 3.94,
+      "peaks": 2,
+      "peak_mph": [
+        25.2,
+        57.9
+      ],
+      "valley_mph": [
+        41.5
+      ]
+    },
+    "bump": {
+      "band_mph": [
+        43.0,
+        48.0
+      ],
+      "records": 84,
+      "transition_pct": 72.6,
+      "transition_all_pct": 1.6
+    }
+  },
+  "em": {
+    "Glisan": {
+      "mu": [
+        4.3813,
+        23.7899
+      ],
+      "sd": [
+        2.9539,
+        4.7678
+      ],
+      "pi": [
+        0.8995,
+        0.1005
+      ],
+      "steps": 18,
+      "loglik": -48881.13081753574,
+      "breakdown_em": 13.7,
+      "breakdown_labels": 13.4,
+      "labels_minus_em": -0.2,
+      "posterior_10_90_width": 2.9,
+      "pi_cong_tried": [
+        0.05,
+        0.3
+      ],
+      "crossing_at_pi_cong": [
+        14.2,
+        12.7
+      ],
+      "agree_pct": 99.7,
+      "always_free_pct": 89.9,
+      "capacity_bin": [
+        12,
+        14
+      ],
+      "capacity_flow": 1810,
+      "em_in_capacity_bin": true,
+      "labels_in_capacity_bin": true,
+      "records": 17036
+    },
+    "Stark/Washington": {
+      "mu": [
+        6.361,
+        20.4755
+      ],
+      "sd": [
+        4.2662,
+        9.0278
+      ],
+      "pi": [
+        0.8134,
+        0.1866
+      ],
+      "steps": 105,
+      "loglik": -56401.51699760264,
+      "breakdown_em": 15.6,
+      "breakdown_labels": 17.7,
+      "labels_minus_em": 2.1,
+      "posterior_10_90_width": 8.1,
+      "pi_cong_tried": [
+        0.05,
+        0.3
+      ],
+      "crossing_at_pi_cong": [
+        18.0,
+        14.5
+      ],
+      "agree_pct": 97.3,
+      "always_free_pct": 86.9,
+      "capacity_bin": [
+        16,
+        18
+      ],
+      "capacity_flow": 1980,
+      "em_in_capacity_bin": false,
+      "labels_in_capacity_bin": true,
+      "records": 17154
+    }
+  },
+  "verify": {
+    "steps": 18,
+    "max_abs_diff": 2e-06,
+    "records": 17036,
+    "start_mu": [
+      4.91,
+      27.42
+    ],
+    "mu": [
+      4.38,
+      23.79
+    ],
+    "sd": [
+      2.95,
+      4.77
+    ],
+    "pi": [
+      0.899,
+      0.101
+    ],
+    "loglik_first": -61637,
+    "loglik_last": -48881
+  },
+  "restarts": {
+    "starts": 20,
+    "bad_starts": 5,
+    "bad_starts_tight": 0,
+    "bad_starts_kmeans": 0,
+    "loglik_good": -153934,
+    "loglik_bad_range": [
+      -180606,
+      -180069
+    ],
+    "bad_means_occ_range": [
+      6.1,
+      6.6
+    ],
+    "agree_2d_pct": 99.2
+  },
+  "bic": {
+    "k": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "bic": [
+      361261,
+      307985,
+      293747,
+      290160,
+      289237,
+      288961,
+      288616,
+      288532,
+      288617,
+      288380
+    ],
+    "bic_min_k": 10,
+    "bic_min_at_edge": true,
+    "bic_falls_every_k": false,
+    "occ_means_by_k": [
+      [
+        6.3
+      ],
+      [
+        4.3,
+        22.5
+      ],
+      [
+        1.1,
+        6.0,
+        23.3
+      ],
+      [
+        0.9,
+        3.2,
+        7.2,
+        23.3
+      ],
+      [
+        0.8,
+        1.8,
+        3.9,
+        7.2,
+        23.2
+      ],
+      [
+        0.7,
+        1.7,
+        3.7,
+        6.3,
+        7.5,
+        23.3
+      ],
+      [
+        0.7,
+        1.6,
+        3.3,
+        4.9,
+        7.2,
+        23.2,
+        23.4
+      ],
+      [
+        0.7,
+        1.5,
+        3.4,
+        6.0,
+        7.5,
+        19.8,
+        24.5,
+        25.2
+      ],
+      [
+        0.7,
+        1.4,
+        2.3,
+        3.6,
+        5.3,
+        7.3,
+        21.9,
+        24.4,
+        26.3
+      ],
+      [
+        0.7,
+        1.2,
+        1.9,
+        3.0,
+        4.1,
+        6.5,
+        7.6,
+        22.9,
+        23.0,
+        23.8
+      ]
+    ],
+    "congested_components_by_k": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      3,
+      3,
+      3
+    ],
+    "one_congested_ks": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "top_mean_occ_range": [
+      22.5,
+      23.3
+    ]
+  },
+  "fundamental": {
+    "bands_occ": [
+      [
+        15.0,
+        20.0
+      ],
+      [
+        35.0,
+        40.0
+      ]
+    ],
+    "Glisan": {
+      "congested_flow_median": [
+        1540,
+        1010
+      ]
+    },
+    "Stark/Washington": {
+      "congested_flow_median": [
+        1740,
+        1600
+      ]
+    }
+  },
+  "transfer": {
+    "test_records": 17154,
+    "test_congested": 2241,
+    "test_free": 14913,
+    "nb_occ": {
+      "acc_home_pct": 99.7,
+      "acc_pct": 95.2,
+      "false_alarms": 754,
+      "missed": 65,
+      "errors": 819,
+      "unsure_home_pct": 0.6,
+      "unsure_pct": 7.8
+    },
+    "nb_occ_flow": {
+      "acc_home_pct": 99.7,
+      "acc_pct": 92.4,
+      "false_alarms": 1237,
+      "missed": 72,
+      "errors": 1309,
+      "unsure_home_pct": 0.8,
+      "unsure_pct": 16.3
+    },
+    "full_occ_flow": {
+      "acc_home_pct": 99.6,
+      "acc_pct": 84.4,
+      "false_alarms": 2675,
+      "missed": 8,
+      "errors": 2683,
+      "unsure_home_pct": 0.4,
+      "unsure_pct": 8.2
+    },
+    "lr_occ": {
+      "acc_home_pct": 99.7,
+      "acc_pct": 94.8,
+      "false_alarms": 829,
+      "missed": 62,
+      "errors": 891,
+      "unsure_home_pct": 0.7,
+      "unsure_pct": 9.5
+    },
+    "lr_occ_flow": {
+      "acc_home_pct": 99.8,
+      "acc_pct": 96.3,
+      "false_alarms": 613,
+      "missed": 15,
+      "errors": 628,
+      "unsure_home_pct": 0.5,
+      "unsure_pct": 8.0
+    },
+    "lr_occ_flow_no_penalty_false_alarms": 617,
+    "glisan_threshold_at_stark": {
+      "threshold": 13.7,
+      "false_alarms": 738,
+      "missed": 67,
+      "errors": 805,
+      "from_labels": 4.1
+    },
+    "own_threshold_at_stark": {
+      "threshold": 15.6,
+      "false_alarms": 301,
+      "missed": 161,
+      "errors": 462,
+      "from_labels": 2.1
+    }
+  },
+  "trace": {
+    "time": "2011-10-06 14:45",
+    "occupancy": 16.8,
+    "flow": 1460,
+    "speed": 30,
+    "mu_free": 4.38,
+    "sd_free": 2.95,
+    "pi_free": 0.899,
+    "mu_cong": 23.79,
+    "sd_cong": 4.77,
+    "pi_cong": 0.101,
+    "joint_free": 1.819573656445915e-05,
+    "joint_cong": 0.0028527428183911367,
+    "post_cong": 0.994
+  },
+  "day": {
+    "night_occ_median": 1.0,
+    "daytime_occ_range": [
+      6.7,
+      9.4
+    ],
+    "midday_speed_median": 57,
+    "congested_first": "14:40",
+    "congested_last": "18:25",
+    "congested_records": 45,
+    "first_above_high_occ": "15:20",
+    "min_speed": 17,
+    "min_speed_time": "17:30"
+  },
+  "hills": {
+    "means_occ": [
+      4.3,
+      22.5
+    ],
+    "means_flow": [
+      802,
+      1434
+    ],
+    "weights": [
+      0.89,
+      0.11
+    ]
+  },
+  "em_build": {
+    "start_means": [
+      4.9,
+      27.4
+    ],
+    "steps": [
+      0,
+      1,
+      3,
+      18
+    ],
+    "means": [
+      [
+        4.9,
+        27.4
+      ],
+      [
+        4.5,
+        23.4
+      ],
+      [
+        4.4,
+        23.7
+      ],
+      [
+        4.4,
+        23.8
+      ]
+    ],
+    "moved_after_step1": [
+      0.1,
+      0.4
+    ]
+  },
+  "stall": {
+    "stalled_seed": 3,
+    "loglik_stalled": -180599,
+    "loglik_best": -153939
+  },
+  "naive": {
+    "corr_free": 0.97
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "summary": {
+    "first": "1908-02-04",
+    "last": "2025-12-31",
+    "days": 42499,
+    "missing": 567,
+    "missing_first_year": 1912,
+    "missing_last_year": 1914,
+    "max_m3s": 529.5,
+    "zero_days": 59,
+    "days_below_floor": 135,
+    "n_fit": 7305,
+    "n_cal": 3652,
+    "n_test": 9490,
+    "last_fit_target": "1970-01-07",
+    "first_cal_target": "1970-01-08",
+    "guarantee_max_pct": 90.03,
+    "cal_scores_below_steady_pct": 59.3,
+    "cal_scores_p995": 3.44
+  },
+  "exchangeable": {
+    "mean_pct": 90.1,
+    "p5_pct": 86.2,
+    "p95_pct": 93.2,
+    "by_day_mean_pct": 90.1,
+    "by_day_p5_pct": 88.5,
+    "by_day_p95_pct": 91.6
+  },
+  "decades": {
+    "fixed_by_decade": {
+      "1900": 91.8,
+      "1910": 88.9,
+      "1920": 88.9,
+      "1930": 88.8,
+      "1940": 89.0,
+      "1950": 90.3,
+      "1960": 90.4,
+      "1970": 90.0,
+      "1980": 87.5,
+      "1990": 89.3,
+      "2000": 88.2,
+      "2010": 87.0,
+      "2020": 89.2
+    },
+    "aci_by_decade": {
+      "1980": 89.9,
+      "1990": 90.6,
+      "2000": 89.2,
+      "2010": 90.2,
+      "2020": 90.1
+    },
+    "fit_period_pct": 90.3,
+    "p1980_1999_pct": 88.4,
+    "test_pct": 87.9,
+    "aci_test_pct": 89.8,
+    "earlier_min_pct": 88.8,
+    "earlier_max_pct": 89.0,
+    "later_min_pct": 87.0,
+    "later_max_pct": 89.3,
+    "partial_rows": {
+      "1900": 668,
+      "2020": 2185
+    }
+  },
+  "decade_scores": {
+    "q90_by_decade": {
+      "1900": 1.205,
+      "1910": 1.356,
+      "1920": 1.344,
+      "1930": 1.381,
+      "1940": 1.342,
+      "1950": 1.265,
+      "1960": 1.257,
+      "1970": 1.277,
+      "1980": 1.415,
+      "1990": 1.33,
+      "2000": 1.43,
+      "2010": 1.468,
+      "2020": 1.349
+    },
+    "q90_fit_cal_min": 1.26,
+    "q90_fit_cal_max": 1.28,
+    "q90_other_min": 1.33,
+    "q90_other_max": 1.47,
+    "recal_pct": {
+      "1910": 89.7,
+      "1920": 89.5,
+      "1930": 90.0,
+      "1940": 89.5,
+      "1970": 88.4,
+      "1980": 90.5,
+      "1990": 89.3,
+      "2000": 90.8,
+      "2010": 91.2
+    },
+    "recal_1970s_pct": 88.4,
+    "recal_other_min_pct": 89.3,
+    "recal_other_max_pct": 91.2
+  },
+  "conditional": {
+    "rising": {
+      "share_pct": 14.3,
+      "coverage_pct": 28.1
+    },
+    "rising_mid": {
+      "share_pct": 8.3,
+      "coverage_pct": 93.6
+    },
+    "falling": {
+      "share_pct": 28.9,
+      "coverage_pct": 96.1
+    },
+    "steady": {
+      "share_pct": 48.6,
+      "coverage_pct": 99.7
+    },
+    "low flow": {
+      "share_pct": 7.6,
+      "coverage_pct": 81.1
+    },
+    "all_by_level": {
+      "90": 87.9,
+      "95": 94.5,
+      "99": 98.4
+    },
+    "rising_by_level": {
+      "90": 28.1,
+      "95": 62.8,
+      "99": 89.3
+    },
+    "steady_by_level": {
+      "90": 99.7,
+      "95": 100.0,
+      "99": 100.0
+    },
+    "aci_rising_pct": 39.0,
+    "aci_not_rising_pct": 98.3,
+    "month_min_pct": 78.0,
+    "month_min": 10,
+    "month_max_pct": 93.0,
+    "mondrian": {
+      "overall_pct": 87.6,
+      "month_min_pct": 74.0,
+      "month_min": 10,
+      "month_max_pct": 95.0,
+      "rising_pct": 29.0
+    }
+  },
+  "floor": {
+    "floor_m3s": 0.01,
+    "test_pct": {
+      "0.01": 87.9,
+      "0.03": 88.1,
+      "0.1": 88.5
+    },
+    "low_flow_pct": {
+      "0.01": 81.1,
+      "0.03": 84.0,
+      "0.1": 89.7
+    },
+    "rising_pct": {
+      "0.01": 28.1,
+      "0.03": 28.1,
+      "0.1": 28.0
+    }
+  },
+  "widths": {
+    "persistence_factor": 4.4,
+    "climatology_factor": 13.8,
+    "model_factor": 3.6,
+    "by_level": {
+      "90": 3.6,
+      "95": 6.5,
+      "99": 15.5
+    }
+  },
+  "example": {
+    "year": 2013,
+    "days": 122,
+    "misses": 19,
+    "misses_on_rises": 18,
+    "peak_m3s": 203,
+    "peak_day": "2013-04-19"
+  },
+  "trace": {
+    "day": "2024-06-03",
+    "target": "2024-06-10",
+    "today_m3s": 10.48,
+    "pred_m3s": 9.31,
+    "lo_m3s": 2.6,
+    "hi_m3s": 33.4,
+    "obs_m3s": 10.31,
+    "qhat": 1.277,
+    "factor": 3.586,
+    "n_cal": 3652,
+    "k": 3288
+  },
+  "weights": [
+    0.176,
+    0.813,
+    -0.304,
+    0.101,
+    0.061,
+    0.154,
+    0.331,
+    0.189
+  ],
+  "years": {
+    "worst_year": 2014,
+    "worst_pct": 75.0,
+    "best_pct": 93.0,
+    "rest_min_pct": 83.0,
+    "loyo_1970s_min_pct": 84.4,
+    "loyo_1970s_max_pct": 96.2,
+    "loyo_all_min_pct": 79.7,
+    "loyo_all_max_pct": 98.4,
+    "loyo_years": 87,
+    "worst_below_every_loyo": true
+  },
+  "rolling": {
+    "years": 3,
+    "first_day": "1982-12-30",
+    "fixed_min_pct": 81.4,
+    "fixed_max_pct": 93.2,
+    "aci_min_pct": 87.9,
+    "aci_max_pct": 92.1,
+    "fixed_dip_before_2000": 1991,
+    "fixed_dip_since_2000": 2015
+  }
+}

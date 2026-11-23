@@ -1,0 +1,34 @@
+% CEE Lecture 1: classical programming vs. machine learning, on one engineering example. Row 1:
+% the engineer writes the rule (Abrams' water-cement law). Row 2: the rule is learned from the
+% tested mixes (UCI Concrete Compressive Strength; Yeh, 1998) and judged on mixes it has not
+% seen. Counts from numbers.tex (figures/cee_l01_framing.py).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Row 1: classical programming.
+  \node[rowlabel] at (0,4.3) {Classical programming: an engineer writes the rule};
+  \node[data, anchor=east] (rule) at (5.4,3.05) {rule: $f_c = A\,/\,B^{\,w/c}$};
+  \node[data, anchor=east] (mix) at (5.4,1.75) {a new mix};
+  \node[op, minimum width=3.0cm, minimum height=2.0cm] (prog) at (7.9,2.4) {program};
+  \node[data, anchor=west] (pred) at (10.4,2.4) {predicted strength};
+  \draw[flow] (rule.east) -- (prog.west |- rule.east);
+  \draw[flow] (mix.east) -- (prog.west |- mix.east);
+  \draw[flow] (prog) -- (pred);
+  \node[note, anchor=west] at (15.6,2.4)
+    {Abrams' law: strength\\falls as the water–cement\\ratio $w/c$ rises};
+
+  % Row 2: machine learning.
+  \node[rowlabel] at (0,0.0) {Machine learning: the rule is learned from examples};
+  \node[data, anchor=east] (data) at (5.4,-1.25) {tested mixes $\mathbf{x}_i$};
+  \node[data, anchor=east] (ans) at (5.4,-2.55) {measured strengths $y_i$};
+  \node[focus, minimum width=3.0cm, minimum height=2.0cm] (learn) at (7.9,-1.9) {learning\\algorithm};
+  \node[data, anchor=west] (model) at (10.4,-1.9) {learned rule $\hat{f}$};
+  \draw[flow] (data.east) -- (learn.west |- data.east);
+  \draw[flow] (ans.east) -- (learn.west |- ans.east);
+  \draw[flow] (learn) -- (model);
+  \node[note, anchor=west] at (15.6,-1.9)
+    {\key{\NTests} tests of \NMixes{} mixes\\(Yeh, 1998), judged on\\mixes it has not seen};
+\end{tikzpicture}
+\end{document}

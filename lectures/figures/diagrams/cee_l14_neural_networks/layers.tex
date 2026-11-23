@@ -1,0 +1,29 @@
+% CEE Lecture 14: the backward pass in matrix form, layer by layer, with each array's shape for a
+% batch of 128 runs. Forward arrows above, backward arrows below; each backward step is one local
+% rule: a product's gradient (two products), a ramp's mask, a bias's sum over rows.
+\documentclass[tikz,border=6pt]{standalone}
+\input{diagram_style}
+\begin{document}
+\begin{tikzpicture}
+  \tikzset{arr/.style={rounded corners=2pt, draw=navy, line width=1.2pt, fill=white,
+      minimum height=1.25cm, minimum width=1.9cm, align=center},
+    lab/.style={font=\fontsize{13}{15}\selectfont, text=muted, align=center},
+    eq/.style={font=\fontsize{14}{17}\selectfont, text=alertc, align=center}}
+  \foreach \n/\t/\s/\x in {z/Z/2/0, a1/A_1/64/4.2, h1/H_1/64/8.4, a2/A_2/64/12.6, h2/H_2/64/16.8, y/\hat Y/2/21.0} {
+    \node[arr] (\n) at (\x,0) {$\t$\\{\small 128$\times$\s}};
+  }
+  \node[op] (L) at (24.9,0) {$L$};  % room for "mean sq."
+  \foreach \a/\b/\t in {z/a1/{$\cdot W_1+\mathbf{b}_1$}, a1/h1/ramp, h1/a2/{$\cdot W_2+\mathbf{b}_2$}, a2/h2/ramp, h2/y/{$\cdot W_3+\mathbf{b}_3$}, y/L/mean sq.} {
+    \draw[flow] ([yshift=0.25cm]\a.east) -- node[above, lab] {\t} ([yshift=0.25cm]\b.west);
+    \draw[train] ([yshift=-0.25cm]\b.west) -- ([yshift=-0.25cm]\a.east);
+  }
+  % backward rules, alternating rows so they never collide
+  \node[eq, anchor=north] at (21.0,-1.1) {$G=\dfrac{2(\hat Y-Y)}{nm}$};
+  \node[eq, anchor=north] at (16.8,-2.9) {$\partial W_3=H_2^{\top}G$\\$\partial H_2=G\,W_3^{\top}$};
+  \node[eq, anchor=north] at (12.6,-1.1) {$\partial A_2=\partial H_2\odot[A_2>0]$};
+  \node[eq, anchor=north] at (8.4,-2.9) {$\partial W_2=H_1^{\top}\,\partial A_2$\\$\partial H_1=\partial A_2\,W_2^{\top}$};
+  \node[eq, anchor=north] at (4.2,-1.1) {$\partial A_1=\partial H_1\odot[A_1>0]$};
+  \node[eq, anchor=north] at (0,-2.9) {$\partial W_1=Z^{\top}\,\partial A_1$};
+  \node[lab, anchor=north] at (12.2,-4.9) {each bias: the column sums of the gradient below it, e.g.\ $\partial\mathbf{b}_3=\mathbf{1}^{\top}G$};
+\end{tikzpicture}
+\end{document}

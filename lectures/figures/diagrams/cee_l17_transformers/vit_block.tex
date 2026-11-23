@@ -1,0 +1,52 @@
+% CEE Lecture 17: a vision transformer reading a crack tile. The tile is cut into 16 x 16 patches,
+% each becomes a token; a class token and position embeddings are added; the same pre-norm block
+% (self-attention, then an MLP, each inside a residual path) runs \Blocks{} times; Lecture 15's
+% probe reads the class token. Numbers from numbers.tex (the figure script).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}[
+    plus/.style={circle, draw=navy, line width=1.2pt, fill=white, inner sep=1pt,
+      font=\fontsize{15}{17}\selectfont},
+    res/.style={flow, rounded corners=6pt},
+  ]
+  % Row 1: from a tile to tokens
+  \node[data] (tile) at (0,3.4) {tile, 224 px};
+  \node[op] (patch) at (5.6,3.4) {cut into 16 px patches};
+  \node[data] (tok) at (12.4,3.4) {\Tokens{} tokens of \Dim{} numbers};
+  \node[note, text=muted, anchor=west] at (16.0,3.4) {+ class token, + position};
+  \draw[flow] (tile) -- (patch);
+  \draw[flow] (patch) -- (tok);
+
+  % Row 2: one block, repeated
+  \coordinate (in) at (0.4,0);
+  \node[op] (ln1) at (2.0,0) {norm};
+  \node[focus] (att) at (5.2,0) {self-attention\\\Heads{} heads};
+  \node[plus] (p1) at (8.0,0) {$+$};
+  \node[op] (ln2) at (9.8,0) {norm};
+  \node[op] (mlp) at (13.1,0) {MLP\\\Dim{}$\rightarrow$3072$\rightarrow$\Dim{}};
+  \node[plus] (p2) at (16.0,0) {$+$};
+  \draw[flow] (tok.south) |- ++(0,-1.2) -| (in) -- (ln1);
+  \draw[flow] (ln1) -- (att);
+  \draw[flow] (att) -- (p1);
+  \draw[flow] (p1) -- (ln2);
+  \draw[flow] (ln2) -- (mlp);
+  \draw[flow] (mlp) -- (p2);
+  \draw[res] (in) -- ++(0,1.25) -| (p1);  % residual around attention
+  \draw[res] (p1.north) ++(0,0) -- ++(0,0.0) (8.0,0.32) -- (8.0,1.25) -| (p2);  % around the MLP
+  \begin{scope}[on background layer]
+    \node[group, fit=(ln1)(att)(p1)(ln2)(mlp)(p2), inner ysep=30pt, inner xsep=14pt] (block) {};
+  \end{scope}
+  \node[note, text=navy, font=\fontsize{14}{17}\selectfont\bfseries, anchor=north west]
+    at ([xshift=4pt, yshift=-4pt]block.south west)
+    {one block, \BlockWeights{}\,M weights; the same shape \Blocks{} times};
+
+  % Read-out
+  \node[data] (cls) at (19.4,0) {class token};
+  \node[op] (probe) at (23.2,0) {probe (Lecture 15)};
+  \draw[flow] (p2) -- (cls);
+  \draw[flow] (cls) -- (probe);
+  \node[note, text=muted, anchor=north] at (21.3,-1.0) {\VitWeights{}\,M weights in all};
+\end{tikzpicture}
+\end{document}

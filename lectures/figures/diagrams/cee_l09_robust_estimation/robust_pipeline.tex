@@ -1,0 +1,43 @@
+% CEE Lecture 9, "one picture": the course picture with the loss as the focus step. The decoder
+% predicts sensor n229 from its neighbor n636 along a line; a robust loss (Huber weights or a RANSAC
+% consensus) fits the line on readings that may hold a burst. The inset follows one reading, 17:00
+% on March 5, 2018, 75 minutes after the burst; numbers from numbers.tex (figure script).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes; the loss is this lecture's focus.
+  \node[data] (x) at (1.4,0) {neighbor n636, $x$};
+  \node[op, minimum width=3.2cm] (dec) at (5.6,0) {decoder: line\\$w_0+w_1x$};
+  \node[data] (yhat) at (8.55,0) {$\hat{y}$};
+  \node[op, minimum width=3.0cm] (res) at (11.4,0) {residual\\$r=y-\hat{y}$};
+  \node[op, minimum width=3.9cm] (alarm) at (16.0,0) {alarm if the hourly\\mean of $r<-5\sigma$};
+  \node[data] (y) at (14.6,2.15) {sensor n229, $y$};
+  \node[focus, minimum width=4.2cm] (loss) at (5.6,2.15) {robust loss: Huber\\weights or RANSAC};
+  \draw[flow] (x) -- (dec);
+  \draw[flow] (dec) -- (yhat);
+  \draw[flow] (yhat) -- (res);
+  \draw[flow] (res) -- (alarm);
+  \draw[flow] (y.west) -| ([xshift=0.7cm]res.north);
+  \draw[flow] ([xshift=-0.7cm]res.north) |- (loss.east);
+  \draw[train] (loss.south) -- (dec.north);
+  \node[note, anchor=south, text=alertc] at ([yshift=4pt]loss.north)
+    {fit once on \NWin{} readings; RANSAC keeps \Inliers{} within $\tau$ = \TauM{} m};
+
+  % Worked example: one reading, 75 minutes after the burst.
+  \node[insettitle] (ttl) at (0.0,-2.0) {17:00, March 5, 2018};
+  \node[note, anchor=north] (dv) at (5.6,-2.65)
+    {$x$ = \XNb{} m\\\WZero{} + \WOne{} $\times$ \XNb\\$\hat{y}$ = \key{\Pred{} m}};
+  \node[note, anchor=north] (rv) at (11.4,-2.65)
+    {$y$ = \YSn{} m\\$r$ = \YSn{} $-$ \Pred\\= \key{\Resid{} m} = \InSigma$\sigma$};
+  \node[note, anchor=north east] (av) at (17.95,-2.65)
+    {$\sigma$ = \SigmaM{} m\\burst 15:45,\\\Dist{} m away\\$\rightarrow$ \key{alarm}};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(dv)(rv)(av)(alarm.east |- av.south)] {};
+  \end{scope}
+  \draw[leader] (dec.south) -- (dv.north);
+  \draw[leader] (res.south) -- (rv.north);
+  \draw[leader] (alarm.south) -- (alarm.south |- av.north);
+\end{tikzpicture}
+\end{document}

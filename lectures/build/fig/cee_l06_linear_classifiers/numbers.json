@@ -1,0 +1,626 @@
+{
+  "data": {
+    "train": {
+      "start": 2014,
+      "end": 2018,
+      "bridges": 19748,
+      "turned_poor": 841,
+      "poor_pct": 4.3,
+      "dropped_pct": 1.1,
+      "deck_missing": 195
+    },
+    "val": {
+      "start": 2016,
+      "end": 2020,
+      "bridges": 19777,
+      "turned_poor": 898,
+      "poor_pct": 4.5,
+      "dropped_pct": 0.9,
+      "deck_missing": 205
+    },
+    "test": {
+      "start": 2020,
+      "end": 2024,
+      "bridges": 19637,
+      "turned_poor": 793,
+      "poor_pct": 4.0,
+      "dropped_pct": 0.8,
+      "deck_missing": 227
+    },
+    "by_rating_train": {
+      "5": {
+        "bridges": 2946,
+        "poor": 535,
+        "pct": 18.2
+      },
+      "6": {
+        "bridges": 5231,
+        "poor": 213,
+        "pct": 4.1
+      },
+      "7": {
+        "bridges": 5278,
+        "poor": 71,
+        "pct": 1.3
+      },
+      "8": {
+        "bridges": 5547,
+        "poor": 22,
+        "pct": 0.4
+      },
+      "9": {
+        "bridges": 746,
+        "poor": 0,
+        "pct": 0.0
+      }
+    },
+    "n_inputs": 16
+  },
+  "dropped_test": {
+    "dropped": 150,
+    "of": 19787,
+    "rated_5_pct_dropped": 65.0,
+    "rated_5_pct_kept": 19.0,
+    "mean_p_pct_dropped": 15.0,
+    "expected_poor_dropped": 23
+  },
+  "log_odds": {
+    "slope_per_point": -1.441,
+    "rated_9_turned_poor": 0,
+    "rated_9_bridges": 746,
+    "empirical_logit": {
+      "5": -1.506,
+      "6": -3.159,
+      "7": -4.295,
+      "8": -5.526
+    }
+  },
+  "verify": {
+    "material_weight": {
+      "concrete": -0.311,
+      "steel": -0.291,
+      "prestressed": -0.506,
+      "timber": -0.035
+    },
+    "material_se": {
+      "concrete": 0.439,
+      "steel": 0.496,
+      "prestressed": 0.551,
+      "timber": 0.067
+    },
+    "best_C": 0.1,
+    "steps": 9,
+    "max_rel_diff": 1.2e-12,
+    "lbfgs_iterations": 19,
+    "lbfgs_loss_diff": 1e-05,
+    "lbfgs_tol_1e8_max_abs_diff": 4e-06,
+    "lbfgs_max_abs_diff": 0.4,
+    "lbfgs_max_rel_diff": 1.2,
+    "lbfgs_max_p_diff": 0.13,
+    "val_log_loss_none": 0.14664,
+    "val_log_loss_l2": {
+      "0.01": 0.14705,
+      "0.1": 0.14659,
+      "1.0": 0.14662,
+      "10.0": 0.14663
+    },
+    "l2_best_gain": 5e-05,
+    "weights": {
+      "intercept": -4.207,
+      "age": 0.007,
+      "years_since_work": 0.041,
+      "log_adt": 0.08,
+      "pct_truck": -0.094,
+      "log_length": 0.052,
+      "deck_width_m": -0.102,
+      "concrete": -0.311,
+      "steel": -0.291,
+      "prestressed": -0.506,
+      "timber": -0.035,
+      "lat": 0.165,
+      "lon": 0.046,
+      "deck": -0.134,
+      "superstructure": -0.312,
+      "substructure": -0.137,
+      "rating": -1.044
+    },
+    "other_material_bridges": 14,
+    "other_material_poor": 1,
+    "material_bridges": {
+      "concrete": 3916,
+      "steel": 5602,
+      "prestressed": 10160,
+      "timber": 56,
+      "other": 14
+    }
+  },
+  "ranking": {
+    "auc_val": 0.847,
+    "auc_test": 0.815,
+    "auc_rating_only_test": 0.796,
+    "caught_at_10_pct": 43.0
+  },
+  "thresholds": {
+    "accuracy_flag_none": 95.96,
+    "accuracy_at_half": 95.96,
+    "flagged_at_half": 0,
+    "caught_at_half": 0,
+    "max_p": 0.497,
+    "turned_poor": 793,
+    "bridges": 19637,
+    "per_ratio": {
+      "10": {
+        "threshold": 0.0909,
+        "flagged_pct": 18.1,
+        "caught": 510,
+        "missed": 283,
+        "caught_pct": 64.3,
+        "cost": 0.3,
+        "best_threshold_hindsight": 0.118,
+        "within_002_of_best": [
+          0.069,
+          0.164
+        ],
+        "best_cost_hindsight": 0.296,
+        "cost_flag_none": 0.404,
+        "cost_flag_all": 0.96,
+        "cost_rule": 0.302,
+        "cost_at_half": 0.404
+      },
+      "20": {
+        "threshold": 0.0476,
+        "flagged_pct": 31.5,
+        "caught": 631,
+        "missed": 162,
+        "caught_pct": 79.6,
+        "cost": 0.447,
+        "best_threshold_hindsight": 0.074,
+        "within_002_of_best": [
+          0.045,
+          0.117
+        ],
+        "best_cost_hindsight": 0.438,
+        "cost_flag_none": 0.808,
+        "cost_flag_all": 0.96,
+        "cost_rule": 0.436,
+        "cost_at_half": 0.808
+      },
+      "50": {
+        "threshold": 0.0196,
+        "flagged_pct": 49.5,
+        "caught": 708,
+        "missed": 85,
+        "caught_pct": 89.3,
+        "cost": 0.675,
+        "best_threshold_hindsight": 0.027,
+        "within_002_of_best": [
+          0.02,
+          0.038
+        ],
+        "best_cost_hindsight": 0.655,
+        "cost_flag_none": 2.019,
+        "cost_flag_all": 0.96,
+        "cost_rule": 0.84,
+        "cost_at_half": 2.019
+      }
+    },
+    "rule": {
+      "flagged_pct": 19.4,
+      "caught": 529,
+      "caught_pct": 66.7,
+      "model_caught_pct_same_share": 66.3
+    },
+    "rule_5_6": {
+      "flagged_pct": 49.1,
+      "caught_pct": 89.2
+    },
+    "model_minus_rule": {
+      "20": {
+        "diff": 0.011,
+        "ci": [
+          -0.019,
+          0.042
+        ]
+      },
+      "50": {
+        "diff": -0.164,
+        "ci": [
+          -0.265,
+          -0.071
+        ]
+      }
+    }
+  },
+  "cost_curve": {
+    "cost_at_grid_start": 0.764
+  },
+  "validation_costs": {
+    "cost": 0.426,
+    "cost_rule": 0.453,
+    "cost_flag_none": 0.908,
+    "cost_flag_all": 0.955,
+    "flagged_pct": 28.3,
+    "caught_pct": 80.3,
+    "rule_caught_pct": 64.8,
+    "rule_flagged_pct": 16.3,
+    "floor": {
+      "twin_records": 1546,
+      "poor_pct": 5.4,
+      "agree_pct": 96.4,
+      "cost": 0.367,
+      "cost_model": 0.52,
+      "cost_rule": 0.609,
+      "cost_flag_none": 1.074,
+      "cost_flag_all": 0.946
+    }
+  },
+  "floor_test": {
+    "twin_records": 1526,
+    "poor_pct": 4.3,
+    "agree_pct": 97.6,
+    "cost": 0.248,
+    "cost_model": 0.673,
+    "cost_rule": 0.604,
+    "cost_flag_none": 0.865,
+    "cost_flag_all": 0.957
+  },
+  "ordinal": {
+    "auc_ordinal": 0.811,
+    "auc_binary": 0.815,
+    "caught_at_10_ordinal_pct": 39.0,
+    "caught_at_10_binary_pct": 43.0,
+    "cost_ordinal": 0.437,
+    "per_cut": {
+      "4": {
+        "age": 0.007,
+        "superstructure": -0.312
+      },
+      "5": {
+        "age": 0.037,
+        "superstructure": -0.214
+      },
+      "6": {
+        "age": 0.093,
+        "superstructure": -0.441
+      },
+      "7": {
+        "age": 0.263,
+        "superstructure": 0.332
+      },
+      "8": {
+        "age": -0.267,
+        "superstructure": -0.272
+      }
+    },
+    "shared": {
+      "age": 0.103,
+      "superstructure": -0.223
+    },
+    "classes": 6
+  },
+  "calibration": {
+    "val": {
+      "mean_p_pct": 4.5,
+      "observed_pct": 4.5,
+      "top_tenth_p_pct": 20.0,
+      "top_tenth_observed_pct": 22.0
+    },
+    "test": {
+      "mean_p_pct": 5.0,
+      "observed_pct": 4.0,
+      "top_tenth_p_pct": 21.0,
+      "top_tenth_observed_pct": 17.0
+    }
+  },
+  "post_hoc": {
+    "test_mean_p_pct": 5.03,
+    "test_observed_pct": 4.04,
+    "platt_val": {
+      "test_mean_p_pct": 5.06,
+      "cost": 0.447
+    },
+    "refit_val": {
+      "test_mean_p_pct": 5.07,
+      "cost": 0.445,
+      "listing_converges": false,
+      "other_material_bridges": 13,
+      "other_material_poor": 0
+    },
+    "later": {
+      "start": 2018,
+      "end": 2022,
+      "mean_p_pct": 4.79,
+      "observed_pct": 4.09,
+      "auc": 0.843,
+      "auc_rating_only": 0.824
+    },
+    "auc_rating_only_val": 0.823
+  },
+  "svm": {
+    "auc_svm": 0.815,
+    "auc_logistic": 0.815,
+    "positive_scores": 0,
+    "train_positive_scores": 0,
+    "balanced_train_positive_scores": 6221,
+    "caught_at_10_pct": 43.0,
+    "platt_cost": 0.441
+  },
+  "by_owner": {
+    "state": {
+      "bridges": 5497,
+      "inventory_pct": 28.0,
+      "turned_poor": 203,
+      "poor_pct": 3.7,
+      "mean_p_pct": 6.9,
+      "rated_5_pct": 25.6,
+      "flagged_pct": 45.6,
+      "caught_pct": 84.0,
+      "missed": 33
+    },
+    "county": {
+      "bridges": 2885,
+      "inventory_pct": 14.7,
+      "turned_poor": 145,
+      "poor_pct": 5.0,
+      "mean_p_pct": 4.5,
+      "rated_5_pct": 17.2,
+      "flagged_pct": 27.2,
+      "caught_pct": 82.0,
+      "missed": 26
+    },
+    "township": {
+      "bridges": 9490,
+      "inventory_pct": 48.3,
+      "turned_poor": 339,
+      "poor_pct": 3.6,
+      "mean_p_pct": 3.9,
+      "rated_5_pct": 16.3,
+      "flagged_pct": 23.3,
+      "caught_pct": 75.0,
+      "missed": 86
+    },
+    "city": {
+      "bridges": 1221,
+      "inventory_pct": 6.2,
+      "turned_poor": 97,
+      "poor_pct": 7.9,
+      "mean_p_pct": 6.5,
+      "rated_5_pct": 24.0,
+      "flagged_pct": 39.6,
+      "caught_pct": 87.0,
+      "missed": 13
+    },
+    "other owners": {
+      "bridges": 544,
+      "inventory_pct": 2.8,
+      "turned_poor": 9,
+      "poor_pct": 1.7,
+      "mean_p_pct": 5.2,
+      "rated_5_pct": 14.2,
+      "flagged_pct": 35.3,
+      "caught_pct": 56.0,
+      "missed": 4
+    }
+  },
+  "owner_gap": {
+    "score_gap": 0.93,
+    "score_gap_by_group": {
+      "ratings": 0.7,
+      "material": 0.19,
+      "traffic_and_size": 0.02,
+      "age_and_work": -0.01,
+      "location": 0.04
+    },
+    "caught_gap_pts": 9.1,
+    "caught_gap_ci_pts": [
+      -3.2,
+      19.7
+    ]
+  },
+  "attempt": {
+    "rows": [
+      {
+        "id": "A",
+        "structure": "010314700000000",
+        "road": "Duncan Rd",
+        "over": "Phinney Branch",
+        "facility_nbi": "DUNCAN RD(FAU 7155",
+        "built": 1969,
+        "rebuilt": null,
+        "adt": 8400,
+        "material": "prestressed",
+        "deck": 6,
+        "superstructure": 6,
+        "substructure": 7,
+        "rating": 6,
+        "rating_2024": 6,
+        "p": 0.049,
+        "flag_at_r": true
+      },
+      {
+        "id": "B",
+        "structure": "010601000000000",
+        "road": "Duncan Rd",
+        "over": "Copper Slough",
+        "facility_nbi": "FAU 7155(DUNCAN RD",
+        "built": 1976,
+        "rebuilt": null,
+        "adt": 8000,
+        "material": "prestressed",
+        "deck": 5,
+        "superstructure": 5,
+        "substructure": 6,
+        "rating": 5,
+        "rating_2024": 2,
+        "p": 0.179,
+        "flag_at_r": true
+      },
+      {
+        "id": "C",
+        "structure": "010435100000000",
+        "road": "FAU 7154",
+        "over": "Copper Slough",
+        "facility_nbi": "FAU 7154(CH 25)",
+        "built": 1988,
+        "rebuilt": 2003,
+        "adt": 7000,
+        "material": "prestressed",
+        "deck": 6,
+        "superstructure": 6,
+        "substructure": 7,
+        "rating": 6,
+        "rating_2024": 6,
+        "p": 0.044,
+        "flag_at_r": false
+      },
+      {
+        "id": "D",
+        "structure": "010448400000000",
+        "road": "Staley Rd",
+        "over": "Phinney Branch",
+        "facility_nbi": "FAU 715/ STALEY RD",
+        "built": 2006,
+        "rebuilt": null,
+        "adt": 7000,
+        "material": "prestressed",
+        "deck": 6,
+        "superstructure": 6,
+        "substructure": 8,
+        "rating": 6,
+        "rating_2024": 6,
+        "p": 0.038,
+        "flag_at_r": false
+      },
+      {
+        "id": "E",
+        "structure": "010620200000000",
+        "road": "Mattis Ave",
+        "over": "Phinney Branch",
+        "facility_nbi": "MATTIS AVE(FAU 715",
+        "built": 1977,
+        "rebuilt": null,
+        "adt": 5750,
+        "material": "prestressed",
+        "deck": 5,
+        "superstructure": 5,
+        "substructure": 7,
+        "rating": 5,
+        "rating_2024": 5,
+        "p": 0.134,
+        "flag_at_r": true
+      },
+      {
+        "id": "F",
+        "structure": "010612800000000",
+        "road": "Broadway",
+        "over": "Saline Branch",
+        "facility_nbi": "FAU 7182(BROADWAY)",
+        "built": 1982,
+        "rebuilt": null,
+        "adt": 3350,
+        "material": "prestressed",
+        "deck": 5,
+        "superstructure": 5,
+        "substructure": 5,
+        "rating": 5,
+        "rating_2024": 4,
+        "p": 0.2,
+        "flag_at_r": true
+      }
+    ],
+    "rank_by_p": [
+      "F",
+      "B",
+      "E",
+      "A",
+      "C",
+      "D"
+    ],
+    "turned_poor": [
+      "B",
+      "F"
+    ],
+    "flagged_at_r": [
+      "A",
+      "B",
+      "E",
+      "F"
+    ],
+    "materials": [
+      "prestressed"
+    ]
+  },
+  "trace": {
+    "structure": "010601000000000",
+    "age": 43,
+    "built": 1976,
+    "adt": 8000,
+    "deck": 5,
+    "superstructure": 5,
+    "substructure": 6,
+    "rating": 5,
+    "rating_2024": 2,
+    "baseline": "prestressed",
+    "intercept": -4.21,
+    "top": [
+      {
+        "input": "rating",
+        "z": -1.6,
+        "term": 1.67
+      },
+      {
+        "input": "superstructure",
+        "z": -1.98,
+        "term": 0.62
+      },
+      {
+        "input": "deck",
+        "z": -2.08,
+        "term": 0.28
+      }
+    ],
+    "rest": 0.12,
+    "s": -1.52,
+    "p": 0.18,
+    "threshold": 0.048,
+    "flag": true,
+    "material_terms": -0.15,
+    "own_coding_prestressed_term": -0.49
+  },
+  "R": 20,
+  "dial": {
+    "caught_at_90_flagged_pct": 99.5,
+    "flagged_to_catch_all_pct": 99.9
+  },
+  "sheet": {
+    "weights": [
+      5.113,
+      -1.388,
+      0.005
+    ],
+    "p_max_grid": 0.322,
+    "p_rating5": {
+      "age0": 0.14,
+      "age110": 0.21
+    },
+    "threshold_rating": {
+      "age0": 5.84,
+      "age110": 6.22
+    }
+  },
+  "newton": {
+    "steps": 9,
+    "w": [
+      -4.139,
+      -1.612
+    ],
+    "gaps": {
+      "1": 0.077,
+      "2": 0.021,
+      "3": 0.0046,
+      "4": 0.00049,
+      "5": 9.5e-06,
+      "6": 4.8e-09
+    }
+  }
+}

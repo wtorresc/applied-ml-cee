@@ -1,0 +1,290 @@
+{
+  "attempt": {
+    "A_train": 7.037,
+    "B_random": 8.886,
+    "C_best_of_255_on_test": 8.149,
+    "D_designs_once": 9.511,
+    "D_28d": 9.874,
+    "honest_C_val": 8.524,
+    "honest_C_test": 8.736,
+    "C_below_honest_C": 0.59,
+    "honest_C_test_above_val_splits": 19,
+    "honest_C_gap": 0.212,
+    "chosen_most_often": "cement, slag, water, SP, age",
+    "chosen_most_often_splits": 11,
+    "n_input_sets": 255
+  },
+  "bracket": {
+    "predict_mean": 17.0,
+    "repeat_groups": 9,
+    "repeat_tests": 20,
+    "repeat_mixes": 3,
+    "floor_median_sd": 1.4
+  },
+  "trace": {
+    "row": 873,
+    "candidates": 5,
+    "x": {
+      "cement": 237.0,
+      "slag": 92.0,
+      "fly_ash": 71.0,
+      "water": 247.0,
+      "superplasticizer": 6.0,
+      "coarse_agg": 853.0,
+      "fine_agg": 695.0,
+      "age": 28.0
+    },
+    "z": {
+      "cement": -0.41,
+      "slag": 0.24,
+      "fly ash": 0.25,
+      "water": 3.13,
+      "SP": 0.02,
+      "coarse": -1.62,
+      "fine": -0.96,
+      "age": -0.26
+    },
+    "wb": 0.62,
+    "neighbor_strengths": [
+      35.2,
+      35.2,
+      37.2,
+      37.2,
+      45.9
+    ],
+    "neighbor_wb": [
+      0.55,
+      0.55,
+      0.46,
+      0.46,
+      0.6
+    ],
+    "neighbor_ages": [
+      28,
+      28,
+      28,
+      28,
+      28
+    ],
+    "pred": 38.1,
+    "y": 28.6,
+    "error": 9.5,
+    "squared_error": 90.3,
+    "records_of_its_design_in_test": 2,
+    "n_train": 746,
+    "n_train_designs": 236
+  },
+  "verify_listing": {
+    "input_sets": 255,
+    "max_abs_diff_mpa": 0.0,
+    "designs_on_both_sides": 0
+  },
+  "selection_curve": {
+    "M": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      255
+    ],
+    "picked": [
+      12.95,
+      11.43,
+      10.26,
+      9.37,
+      8.8,
+      8.45,
+      8.22,
+      8.02,
+      7.87
+    ],
+    "fresh": [
+      13.0,
+      11.66,
+      10.64,
+      9.77,
+      9.37,
+      9.2,
+      9.09,
+      8.97,
+      8.84
+    ],
+    "gap": [
+      0.04,
+      0.22,
+      0.38,
+      0.39,
+      0.57,
+      0.75,
+      0.87,
+      0.95,
+      0.98
+    ],
+    "orders": 20
+  },
+  "random_split": {
+    "splits": 30,
+    "test_rows_with_mix_in_train": {
+      "mean": 0.74,
+      "min": 0.67,
+      "max": 0.8
+    },
+    "test_rows_with_design_in_train": {
+      "mean": 0.88,
+      "min": 0.83,
+      "max": 0.93
+    }
+  },
+  "new_material": {
+    "home_tests": 566,
+    "home_designs": 167,
+    "away_tests": 464,
+    "away_designs": 148,
+    "promised": 9.8,
+    "promised_sd": 1.44,
+    "delivered": 13.66,
+    "mean_predictor_on_away": 14.38,
+    "fly_ash_scale_in_training": 1.0,
+    "fly_ash_sd_in_training": 0.0
+  },
+  "decision": {
+    "predictions_28d": 3179,
+    "distinct_tests_28d": 425,
+    "weak_share_28d": 0.51,
+    "honest_margin": 9.9,
+    "pooled_rmse_28d": 9.92,
+    "no_margin_weak_accepted": 0.13,
+    "no_margin_strong_rejected": 0.305,
+    "honest_margin_weak_accepted": 0.011,
+    "honest_margin_strong_rejected": 0.592
+  },
+  "vote": {
+    "row": 922,
+    "candidates": 8,
+    "pred": 47.3,
+    "y": 33.8,
+    "fly_ash": 77.0,
+    "fly_ash_share_of_binder": 0.18,
+    "pred_minus_promised": 37.5,
+    "pred_minus_fly_rmse": 33.6
+  },
+  "two_models": {
+    "sigma": 0.9,
+    "expected_gain": 0.5
+  },
+  "margin": {
+    "near_band_mpa": [
+      36.0,
+      40.0
+    ],
+    "near_predictions": 330,
+    "near_distinct_tests": 111,
+    "near_measured_min_mpa": 16.5,
+    "near_measured_max_mpa": 72.1,
+    "near_weak_share": 0.37
+  },
+  "splits": {
+    "shown_test_rows_leaked": 54,
+    "shown_test_rows": 54
+  },
+  "winners_curse": {
+    "true": 9.51,
+    "expected_best": {
+      "2": 9.02,
+      "16": 7.96,
+      "255": 7.04
+    },
+    "expected_gap": {
+      "2": 0.5,
+      "16": 1.5,
+      "255": 2.5
+    }
+  },
+  "costs": {
+    "max_margin": 16.0,
+    "weak_approved_at_max_margin": 0.003,
+    "strong_rejected_at_max_margin": 0.777
+  },
+  "tour": {
+    "concrete": {
+      "tests": 1030,
+      "mixes": 428,
+      "designs": 315,
+      "ages": 14,
+      "age_min": 1,
+      "age_max": 365,
+      "tests_28d": 425,
+      "strength_min": 2.3,
+      "strength_max": 82.6
+    },
+    "nbi": {
+      "records": 131851,
+      "bridges": 23464,
+      "counties": 102,
+      "year_min": 2014,
+      "year_max": 2024,
+      "per_year_min": 21935,
+      "per_year_max": 22015
+    },
+    "bdg2": {
+      "buildings": 1578,
+      "sites": 19,
+      "days": 731,
+      "hours_per_day": 24,
+      "year_min": 2016,
+      "year_max": 2017,
+      "lecture4_buildings": 1159,
+      "lecture4_sites": 15
+    }
+  },
+  "datasets": {
+    "poor_bridges_last_year": 2308,
+    "bridges_last_year": 21966
+  },
+  "cited": {
+    "flood_hub": {
+      "countries": "over 80",
+      "lead_days": 5,
+      "source": "Nearing et al. (2024), Nature 627, abstract"
+    },
+    "aifs": {
+      "operational": "25 February 2025",
+      "source": "ECMWF news, 'ECMWF's AI forecasts become operational'"
+    },
+    "freeman": {
+      "fail_ratio": 1.5,
+      "source": "Freeman et al. (2014), PNAS 111(23), abstract"
+    },
+    "sinha_kapur": {
+      "g": 0.36,
+      "studies": 53,
+      "source": "Sinha & Kapur (2021), RER 91(5)"
+    }
+  },
+  "course": {
+    "homeworks": 5,
+    "core_points": 100,
+    "exams": 3,
+    "exams_counted": 2,
+    "exam_points": 100,
+    "project_points": 100,
+    "xp_target_3_credits": 400,
+    "xp_target_4_credits": 525,
+    "denominator_extra": 300,
+    "late_days": 10,
+    "ai_levels": {
+      "CBTF exams": "Restricted",
+      "Homework cores": "Limited Use",
+      "Critique-the-machine problems": "Use When Instructed",
+      "Stretch goals and final project": "All Use, with a disclosure log"
+    }
+  },
+  "K": 5,
+  "fc": 35.0,
+  "repeats": 30,
+  "folds": 5
+}

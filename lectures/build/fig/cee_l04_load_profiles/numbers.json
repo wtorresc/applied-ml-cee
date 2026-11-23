@@ -1,0 +1,604 @@
+{
+  "data": {
+    "buildings_in_file": 1578,
+    "sites_in_file": 19,
+    "incomplete_or_nonpositive": 356,
+    "daily_meters": 63,
+    "daily_meters_top_site_count": 61,
+    "eligible": 1159,
+    "sites": 15,
+    "train_buildings": 1023,
+    "test_buildings": 136,
+    "train_sites": 14,
+    "test_sites": 1,
+    "test_site_names": [
+      "Hog"
+    ],
+    "weekdays_2016": 261,
+    "weekdays_2017": 260,
+    "min_complete_pct": 80,
+    "uses_top": {
+      "Education": 477,
+      "Office": 224,
+      "Entertainment/public assembly": 133,
+      "Public services": 121,
+      "Lodging/residential": 110
+    },
+    "kw_median": 75.1,
+    "kw_min": 0.2,
+    "kw_max": 3494.5
+  },
+  "attempt": {
+    "rows": [
+      {
+        "letter": "Q",
+        "row": 914,
+        "name": "Hog_office_Elnora",
+        "site": "Hog",
+        "use": "Office",
+        "kw": 699.0,
+        "blocks_kw": [
+          690.0,
+          689.0,
+          708.0,
+          722.0,
+          709.0,
+          674.0
+        ],
+        "night_day": 0.96,
+        "sqm": 9770.0,
+        "w_per_m2": 71.0,
+        "shape_min": 0.96,
+        "shape_max": 1.04
+      },
+      {
+        "letter": "A",
+        "row": 873,
+        "name": "Hog_office_Terry",
+        "site": "Hog",
+        "use": "Office",
+        "kw": 694.0,
+        "blocks_kw": [
+          558.0,
+          549.0,
+          714.0,
+          841.0,
+          831.0,
+          673.0
+        ],
+        "night_day": 0.66,
+        "sqm": 24855.0,
+        "w_per_m2": 28.0,
+        "shape_min": 0.75,
+        "shape_max": 1.26,
+        "d_raw_kw": 536.0,
+        "d_shape": 0.772
+      },
+      {
+        "letter": "B",
+        "row": 911,
+        "name": "Hog_office_Betsy",
+        "site": "Hog",
+        "use": "Office",
+        "kw": 708.0,
+        "blocks_kw": [
+          551.0,
+          546.0,
+          720.0,
+          853.0,
+          861.0,
+          719.0
+        ],
+        "night_day": 0.65,
+        "sqm": 23175.0,
+        "w_per_m2": 31.0,
+        "shape_min": 0.73,
+        "shape_max": 1.26,
+        "d_raw_kw": 596.0,
+        "d_shape": 0.838
+      },
+      {
+        "letter": "C",
+        "row": 287,
+        "name": "Rat_education_Jacob",
+        "site": "Rat",
+        "use": "Education",
+        "kw": 63.0,
+        "blocks_kw": [
+          62.0,
+          62.0,
+          63.0,
+          65.0,
+          64.0,
+          62.0
+        ],
+        "night_day": 0.96,
+        "sqm": 5311.0,
+        "w_per_m2": 12.0,
+        "shape_min": 0.97,
+        "shape_max": 1.03,
+        "d_raw_kw": 3114.0,
+        "d_shape": 0.066
+      },
+      {
+        "letter": "D",
+        "row": 158,
+        "name": "Fox_public_Belle",
+        "site": "Fox",
+        "use": "Public services",
+        "kw": 58.0,
+        "blocks_kw": [
+          56.0,
+          56.0,
+          59.0,
+          60.0,
+          58.0,
+          57.0
+        ],
+        "night_day": 0.94,
+        "sqm": 1525.0,
+        "w_per_m2": 38.0,
+        "shape_min": 0.97,
+        "shape_max": 1.04,
+        "d_raw_kw": 3141.0,
+        "d_shape": 0.072
+      }
+    ],
+    "q": 914,
+    "office_ref_night_day": 0.66,
+    "office_ref_exact": 0.658,
+    "n_train_offices": 157,
+    "q_excess_kw": 214.0,
+    "q_excess_mwh_year": 447,
+    "night_hours": 8,
+    "weekdays": 261,
+    "peer_letters": [
+      "A",
+      "B"
+    ],
+    "shape_letters": [
+      "C",
+      "D"
+    ],
+    "double_raw_kw": 3423.0,
+    "double_farther_than_all": true
+  },
+  "lloyd_by_hand": {
+    "block_shapes": {
+      "Q": [
+        0.99,
+        0.99,
+        1.01,
+        1.03,
+        1.02,
+        0.96
+      ],
+      "A": [
+        0.8,
+        0.79,
+        1.03,
+        1.21,
+        1.2,
+        0.97
+      ],
+      "B": [
+        0.78,
+        0.77,
+        1.02,
+        1.2,
+        1.22,
+        1.01
+      ],
+      "C": [
+        0.98,
+        0.98,
+        1.0,
+        1.03,
+        1.02,
+        0.98
+      ],
+      "D": [
+        0.97,
+        0.98,
+        1.01,
+        1.03,
+        1.01,
+        0.99
+      ]
+    },
+    "start": [
+      "A",
+      "C"
+    ],
+    "groups": [
+      [
+        "A",
+        "B"
+      ],
+      [
+        "Q",
+        "C",
+        "D"
+      ]
+    ],
+    "J_start": 0.0048,
+    "J_after_update": 0.0026,
+    "centers_after_update": [
+      [
+        0.79,
+        0.78,
+        1.02,
+        1.21,
+        1.21,
+        0.99
+      ],
+      [
+        0.98,
+        0.98,
+        1.01,
+        1.03,
+        1.02,
+        0.98
+      ]
+    ],
+    "converged_J": 0.0026,
+    "converged_same": true
+  },
+  "verify_pca": {
+    "max_var_diff": 0.0,
+    "max_mode_diff": 0.0,
+    "max_score_diff": 1e-15,
+    "modes_with_flipped_sign": 2,
+    "tolerance": 1e-13
+  },
+  "verify_kmeans": {
+    "same_labels": true,
+    "J": 559.25,
+    "J_rel_diff_below": 1e-15,
+    "iterations": 14,
+    "J_never_rose": true
+  },
+  "modes": {
+    "share_pct": [
+      65.2,
+      18.6,
+      7.2,
+      3.3,
+      1.6,
+      0.9
+    ],
+    "cum_pct": [
+      65.2,
+      83.8,
+      91.0,
+      94.3,
+      95.9,
+      96.8
+    ],
+    "corr_z1_night_day": -0.77,
+    "n_train": 1023,
+    "mode2_peak_hour": 20,
+    "mean_shape_min": 0.77,
+    "mean_shape_max": 1.24,
+    "mean_shape_peak_hour": 13,
+    "mode1_plus2sd_min": 0.45,
+    "mode1_plus2sd_max": 1.79,
+    "mode1_plus2sd_peak_hour": 11
+  },
+  "bracket": {
+    "splits": 30,
+    "test_share_of_sites": 0.25,
+    "r": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "rmse_pct": [
+      22.1,
+      13.3,
+      9.9,
+      7.5,
+      6.0,
+      5.1,
+      4.6,
+      4.0,
+      3.5
+    ],
+    "rmse_sd_pct": [
+      6.0,
+      3.3,
+      2.6,
+      2.1,
+      1.6,
+      1.6,
+      1.4,
+      1.2,
+      1.1
+    ],
+    "floor_pct": 6.9,
+    "floor_sd_pct": 2.4,
+    "floor_pooled_all_pct": 7.4,
+    "kmeans_pct": {
+      "4": 16.0,
+      "16": 12.2
+    },
+    "kmeans_n_init": 10,
+    "first_r_at_floor": 4,
+    "r4_below_floor_splits": 21,
+    "r3_below_floor_splits": 12
+  },
+  "trace": {
+    "kw_mean": 699.0,
+    "z": [
+      -0.62,
+      -0.38,
+      -0.01
+    ],
+    "rmse_pct": 2.2,
+    "captured_pct": 98.0,
+    "z1_share_of_training_offices_below_pct": 20.0,
+    "n_train_offices": 157,
+    "n_train": 1023,
+    "n_train_sites": 14,
+    "nearest_typical_day": "always on"
+  },
+  "size_mode": {
+    "raw kW": {
+      "mode1_pct": 98.0,
+      "corr_score_size": 0.99995,
+      "loading_min": 0.18,
+      "loading_max": 0.226
+    },
+    "each hour standardized": {
+      "mode1_pct": 97.9,
+      "corr_score_size": 0.99996,
+      "loading_min": 0.203,
+      "loading_max": 0.205
+    },
+    "shape (÷ daily mean)": {
+      "mode1_pct": 65.2,
+      "corr_score_size": -0.13808,
+      "loading_min": -0.258,
+      "loading_max": 0.313
+    }
+  },
+  "day_leakage": {
+    "random split of days": {
+      "same_building": 55.9,
+      "same_site": 66.3,
+      "same_use": 68.2,
+      "database_days": 288999
+    },
+    "sites held out": {
+      "same_building": 0.0,
+      "same_site": 0.0,
+      "same_use": 25.1,
+      "database_days": 255903
+    },
+    "chance_same_use": 16.0,
+    "queries": 2000,
+    "building_days": 290999
+  },
+  "typical_days": {
+    "K": 4,
+    "n_init": 20,
+    "counts": {
+      "always on": 518,
+      "moderate day": 394,
+      "strong day": 107,
+      "evening peak": 4
+    },
+    "small_cluster": "evening peak",
+    "small_members": [
+      "Fox_warehouse_Lorretta",
+      "Rat_assembly_Jannie",
+      "Rat_assembly_Lillie",
+      "Lamb_assembly_Librada"
+    ],
+    "small_uses": [
+      "Entertainment/public assembly",
+      "Warehouse/storage"
+    ],
+    "small_peak_hour": 20,
+    "small_peak_x_mean": 4.7,
+    "member_peak_x_mean": [
+      3.6,
+      8.6,
+      3.7,
+      2.9
+    ],
+    "J_per_building": 0.492,
+    "center_min": {
+      "always on": 0.89,
+      "moderate day": 0.69,
+      "strong day": 0.43,
+      "evening peak": 0.37
+    },
+    "center_max": {
+      "always on": 1.09,
+      "moderate day": 1.31,
+      "strong day": 1.87,
+      "evening peak": 4.7
+    },
+    "center_peak_hour": {
+      "always on": 19,
+      "moderate day": 12,
+      "strong day": 12,
+      "evening peak": 20
+    }
+  },
+  "season": {
+    "buildings": 1144,
+    "changed_typical_day_pct": 17.0,
+    "summer_vs_winter_rms_pct": 16.1,
+    "year_to_year_rms_pct": 7.4,
+    "same_season_a_year_apart": {
+      "buildings": 1138,
+      "summer_vs_winter_2016_rms_pct": 16.1,
+      "summer_2016_vs_2017_rms_pct": 12.8,
+      "winter_2016_vs_2017_rms_pct": 9.2,
+      "full_year_2016_vs_2017_rms_pct": 7.4
+    }
+  },
+  "decision": {
+    "site": "Hog",
+    "offices": 67,
+    "covered_at_5_pct": {
+      "size × shape": 63.0,
+      "shape only": 60.0,
+      "size only": 9.0
+    },
+    "covered_at_10_pct": {
+      "size × shape": 90.0,
+      "shape only": 75.0,
+      "size only": 50.0
+    },
+    "random_at_10_pct": 15.0,
+    "bootstrap_at_10": {
+      "draws": 1000,
+      "visits": 10,
+      "interval_pct": {
+        "size × shape": [
+          73.0,
+          97.0
+        ],
+        "shape only": [
+          56.0,
+          95.0
+        ],
+        "size only": [
+          14.0,
+          76.0
+        ]
+      },
+      "lead_over_shape_only_pts": {
+        "median": 8.0,
+        "interval": [
+          0.0,
+          28.0
+        ],
+        "draws_not_ahead_pct": 3.0
+      },
+      "lead_over_size_only_pts": {
+        "median": 40.0,
+        "interval": [
+          15.0,
+          76.0
+        ],
+        "draws_not_ahead_pct": 0.0
+      }
+    },
+    "top10_2016_in_top10_2017": 9,
+    "largest_changes_kw_2016_to_2017": {
+      "Hog_office_Nia": [
+        -29.0,
+        -97.0
+      ],
+      "Hog_office_Rolando": [
+        39.0,
+        100.0
+      ]
+    },
+    "vote": [
+      {
+        "name": "Hog_education_Janell",
+        "use": "Education",
+        "kw": 3494.0,
+        "night_day_pct": 80.0,
+        "excess_kw": 540.0,
+        "excess_kw_2017": 502.0,
+        "w_per_m2": 131.0
+      },
+      {
+        "name": "Hog_office_Joey",
+        "use": "Office",
+        "kw": 1307.0,
+        "night_day_pct": 74.0,
+        "excess_kw": 123.0,
+        "excess_kw_2017": 71.0,
+        "w_per_m2": 42.0
+      },
+      {
+        "name": "Hog_lodging_Retha",
+        "use": "Lodging/residential",
+        "kw": 362.0,
+        "night_day_pct": 94.0,
+        "excess_kw": 103.0,
+        "excess_kw_2017": 94.0,
+        "w_per_m2": 21.0
+      }
+    ]
+  },
+  "reidentify": {
+    "shape": {
+      "top1_pct": 64.0,
+      "top5_pct": 81.0
+    },
+    "raw kW": {
+      "top1_pct": 50.0,
+      "top5_pct": 65.0
+    },
+    "buildings": 1159
+  },
+  "cited": {
+    "buildingsbench": {
+      "simulated_buildings": 900000,
+      "real_buildings": "over 1,900",
+      "real_datasets": 7,
+      "source": "Emami, Sahu & Graf (2023), NeurIPS 36 Datasets and Benchmarks, abstract; BDG-2 is one of the real commercial datasets"
+    },
+    "faiss": {
+      "scale": "billion-scale",
+      "source": "Johnson, Douze & Jégou (2021), IEEE Trans. Big Data 7(3), title"
+    },
+    "emeans": {
+      "epochs_to_beat_lloyd": "1.4 to 2.6",
+      "lloyd_epochs": 25,
+      "dino10b_embeddings": "10 billion",
+      "dino10b_clusters": "16 million",
+      "dino10b_epochs": 2.5,
+      "source": "Bessa, Mazaré, Szilvasy, Touvron, Picard, Douze & Jégou (2026), e-means: outperforming k-means (in one-tenth the epochs), arXiv:2611.09501, abstract (read 2026-11-16): beats the loss of Lloyd k-means at 25 epochs in 1.4 to 2.6 epochs; partitions DINO10B, 10 billion DINO embeddings, into 16 million clusters in 2.5 epochs, reaching a loss below Lloyd's at 25 epochs. Authors at FAIR at Meta."
+    }
+  },
+  "carpet": {
+    "night_kw": 679,
+    "afternoon_kw": 707,
+    "colour_min_kw": 293,
+    "colour_max_kw": 994
+  },
+  "plane": {
+    "hours": [
+      3,
+      9,
+      15
+    ],
+    "buildings": 1023,
+    "shown": 400,
+    "mode1_share_pct": 79.0,
+    "plane_share_pct": 94.0
+  },
+  "kmeans_build": {
+    "passes": 12,
+    "J_start": 471.9,
+    "J_end": 356.2
+  },
+  "rebuild": {
+    "scores": [
+      -0.62,
+      -0.38,
+      -0.01
+    ],
+    "error_pct": [
+      15.1,
+      8.1,
+      2.2,
+      2.2
+    ]
+  }
+}

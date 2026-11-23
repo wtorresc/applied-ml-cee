@@ -1,0 +1,343 @@
+{
+  "network": {
+    "junctions": 782,
+    "pipes": 905,
+    "pipe_km": 43.2,
+    "pressure_sensors": 33,
+    "readings_per_day": 288,
+    "leaks_2018": 14,
+    "burst_m3h": 28.4,
+    "burst_m3_per_day": 680,
+    "burst_share_of_inflow_pct": 13,
+    "burst_days": 17.8,
+    "sensor_m_from_burst": 100,
+    "neighbor_m_from_burst": 370,
+    "sensors_apart_m": 340
+  },
+  "attempt": {
+    "rows": {
+      "2018-03-04 14:00": {
+        "sensor": 52.48,
+        "neighbor": 45.47,
+        "inflow": 188
+      },
+      "2018-03-04 17:00": {
+        "sensor": 51.98,
+        "neighbor": 45.07,
+        "inflow": 225
+      },
+      "2018-03-05 14:00": {
+        "sensor": 51.8,
+        "neighbor": 44.91,
+        "inflow": 242
+      },
+      "2018-03-05 17:00": {
+        "sensor": 50.64,
+        "neighbor": 44.6,
+        "inflow": 257
+      }
+    },
+    "drops": {
+      "2018-03-04": {
+        "sensor": -0.5,
+        "neighbor": -0.4
+      },
+      "2018-03-05": {
+        "sensor": -1.16,
+        "neighbor": -0.31
+      }
+    },
+    "excess": {
+      "slope": 1.24,
+      "predicted": -0.38,
+      "beyond_prediction": -0.78,
+      "beyond_neighbor": -0.85
+    }
+  },
+  "fits": {
+    "sigma": 0.0167,
+    "tau": 0.05,
+    "slope_cal": 1.2356,
+    "mad_scale_cal": 0.016,
+    "leaks_active_cal": 3,
+    "nearest_leak_cal_m": 566,
+    "slope_clean": 1.2377,
+    "se_slope_hac": 0.0023,
+    "se_slope_hac_day": 0.00089,
+    "se_slope_iid": 0.0012,
+    "resid_autocorr_5min": 0.44,
+    "resid_autocorr_day": 0.33,
+    "window_readings": 2304,
+    "burst_readings": 675,
+    "burst_share_pct": 29,
+    "slope_ols": 1.6304,
+    "slope_huber": 1.6521,
+    "slope_ransac": 1.2376,
+    "slope_sklearn_huber": 1.6593,
+    "huber_steps": 17,
+    "huber_scale": 0.3278,
+    "huber_rlm_rel_diff": 4e-14,
+    "huber_rlm_bound": 1e-12,
+    "half_gap_m": 0.36,
+    "ransac_inliers": 1626,
+    "ransac_inliers_in_burst": 0,
+    "trials_for_window": 9,
+    "trials_table": {
+      "0.3": 7,
+      "0.5": 17,
+      "0.7": 49
+    },
+    "shift": {
+      "clean": -0.7273,
+      "ols": -0.5308,
+      "huber": -0.5199,
+      "ransac": -0.7274
+    },
+    "default_threshold": 0.44,
+    "seeds_default_bad": 13,
+    "seeds_tau_bad": 0,
+    "seeds_default_range": [
+      1.15,
+      1.99
+    ],
+    "seeds_tau_range": [
+      1.23,
+      1.242
+    ]
+  },
+  "burst_lines": {
+    "calm_x_range_m": [
+      44.63,
+      46.16
+    ],
+    "clean_line_at_ends_m": [
+      51.45,
+      53.34
+    ]
+  },
+  "dropouts": {
+    "readings": 1629,
+    "faults": 3,
+    "slope_clean": 1.2377,
+    "slope_ols": 0.0458,
+    "slope_huber": 1.2199,
+    "slope_ransac": 1.2377,
+    "x_mean_m": 45.44,
+    "zero_resid_m": [
+      55.18,
+      55.39
+    ],
+    "zero_weight_max": 0.00048
+  },
+  "breakdown": {
+    "rows": [
+      {
+        "end": "2018-03-06",
+        "burst_pct": 19,
+        "slope_ols": 1.5775,
+        "slope_ransac": 1.2377,
+        "burst_inliers_pct": 0,
+        "calm_inliers_pct": 100,
+        "calm_resid": 0.0,
+        "calm_readings": 1629,
+        "burst_readings": 387,
+        "calm_line_holds": 1627,
+        "burst_line_holds": 301,
+        "calm_line_holds_pct": 100,
+        "burst_line_holds_pct": 78,
+        "calm_minus_burst": 1326
+      },
+      {
+        "end": "2018-03-08",
+        "burst_pct": 37,
+        "slope_ols": 1.6582,
+        "slope_ransac": 1.2377,
+        "burst_inliers_pct": 0,
+        "calm_inliers_pct": 100,
+        "calm_resid": 0.0,
+        "calm_readings": 1629,
+        "burst_readings": 963,
+        "calm_line_holds": 1627,
+        "burst_line_holds": 752,
+        "calm_line_holds_pct": 100,
+        "burst_line_holds_pct": 78,
+        "calm_minus_burst": 875
+      },
+      {
+        "end": "2018-03-10",
+        "burst_pct": 49,
+        "slope_ols": 1.6511,
+        "slope_ransac": 1.2376,
+        "burst_inliers_pct": 0,
+        "calm_inliers_pct": 100,
+        "calm_resid": 0.0,
+        "calm_readings": 1629,
+        "burst_readings": 1539,
+        "calm_line_holds": 1627,
+        "burst_line_holds": 1173,
+        "calm_line_holds_pct": 100,
+        "burst_line_holds_pct": 76,
+        "calm_minus_burst": 454
+      },
+      {
+        "end": "2018-03-11",
+        "burst_pct": 53,
+        "slope_ols": 1.6535,
+        "slope_ransac": 1.2376,
+        "burst_inliers_pct": 0,
+        "calm_inliers_pct": 100,
+        "calm_resid": 0.0,
+        "calm_readings": 1629,
+        "burst_readings": 1827,
+        "calm_line_holds": 1627,
+        "burst_line_holds": 1383,
+        "calm_line_holds_pct": 100,
+        "burst_line_holds_pct": 76,
+        "calm_minus_burst": 244
+      },
+      {
+        "end": "2018-03-12",
+        "burst_pct": 56,
+        "slope_ols": 1.6469,
+        "slope_ransac": 1.2378,
+        "burst_inliers_pct": 0,
+        "calm_inliers_pct": 100,
+        "calm_resid": 0.0,
+        "calm_readings": 1629,
+        "burst_readings": 2115,
+        "calm_line_holds": 1627,
+        "burst_line_holds": 1601,
+        "calm_line_holds_pct": 100,
+        "burst_line_holds_pct": 76,
+        "calm_minus_burst": 26
+      },
+      {
+        "end": "2018-03-15",
+        "burst_pct": 65,
+        "slope_ols": 1.625,
+        "slope_ransac": 1.3517,
+        "burst_inliers_pct": 76,
+        "calm_inliers_pct": 0,
+        "calm_resid": 0.68,
+        "calm_readings": 1629,
+        "burst_readings": 2979,
+        "calm_line_holds": 1627,
+        "burst_line_holds": 2281,
+        "calm_line_holds_pct": 100,
+        "burst_line_holds_pct": 77,
+        "calm_minus_burst": -654
+      }
+    ]
+  },
+  "alarm": {
+    "first_alarm": "2018-03-05 15:50:00",
+    "minutes_after": 5,
+    "readings_week_before": 2016,
+    "false_alarms_week_before": 0,
+    "false_alarms_2018_before": 0,
+    "alarms_after_repair": 0,
+    "threshold_m": 0.083,
+    "slope_line": 1.2356,
+    "one_in_millions": 3.5,
+    "miss": {
+      "pipe": "p158",
+      "start": "2018-10-06 02:35:00",
+      "end": "2018-10-23 13:35:00",
+      "flow_m3h": 24.4,
+      "sensor_m": 220,
+      "neighbor_m": 140,
+      "sensor_drop_m": -0.31,
+      "neighbor_drop_m": -0.24,
+      "resid_before_m": -0.013,
+      "resid_during_m": -0.019,
+      "hourly_min_during_m": -0.066,
+      "alarms_during": 0
+    }
+  },
+  "isolation": {
+    "alarm_pct_next_week": 13,
+    "alarm_pct_by_month": {
+      "1": 38,
+      "2": 33,
+      "3": 88,
+      "4": 74,
+      "5": 95,
+      "6": 94,
+      "7": 92,
+      "8": 100,
+      "9": 97,
+      "10": 99,
+      "11": 100,
+      "12": 99
+    },
+    "alarm_pct_may_dec_min": 92,
+    "alarm_pct_may_dec_max": 100,
+    "inflow_cal_m3h": 175.2,
+    "inflow_by_month": {
+      "1": 156.7,
+      "2": 175.7,
+      "3": 212.1,
+      "4": 182.0,
+      "5": 227.7,
+      "6": 208.5,
+      "7": 213.7,
+      "8": 220.7,
+      "9": 205.8,
+      "10": 219.8,
+      "11": 207.6,
+      "12": 187.4
+    },
+    "inflow_above_cal_pct_may_dec": [
+      7,
+      30
+    ],
+    "leaks_by_month": {
+      "1": 3,
+      "2": 4,
+      "3": 4,
+      "4": 3,
+      "5": 4,
+      "6": 5,
+      "7": 5,
+      "8": 6,
+      "9": 5,
+      "10": 6,
+      "11": 5,
+      "12": 4
+    },
+    "leaks_may_dec": [
+      4,
+      6
+    ],
+    "leaks_started_next_week": 0,
+    "leaks_growing_next_week": [
+      "p427",
+      "p461"
+    ]
+  },
+  "leak_kinds": {
+    "leaks": 14,
+    "incipient": 8,
+    "growth_days_min": 4,
+    "growth_days_median": 50,
+    "growth_days_max": 98
+  },
+  "trace": {
+    "time": "2018-03-05 17:00:00",
+    "minutes_after_burst": 75,
+    "x": 44.64,
+    "y": 50.75,
+    "w0": -3.786,
+    "w1": 1.2376,
+    "pred": 51.46,
+    "resid": -0.71,
+    "in_sigma": -43
+  },
+  "ransac_build": {
+    "inliers": [
+      956,
+      324,
+      1626
+    ]
+  }
+}

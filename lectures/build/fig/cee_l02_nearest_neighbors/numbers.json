@@ -1,0 +1,482 @@
+{
+  "data": {
+    "tests": 1030,
+    "mixes": 428,
+    "ages": [
+      1,
+      3,
+      7,
+      14,
+      28,
+      56,
+      90,
+      91,
+      100,
+      120,
+      180,
+      270,
+      360,
+      365
+    ],
+    "n_28day": 425,
+    "designs": 315,
+    "strength_min": 2.3,
+    "strength_max": 82.6
+  },
+  "abrams": {
+    "abrams_A": 123.8,
+    "abrams_B": 16.5,
+    "r2_log_wb": 0.6,
+    "r2_log_wc": 0.42,
+    "n_mixes_4plus_ages": 133,
+    "median_gain_per_ln_day": 8.7
+  },
+  "distance_share_pct": {
+    "cement": 27.7,
+    "slag": 18.9,
+    "fly_ash": 10.4,
+    "water": 1.2,
+    "superplasticizer": 0.1,
+    "coarse_aggregate": 15.3,
+    "fine_aggregate": 16.3,
+    "age": 10.1,
+    "aggregates": 31.6
+  },
+  "representation_rmse": {
+    "raw kg/m³ and days": {
+      "grouped_mean": 9.954,
+      "grouped_sd": 1.043,
+      "random_mean": 9.121,
+      "random_sd": 0.471
+    },
+    "standardized": {
+      "grouped_mean": 9.511,
+      "grouped_sd": 0.876,
+      "random_mean": 8.886,
+      "random_sd": 0.465
+    },
+    "standardized, ln age": {
+      "grouped_mean": 7.973,
+      "grouped_sd": 0.74,
+      "random_mean": 6.389,
+      "random_sd": 0.436
+    },
+    "dimensionless groups": {
+      "grouped_mean": 6.872,
+      "grouped_sd": 0.683,
+      "random_mean": 5.653,
+      "random_sd": 0.29
+    },
+    "predict the mean": {
+      "grouped_mean": 17.0
+    },
+    "paired: standardized vs raw kg/m³ and days": {
+      "wins": 20,
+      "splits": 30,
+      "mean_gain": 0.44,
+      "sd_gain": 0.71
+    },
+    "paired: standardized, ln age vs standardized": {
+      "wins": 30,
+      "splits": 30,
+      "mean_gain": 1.54,
+      "sd_gain": 0.42
+    },
+    "paired: dimensionless groups vs standardized, ln age": {
+      "wins": 29,
+      "splits": 30,
+      "mean_gain": 1.1,
+      "sd_gain": 0.57
+    }
+  },
+  "repeat_scatter": {
+    "groups": 9,
+    "tests": 20,
+    "mixes": 3,
+    "groups_top_two_mixes": 8,
+    "median_sd": 1.4,
+    "max_sd": 16.5
+  },
+  "leakage": {
+    "k": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      10,
+      15,
+      20
+    ],
+    "random": [
+      6.09,
+      5.68,
+      5.64,
+      5.65,
+      5.77,
+      6.06,
+      6.4,
+      6.6
+    ],
+    "mix": [
+      6.71,
+      6.45,
+      6.35,
+      6.27,
+      6.31,
+      6.47,
+      6.68,
+      6.8
+    ],
+    "design": [
+      7.96,
+      7.3,
+      7.02,
+      6.87,
+      6.83,
+      6.93,
+      7.07,
+      7.16
+    ],
+    "gap_random_vs_design": 1.2,
+    "mix_in_train_random_splits": {
+      "mean": 0.74,
+      "min": 0.67,
+      "max": 0.8
+    },
+    "design_in_train_mix_splits": {
+      "mean": 0.22,
+      "min": 0.15,
+      "max": 0.28
+    },
+    "repeated_mix_age_pairs": 19,
+    "identical_strength_pairs": 10,
+    "tests_per_mix_max": 20,
+    "mixes_tested_once": 246,
+    "rounding": {
+      "mixes": [
+        14,
+        208
+      ],
+      "design": 191,
+      "fine_agg": [
+        806.0,
+        806.9
+      ]
+    },
+    "duplicate": {
+      "rows": [
+        862,
+        1019
+      ],
+      "cement": [
+        140.0,
+        139.7
+      ],
+      "strength": 35.2
+    }
+  },
+  "attempt": {
+    "mixes": [
+      {
+        "row": 524,
+        "cement": 359.0,
+        "slag": 19.0,
+        "fly_ash": 141.0,
+        "water": 154.0,
+        "superplasticizer": 10.9,
+        "coarse_agg": 942.0,
+        "fine_agg": 801.0,
+        "age": 28.0,
+        "strengths": [
+          59.5,
+          62.9
+        ],
+        "wb": 0.3,
+        "raw_distance": 75.8,
+        "water_share_pct": 1.7,
+        "letter": "A"
+      },
+      {
+        "row": 341,
+        "cement": 297.2,
+        "slag": 0.0,
+        "fly_ash": 117.5,
+        "water": 174.8,
+        "superplasticizer": 9.5,
+        "coarse_agg": 1022.8,
+        "fine_agg": 753.5,
+        "age": 28.0,
+        "strengths": [
+          47.4
+        ],
+        "wb": 0.42,
+        "raw_distance": 77.8,
+        "water_share_pct": 1.9,
+        "letter": "B"
+      },
+      {
+        "row": 1018,
+        "cement": 321.4,
+        "slag": 0.0,
+        "fly_ash": 127.9,
+        "water": 182.5,
+        "superplasticizer": 11.5,
+        "coarse_agg": 870.1,
+        "fine_agg": 779.7,
+        "age": 28.0,
+        "strengths": [
+          37.3
+        ],
+        "wb": 0.41,
+        "raw_distance": 90.7,
+        "water_share_pct": 4.2,
+        "letter": "C"
+      },
+      {
+        "row": 336,
+        "cement": 275.1,
+        "slag": 0.0,
+        "fly_ash": 121.3,
+        "water": 159.5,
+        "superplasticizer": 9.9,
+        "coarse_agg": 1053.6,
+        "fine_agg": 777.5,
+        "age": 28.0,
+        "strengths": [
+          51.3
+        ],
+        "wb": 0.4,
+        "raw_distance": 104.5,
+        "water_share_pct": 0.2,
+        "letter": "D"
+      }
+    ],
+    "proposed": {
+      "cement": 298.0,
+      "slag": 0.0,
+      "fly_ash": 107.0,
+      "water": 164.0,
+      "superplasticizer": 13.0,
+      "coarse_agg": 953.0,
+      "fine_agg": 784.0,
+      "age": 28.0,
+      "wb": 0.4,
+      "strength": 35.9
+    },
+    "mean_raw_nearest": 61.2,
+    "mean_wb_matched": 45.3,
+    "letters_wb_matched": [
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  "water_check": {
+    "extra_water": 30.0,
+    "wb_before": 0.4,
+    "wb_after": 0.48,
+    "abrams_before": 39.8,
+    "abrams_after": 32.4,
+    "raw_nearest_tested": 33.1
+  },
+  "age_extrapolation": {
+    "n_late": 281,
+    "n_early_train": 749,
+    "late_mean_error": -9.0,
+    "late_frac_under": 0.92,
+    "late_rmse": 10.7,
+    "inrange_mean_error": -1.4,
+    "inrange_rmse": 7.4,
+    "train_max_strength": 81.8,
+    "late_above_train_max": 1,
+    "late_neighbors_frac_28day": 0.999,
+    "late_frac_own_mix_in_neighbors": 0.95
+  },
+  "monotonicity": {
+    "sweep_wb_min": 0.3,
+    "sweep_wb_max": 0.65,
+    "binder": 405.0,
+    "pred_at_min_wb": 48.7,
+    "pred_at_max_wb": 30.1,
+    "flat_from_wb": 0.57,
+    "abrams_at_max_wb": 20.0,
+    "pred_changes": 13,
+    "pred_increases": 3,
+    "largest_increase": 2.6,
+    "flat_neighbors_wb_max": 0.55,
+    "nearest_distance_proposed": 0.64,
+    "nearest_distance_at_flat_from": 0.48,
+    "nearest_distance_at_max_wb": 0.91,
+    "heldout_nearest_distance_median": 0.37,
+    "heldout_nearest_distance_p90": 0.74,
+    "wetter_train_tests": 159,
+    "wetter_nearest_distance_at_max_wb": 1.72,
+    "wetter_other_groups_min_distance": 1.65,
+    "flat_neighbors_other_groups_max_distance": 0.73
+  },
+  "decision": {
+    "n_tests": 3179,
+    "n_distinct_tests": 425,
+    "splits": 30,
+    "frac_weak": 0.51,
+    "false_accept_0": 0.139,
+    "false_reject_0": 0.149,
+    "false_accept_5": 0.044,
+    "false_reject_5": 0.365,
+    "false_accept_spread": 0.048,
+    "false_reject_spread": 0.37,
+    "median_spread": 4.7,
+    "fixed_margin_same_accepts": 4.62,
+    "fixed_margin_false_accept": 0.048,
+    "fixed_margin_false_reject": 0.348,
+    "spread_rejects_more_than_fixed": true,
+    "spread_minus_fixed_reject_pts": 2.2,
+    "bootstrap": {
+      "draws": 400,
+      "designs": 308,
+      "lo_pts": -5.2,
+      "median_pts": 2.2,
+      "hi_pts": 8.9,
+      "share_at_or_below_zero": 0.29
+    }
+  },
+  "trace": {
+    "row": 913,
+    "x": {
+      "cement": 298.0,
+      "slag": 0.0,
+      "fly_ash": 107.0,
+      "water": 164.0,
+      "superplasticizer": 13.0,
+      "coarse_agg": 953.0,
+      "fine_agg": 784.0,
+      "age": 28.0
+    },
+    "z": {
+      "w/b": 0.4,
+      "slag / b": 0.0,
+      "fly ash / b": 0.26,
+      "SP / b": 0.03,
+      "aggregate / b": 4.29,
+      "ln age": 3.33
+    },
+    "neighbors_groups": [
+      {
+        "wb": 0.4,
+        "age": 28,
+        "strength": 51.3
+      },
+      {
+        "wb": 0.4,
+        "age": 28,
+        "strength": 38.5
+      },
+      {
+        "wb": 0.4,
+        "age": 28,
+        "strength": 38.5
+      },
+      {
+        "wb": 0.41,
+        "age": 28,
+        "strength": 37.3
+      },
+      {
+        "wb": 0.42,
+        "age": 28,
+        "strength": 47.4
+      }
+    ],
+    "neighbors_raw": [
+      {
+        "wb": 0.4,
+        "age": 28,
+        "strength": 38.5
+      },
+      {
+        "wb": 0.4,
+        "age": 28,
+        "strength": 38.5
+      },
+      {
+        "wb": 0.3,
+        "age": 28,
+        "strength": 59.5
+      },
+      {
+        "wb": 0.3,
+        "age": 28,
+        "strength": 62.9
+      },
+      {
+        "wb": 0.42,
+        "age": 28,
+        "strength": 47.4
+      }
+    ],
+    "pred_groups": 42.6,
+    "spread_groups": 6.4,
+    "pred_raw": 49.4,
+    "y": 35.9,
+    "error_groups": 6.7,
+    "error_raw": 13.5,
+    "n_train": 746,
+    "n_train_designs": 236
+  },
+  "verify_listing": {
+    "test_rows": 284,
+    "rows_matching": 283,
+    "rows_with_tie": 8,
+    "ties_same_design": 4,
+    "ties_identical_groups": 1,
+    "ties_other": 3,
+    "rows_differing": 1,
+    "differing": [
+      {
+        "test_row": 910,
+        "strengths": [
+          25.6,
+          26.2
+        ],
+        "coarse_fine": [
+          [
+            1002.0,
+            689.0
+          ],
+          [
+            867.0,
+            824.0
+          ]
+        ]
+      }
+    ],
+    "agree_without_ties": true
+  },
+  "vote": {
+    "prediction_mpa": 37,
+    "spread_mpa": 6
+  },
+  "near": {
+    "raw_wb_min": 0.3,
+    "raw_wb_max": 0.56,
+    "raw_at_28_days": 15,
+    "groups_wb_min": 0.31,
+    "groups_wb_max": 0.52,
+    "groups_at_28_days": 24
+  },
+  "terraces": {
+    "share_flat": 0.82,
+    "wb_range": [
+      0.25,
+      0.8
+    ]
+  },
+  "binder": {
+    "binder_at_15": 507,
+    "binder_at_0": 364,
+    "binder_at_5": 407,
+    "binder_at_10": 454,
+    "per_mpa_0_to_10": 9.0
+  }
+}

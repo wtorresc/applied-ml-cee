@@ -1,0 +1,51 @@
+% CEE Lecture 2, "one picture": the course picture with the k-NN decoder as the focus step.
+% The inset follows one held-out 28-day test through the pipeline; numbers from numbers.tex.
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes; the decoder is this lecture's focus.
+  \node[data] (x) at (0.95,0) {mix $\mathbf{x}$};
+  \node[op, minimum width=3.4cm] (enc) at (4.55,0) {encoder\\dimensionless groups};
+  \node[data] (z) at (7.7,0) {$\mathbf{z}$};
+  \node[focus, minimum width=3.7cm] (dec) at (11.1,0) {decoder: average of\\the $k$ nearest tests};
+  \node[data] (yhat) at (14.6,0) {$\hat{y}$};
+  \node[op, minimum width=2.5cm] (loss) at (17.4,0) {loss\\$(\hat{y}-y)^2$};
+  \node[data] (y) at (20.45,0) {measured $y$};
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (dec);
+  \draw[flow] (dec) -- (yhat);
+  \draw[flow] (yhat) -- (loss);
+  \draw[flow] (y) -- (loss);
+
+  % k-NN stores the training tests instead of fitting weights.
+  \node[data] (train) at (11.1,1.75) {training set: \NTrain{} tests of \NTrainDesigns{} designs};
+  \draw[flow] (train) -- (dec);
+  \node[note, anchor=west, text=muted] at (15.7,1.75) {stored, not fitted};
+
+  % Worked example: one held-out test, column by column under the spine.
+  \node[insettitle] (ttl) at (0.0,-1.85) {One held-out design};
+  \node[anchor=north west, inner sep=2pt] (xv) at (0.0,-2.5) {%
+    \renewcommand{\arraystretch}{1.05}%
+    \begin{tabular}{@{}l@{\hspace{7pt}}r@{\hspace{14pt}}l@{\hspace{7pt}}r@{}}
+      \multicolumn{4}{@{}l}{proportions in kg/m³}\\
+      cement & \XCement & SP & \XSP\\
+      slag & \XSlag & coarse & \XCoarse\\
+      fly ash & \XFlyAsh & fine & \XFine\\
+      water & \XWater & age & \XAge{} d\\
+    \end{tabular}};
+  \node[note, anchor=north] (zv) at (7.7,-2.5) {$w/b$ = \ZWb\\$\ln$ age = \ZLnAge\\and 4 more};
+  \node[note, anchor=north] (nv) at (11.6,-2.5)  % right of centre: clear of the z column
+    {\key{\K} nearest, MPa:\\\NbrStrengths\\mean \Pred\\spread \Spread};
+  \node[note, anchor=north] (pv) at (15.0,-2.5) {$\hat{y}$ = \key{\Pred}\\MPa};
+  \node[note, anchor=north] (lv) at (18.5,-2.5) {$y$ = \Meas{} MPa\\error \Err{} MPa\\$f'_c$ = \FC{} MPa};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(xv)(zv)(nv)(pv)(lv)(y.east |- nv.south)] {};
+  \end{scope}
+  \draw[leader] (z.south) -- (zv.north);
+  \draw[leader] (dec.south) -- (dec.south |- nv.north);
+  \draw[leader] (yhat.south) -- (yhat.south |- pv.north);
+\end{tikzpicture}
+\end{document}

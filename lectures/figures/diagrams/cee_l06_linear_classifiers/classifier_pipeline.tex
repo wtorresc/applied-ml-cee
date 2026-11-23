@@ -1,0 +1,57 @@
+% CEE Lecture 6, "one picture": the course picture with a logistic decoder as the focus step,
+% followed by a decision that costs set. The inset follows the attempt's bridge B (Duncan Rd over
+% Copper Slough, 2020) through the fitted model; numbers from numbers.tex (figure script).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes; the logistic decoder is this lecture's focus.
+  \node[data] (x) at (1.2,0) {bridge $\mathbf{x}$};
+  \node[op, minimum width=3.9cm] (enc) at (4.95,0) {encoder\\\NInputs{} inputs, scaled};
+  \node[data] (z) at (7.95,0) {$\mathbf{z}$};
+  \node[focus, minimum width=3.4cm] (dec) at (10.8,0) {decoder\\$\sigma(w_0+\mathbf{w}^{\top}\mathbf{z})$};
+  \node[data] (p) at (13.45,0) {$p$};
+  \node[op, minimum width=3.6cm] (dcd) at (16.15,0) {decision: flag\\if $p>1/(1+r)$};
+  \node[data] (out) at (19.95,0) {flag or wait};
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (dec);
+  \draw[flow] (dec) -- (p);
+  \draw[flow] (p) -- (dcd);
+  \draw[flow] (dcd) -- (out);
+
+  % Training: the cross-entropy loss against the later label fixes the weights (Newton's method).
+  \node[data] (train) at (4.6,1.95) {training: \NTrain{} bridges, 2014 $\rightarrow$ 2018};
+  \node[op] (loss) at (15.4,1.95) {loss: $-\ln p$ if poor,\\$-\ln(1-p)$ if not};
+  \draw[flow] (train.east) -- ([xshift=-0.9cm]dec.north |- train.east) -- ([xshift=-0.9cm]dec.north);
+  \draw[flow] (p.north) -- (p.north |- loss.south);
+  \draw[train] (loss.west) -- ([xshift=0.9cm]dec.north |- loss.west) -- ([xshift=0.9cm]dec.north);
+  \node[note, anchor=west, text=alertc] at ([xshift=4pt]loss.east) {Newton's\\method};
+  \node[note, anchor=north, text=muted] (rnote) at ([yshift=-2pt]dcd.south) {$r$: a miss costs $r$ false alarms};
+
+  % Worked example: bridge B, column by column under the spine.
+  \node[insettitle] (ttl) at (0.0,-2.0) {Bridge B, 2020};
+  \node[note, anchor=north west] (xv) at (0.0,-2.65)
+    {Duncan Rd over\\Copper Slough\\built \BBuilt, \BADT{} a day\\deck \BDeck, super \BSuper, sub \BSub\\lowest rating \BRating};
+  \node[anchor=north, inner sep=2pt] (dv) at (10.8,-2.65) {%
+    \renewcommand{\arraystretch}{1.05}%
+    \begin{tabular}{@{}l@{\hspace{10pt}}r@{\hspace{10pt}}r@{}}
+      & $z$ & term\\
+      \TNameA & \TZA & \TTermA\\
+      \TNameB & \TZB & \TTermB\\
+      \TNameC & \TZC & \TTermC\\
+      \NRest{} more & & \TRest\\
+      $w_0$ & & \WZero\\
+      score & & \key{\Score}\\
+    \end{tabular}};
+  \node[note, anchor=north] (cv) at (16.15,-2.65) {$p$ = \key{\Prob}\\$>$ 1/21 = \Thresh\\$\rightarrow$ \key{flag}};
+  \node[note, anchor=north east] (ov) at (21.35,-2.65) {in 2024:\\rating \key{\BLater}\\(poor: $\le$ 4)};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(xv)(dv)(cv)(ov)(out.east |- dv.south)] {};
+  \end{scope}
+  \draw[leader] (dec.south) -- (dv.north);
+  \draw[leader] ([yshift=-3pt]rnote.south) -- (cv.north);  % a gap under the note
+  \draw[leader] (out.south) -- (out.south |- ov.north);
+\end{tikzpicture}
+\end{document}

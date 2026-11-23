@@ -1,0 +1,28 @@
+% CEE Lecture 1: when the answer is not machine learning. Four questions in a row; the main path
+% runs right while machine learning still fits, and each "no" (or, for the first, "yes") leaves
+% downward to what to do instead.
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\begin{document}
+\begin{tikzpicture}[
+    q/.style={op, text width=3.25cm, minimum height=2.2cm, font=\fontsize{13}{16}\selectfont},
+    exitbox/.style={data, text width=2.7cm, font=\fontsize{13}{16}\selectfont,
+      execute at begin node={\hyphenpenalty=10000\relax}},  % whole words only
+    lab/.style={font=\fontsize{12}{14}\selectfont\itshape, text=muted},
+  ]
+  \node[q] (q1) at (0,0) {A trusted rule already answers?};
+  \node[q] (q2) at (4.75,0) {Is the case inside the data?};
+  \node[q] (q3) at (9.5,0) {Is the error measured on cases like it?};
+  \node[q] (q4) at (14.25,0) {Is a wrong yes caught before it matters?};
+  \node[focus, text width=2.6cm, minimum height=2.2cm] (ml) at (18.55,0) {ML, with its honest error};
+  \foreach \a/\b in {q1/q2, q2/q3, q3/q4, q4/ml} \draw[flow] (\a) -- (\b);
+  \node[lab, above] at ($(q1.east)!0.5!(q2.west)$) {no};
+  \foreach \a/\b in {q2/q3, q3/q4, q4/ml} \node[lab, above] at ($(\a.east)!0.5!(\b.west)$) {yes};
+  \node[exitbox] (o1) at (0,-3.4) {use the rule:\\a code, Abrams' law};
+  \node[exitbox] (o2) at (4.75,-3.4) {test first:\\fly ash, new ages};
+  \node[exitbox] (o3) at (9.5,-3.4) {do not sign:\\no honest error};
+  \node[exitbox] (o4) at (14.25,-3.4) {test first:\\cast cylinders};
+  \draw[flow] (q1) -- node[lab, right] {yes} (o1);
+  \foreach \i in {2,3,4} \draw[flow] (q\i) -- node[lab, right] {no} (o\i);
+\end{tikzpicture}
+\end{document}

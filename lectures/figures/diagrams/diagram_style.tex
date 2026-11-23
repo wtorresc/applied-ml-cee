@@ -1,0 +1,47 @@
+% Visual vocabulary shared by every lecture diagram (standalone -> PNG via the lectures Makefile).
+% Built with lualatex so text uses the slide fonts (Atkinson Hyperlegible Next and Mono); math stays
+% in Computer Modern. Drawn at the size it occupies on the slide, with 14 pt text.
+%
+% One meaning per shape, in every lecture:
+%   data    a value that flows between steps (x, z, y-hat, a dataset): pill
+%   op      a step that transforms its input (encoder, decoder, loss, program): box
+%   focus   the step this lecture is about (at most one per diagram): filled box
+%   group   steps that belong together (the model): shaded container, label top left
+%   inset   a worked example or a zoomed-in step: dotted frame, title top left
+%   note    a callout outside the structure, joined by a dotted `leader`; \key{} marks numbers
+%   flow    data flow;  train  training signal (dashed, in the alert color)
+\usepackage{amsmath,amssymb,bm}
+\usepackage{fontspec}
+\setmainfont{AtkinsonHyperlegibleNext}[Extension=.otf, UprightFont=*-Regular,
+  BoldFont=*-Bold, ItalicFont=*-RegularItalic, BoldItalicFont=*-BoldItalic]
+\setmonofont{AtkinsonHyperlegibleMono}[Extension=.otf, UprightFont=*-Regular,
+  BoldFont=*-Bold]
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds,shapes.misc}
+\definecolor{ink}{HTML}{1A1A1A}
+\definecolor{navy}{HTML}{1B3A5C}
+\definecolor{accent}{HTML}{0072B2}
+\definecolor{alertc}{HTML}{A33A00}
+\definecolor{muted}{HTML}{595959}
+\definecolor{boxbg}{HTML}{F1F5F9}
+\color{ink}
+\newcommand{\key}[1]{\textcolor{accent}{\textbf{#1}}}
+\tikzset{
+  every picture/.style={font=\fontsize{14}{17}\selectfont, line cap=round, line join=round},
+  op/.style={draw=navy, line width=1.2pt, rounded corners=3pt, fill=white, text=ink,
+    align=center, inner xsep=8pt, inner ysep=5pt, minimum height=1.2cm},
+  focus/.style={op, fill=navy, text=white},
+  data/.style={rounded rectangle, draw=navy, line width=1.2pt, fill=white, text=ink,
+    align=center, inner xsep=7pt, inner ysep=4pt, minimum height=0.9cm},
+  group/.style={draw=navy, line width=0.8pt, rounded corners=10pt, fill=boxbg,
+    inner xsep=12pt, inner ysep=10pt},
+  grouplabel/.style={font=\fontsize{14}{17}\selectfont\bfseries, text=navy, anchor=north west},
+  inset/.style={draw=navy, line width=1.2pt, densely dotted, rounded corners=8pt, fill=white,
+    inner sep=10pt},
+  insettitle/.style={font=\fontsize{14}{17}\selectfont\bfseries, text=navy, anchor=north west},
+  note/.style={align=left, text=ink, inner sep=2pt},
+  leader/.style={draw=muted, line width=1.1pt, densely dotted},
+  flow/.style={-{Stealth[length=8pt]}, line width=1.3pt, draw=navy},
+  train/.style={flow, draw=alertc, dashed},
+  rowlabel/.style={font=\fontsize{14}{17}\selectfont\bfseries, text=navy, anchor=west},
+}

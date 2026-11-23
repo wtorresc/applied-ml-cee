@@ -1,0 +1,2336 @@
+{
+  "attempt": {
+    "prefix": "An employee was descending an 8-foot ladder. When he was on the fourth rung, the ladder",
+    "report": "An employee was descending an 8-foot ladder. When he was on the fourth rung, the ladder fell down and the employee fell on top of it, resulting in a broken arm.",
+    "candidates": 1165,
+    "prefix_tail": "fourth rung, the ladder",
+    "report_tail": "fell down and the employee fell on top of it, resulting in a broken arm."
+  },
+  "check": {
+    "ours": 3.759494240674627,
+    "hf": 3.7594940662384033,
+    "diff": 1.7443622368773504e-07,
+    "no_shift": 10.14964334143404,
+    "earlier_max_change": 0.0,
+    "last_max_change": 23.460601806640625,
+    "tokens": 22
+  },
+  "fine_tune": {
+    "bits_per_char": {
+      "0": 1.0806052650802647,
+      "400": 0.8176813441341959,
+      "1200": 0.7717002517942991,
+      "4000": 0.7341169291898041,
+      "10000": 0.7064902224935554,
+      "20000": 0.6844476199726631
+    },
+    "seconds": 203.08663177100243,
+    "truncated_share": 0.00355
+  },
+  "next_token": {
+    "GPT-2 as released": {
+      "top": [
+        "·was",
+        "·fell",
+        "·broke",
+        "·snapped",
+        "·collapsed"
+      ],
+      "p": [
+        0.09472000098687684,
+        0.07670659442647897,
+        0.05946495554832527,
+        0.03444036644970207,
+        0.025552739128338303
+      ],
+      "p_word": 0.07670659442647897,
+      "rank_word": 2
+    },
+    "after 20,000 reports": {
+      "top": [
+        "·slipped",
+        "·fell",
+        "·tipped",
+        "·dropped",
+        "·became"
+      ],
+      "p": [
+        0.30928253165234837,
+        0.20146444780139386,
+        0.06909455329731766,
+        0.037842353473233274,
+        0.02644736113147204
+      ],
+      "p_word": 0.20146444780139386,
+      "rank_word": 2
+    }
+  },
+  "surprise": {
+    "GPT-2 as released": {
+      "tokens": [
+        "An",
+        "·employee",
+        "·was",
+        "·descending",
+        "·an",
+        "·8",
+        "-",
+        "foot",
+        "·ladder",
+        ".",
+        "·When",
+        "·he",
+        "·was",
+        "·on",
+        "·the",
+        "·fourth",
+        "·run",
+        "g",
+        ",",
+        "·the",
+        "·ladder",
+        "·fell"
+      ],
+      "bits": [
+        8.940567081604915,
+        7.130789636554518,
+        7.29714252489809,
+        19.50528780326787,
+        6.164029445875789,
+        9.028345312074947,
+        1.204631565518738,
+        0.7248194829360655,
+        4.466676663315483,
+        8.123483536141197,
+        5.531534689107628,
+        1.2673563412019042,
+        3.9145543486290295,
+        6.463284766668203,
+        0.9417964141150471,
+        9.223421405319883,
+        7.517607751014851,
+        3.1158010276497445,
+        0.775778986083975,
+        2.6647600937978146,
+        1.61750688524209,
+        3.704505578964103
+      ],
+      "last": 3.704505578964103
+    },
+    "after 20,000 reports": {
+      "tokens": [
+        "An",
+        "·employee",
+        "·was",
+        "·descending",
+        "·an",
+        "·8",
+        "-",
+        "foot",
+        "·ladder",
+        ".",
+        "·When",
+        "·he",
+        "·was",
+        "·on",
+        "·the",
+        "·fourth",
+        "·run",
+        "g",
+        ",",
+        "·the",
+        "·ladder",
+        "·fell"
+      ],
+      "bits": [
+        0.40176392723108767,
+        0.005832217994099433,
+        0.3140388549978395,
+        6.582761935513872,
+        3.4431118316542713,
+        1.9458007837691564,
+        0.15386303126566905,
+        0.0668387365314501,
+        0.8035604680646303,
+        3.6482598692270045,
+        4.978689279070395,
+        0.34493093979991724,
+        4.698303954580454,
+        6.062034307237014,
+        0.2153058395427417,
+        4.934547764667341,
+        1.2007964432521088,
+        0.013265283870025573,
+        0.27694414199643047,
+        2.597346525138529,
+        0.3414941212101726,
+        2.3114028244020384
+      ],
+      "last": 2.3114028244020384
+    }
+  },
+  "surprise_lower": 21,
+  "generated": {
+    "GPT-2 as released": "was about to fall. \"I was just trying to get up and get out of the way,\" said the employee, who asked not to",
+    "after 20,000 reports": "slipped and he fell to the ground, breaking his left femur."
+  },
+  "unigram_bits_per_char": 1.7764871016426746,
+  "lm": {
+    "train_reports": 20000,
+    "test_reports": 2000,
+    "lr": 5e-05,
+    "batch": 16,
+    "steps": {
+      "0": 0,
+      "400": 25,
+      "1200": 75,
+      "4000": 250,
+      "10000": 625,
+      "20000": 1250
+    }
+  },
+  "qwen_base_bits_per_char": 1.0303613317276885,
+  "qwen_bits_per_char": 1.2947297870714967,
+  "qwen_scoring_seconds": 294.95078630199714,
+  "parameters": {
+    "gpt2": 124439808,
+    "qwen_base": 752393024,
+    "qwen": 752393024
+  },
+  "parameters_billions": {
+    "gpt2": 0.124439808,
+    "qwen_base": 0.752393024,
+    "qwen": 0.752393024
+  },
+  "parameters_millions": {
+    "gpt2": 124.439808,
+    "qwen_base": 752.393024,
+    "qwen": 752.393024
+  },
+  "vocab": {
+    "gpt2": 50257,
+    "qwen_base": 248077,
+    "qwen": 248077
+  },
+  "test_tokens": {
+    "gpt2": 90777,
+    "qwen_base": 91990,
+    "qwen": 91990,
+    "characters": 438408
+  },
+  "base_ratio": 6.046240637079736,
+  "chat_document": "<|im_start|>system\nYou answer questions about the MUTCD (11th Edition, 2023), the U.S. manual for traffic signs, signals, and markings. Answer in one or two sentences with the number and the section. If the MUTCD does not cover the question, say: Not in the MUTCD.<|im_end|>\n<|im_start|>user\nPosted speed limits must be multiples of what?<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "coding_data": {
+    "other_types_share": 0.037642605541243886,
+    "pool": 13572,
+    "test": 1000,
+    "test_counts": {
+      "2": 65,
+      "4": 439,
+      "5": 116,
+      "6": 380
+    },
+    "majority_share": 0.439,
+    "chance": 0.25,
+    "median_words": 36.0
+  },
+  "probe": {
+    "1": [
+      {
+        "accuracy": 0.739,
+        "balanced": 0.7539951533713651
+      },
+      {
+        "accuracy": 0.583,
+        "balanced": 0.6586800660633596
+      },
+      {
+        "accuracy": 0.549,
+        "balanced": 0.43561940521351655
+      }
+    ],
+    "3": [
+      {
+        "accuracy": 0.751,
+        "balanced": 0.7769789790739999
+      },
+      {
+        "accuracy": 0.741,
+        "balanced": 0.7489076322992396
+      },
+      {
+        "accuracy": 0.77,
+        "balanced": 0.6800229849546375
+      }
+    ],
+    "10": [
+      {
+        "accuracy": 0.814,
+        "balanced": 0.8181721185209871
+      },
+      {
+        "accuracy": 0.805,
+        "balanced": 0.8180691787428245
+      },
+      {
+        "accuracy": 0.852,
+        "balanced": 0.8409337587138666
+      }
+    ],
+    "30": [
+      {
+        "accuracy": 0.836,
+        "balanced": 0.8584776567891756
+      },
+      {
+        "accuracy": 0.832,
+        "balanced": 0.8413246683078094
+      },
+      {
+        "accuracy": 0.821,
+        "balanced": 0.8409064376953574
+      }
+    ],
+    "100": [
+      {
+        "accuracy": 0.852,
+        "balanced": 0.8614780118471377
+      },
+      {
+        "accuracy": 0.878,
+        "balanced": 0.8745992480021829
+      },
+      {
+        "accuracy": 0.863,
+        "balanced": 0.870388968939027
+      }
+    ],
+    "all": {
+      "accuracy": 0.923,
+      "balanced": 0.908359536017315,
+      "reports": 13572
+    }
+  },
+  "retrieval": {
+    "k": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "bge": [
+      0.6470588235294118,
+      0.7918552036199095,
+      0.8371040723981901,
+      0.8506787330316742,
+      0.8506787330316742,
+      0.8778280542986425,
+      0.8823529411764706,
+      0.9049773755656109,
+      0.9140271493212669,
+      0.9276018099547512,
+      0.9321266968325792,
+      0.9366515837104072,
+      0.9411764705882353,
+      0.9502262443438914,
+      0.9502262443438914,
+      0.9502262443438914,
+      0.9547511312217195,
+      0.9547511312217195,
+      0.9547511312217195,
+      0.9547511312217195
+    ],
+    "tfidf": [
+      0.5158371040723982,
+      0.6877828054298643,
+      0.751131221719457,
+      0.7828054298642534,
+      0.7918552036199095,
+      0.8144796380090498,
+      0.8280542986425339,
+      0.8687782805429864,
+      0.8959276018099548,
+      0.9004524886877828,
+      0.9095022624434389,
+      0.9095022624434389,
+      0.918552036199095,
+      0.918552036199095,
+      0.918552036199095,
+      0.9321266968325792,
+      0.9366515837104072,
+      0.9366515837104072,
+      0.9366515837104072,
+      0.9366515837104072
+    ],
+    "refs": 221,
+    "cited_sections": 174,
+    "examples": [
+      {
+        "citing": "1A.04",
+        "cited": "1C.02",
+        "query": "definitions of “engineering study” and “engineering judgment"
+      },
+      {
+        "citing": "1B.04",
+        "cited": "1B.08",
+        "query": "information on submitting a request for interpretation"
+      },
+      {
+        "citing": "1B.07",
+        "cited": "1B.08",
+        "query": "information on submitting a request for interim approval"
+      },
+      {
+        "citing": "1C.02",
+        "cited": "1D.11",
+        "query": "additional information about crashworthiness"
+      },
+      {
+        "citing": "1C.02",
+        "cited": "5A.03",
+        "query": "descriptions of the automation levels"
+      },
+      {
+        "citing": "1C.02",
+        "cited": "1A.02",
+        "query": "information regarding items that are not traffic control devices"
+      },
+      {
+        "citing": "1D.01",
+        "cited": "1A.03",
+        "query": "additional information on target road users"
+      },
+      {
+        "citing": "1D.09",
+        "cited": "2A.02",
+        "query": "information on excessive use of signs and other considerations that can reduce their effectiveness and the effectiveness of other traffic control devices"
+      }
+    ]
+  },
+  "mutcd": {
+    "sections": 954,
+    "chunks": 4032,
+    "words": 400027,
+    "chunk_words": 150,
+    "chunk_stride": 100,
+    "pdftotext": "pdftotext version 26.01.0"
+  },
+  "bge_parameters": 109482240,
+  "coding": {
+    "0": [
+      {
+        "accuracy": 0.467,
+        "balanced": 0.4483004084518105,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 0,
+          "4": 455,
+          "5": 545,
+          "6": 0
+        },
+        "confusion": [
+          [
+            0,
+            16,
+            49,
+            0
+          ],
+          [
+            0,
+            352,
+            87,
+            0
+          ],
+          [
+            0,
+            1,
+            115,
+            0
+          ],
+          [
+            0,
+            86,
+            294,
+            0
+          ]
+        ],
+        "prompt_tokens": 126,
+        "seconds": 17.254995059993234
+      }
+    ],
+    "1": [
+      {
+        "accuracy": 0.814,
+        "balanced": 0.7345927383412035,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 35,
+          "4": 475,
+          "5": 159,
+          "6": 331
+        },
+        "confusion": [
+          [
+            24,
+            11,
+            4,
+            26
+          ],
+          [
+            4,
+            409,
+            4,
+            22
+          ],
+          [
+            0,
+            2,
+            106,
+            8
+          ],
+          [
+            7,
+            53,
+            45,
+            275
+          ]
+        ],
+        "prompt_tokens": 478,
+        "seconds": 18.864028816999053
+      },
+      {
+        "accuracy": 0.838,
+        "balanced": 0.6956134759204555,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 13,
+          "4": 493,
+          "5": 118,
+          "6": 376
+        },
+        "confusion": [
+          [
+            10,
+            12,
+            2,
+            41
+          ],
+          [
+            0,
+            422,
+            1,
+            16
+          ],
+          [
+            0,
+            3,
+            100,
+            13
+          ],
+          [
+            3,
+            56,
+            15,
+            306
+          ]
+        ],
+        "prompt_tokens": 459,
+        "seconds": 18.90335111299646
+      },
+      {
+        "accuracy": 0.647,
+        "balanced": 0.6211974969765216,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 27,
+          "4": 552,
+          "5": 317,
+          "6": 104
+        },
+        "confusion": [
+          [
+            19,
+            17,
+            21,
+            8
+          ],
+          [
+            1,
+            421,
+            13,
+            4
+          ],
+          [
+            0,
+            1,
+            115,
+            0
+          ],
+          [
+            7,
+            113,
+            168,
+            92
+          ]
+        ],
+        "prompt_tokens": 497,
+        "seconds": 18.852887629996985
+      }
+    ],
+    "3": [
+      {
+        "accuracy": 0.838,
+        "balanced": 0.7256550405987234,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 23,
+          "4": 448,
+          "5": 131,
+          "6": 398
+        },
+        "confusion": [
+          [
+            15,
+            11,
+            3,
+            36
+          ],
+          [
+            0,
+            398,
+            2,
+            39
+          ],
+          [
+            0,
+            2,
+            108,
+            6
+          ],
+          [
+            8,
+            37,
+            18,
+            317
+          ]
+        ],
+        "prompt_tokens": 1344,
+        "seconds": 21.757235313998535
+      },
+      {
+        "accuracy": 0.787,
+        "balanced": 0.7336708278781399,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 45,
+          "4": 380,
+          "5": 204,
+          "6": 371
+        },
+        "confusion": [
+          [
+            24,
+            6,
+            8,
+            27
+          ],
+          [
+            17,
+            354,
+            20,
+            48
+          ],
+          [
+            0,
+            1,
+            114,
+            1
+          ],
+          [
+            4,
+            19,
+            62,
+            295
+          ]
+        ],
+        "prompt_tokens": 1279,
+        "seconds": 22.154679471001145
+      },
+      {
+        "accuracy": 0.764,
+        "balanced": 0.6289752936582165,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 1,
+          "4": 623,
+          "5": 137,
+          "6": 239
+        },
+        "confusion": [
+          [
+            1,
+            44,
+            3,
+            17
+          ],
+          [
+            0,
+            436,
+            1,
+            2
+          ],
+          [
+            0,
+            7,
+            108,
+            1
+          ],
+          [
+            0,
+            136,
+            25,
+            219
+          ]
+        ],
+        "prompt_tokens": 1257,
+        "seconds": 21.571686195005896
+      }
+    ],
+    "10": [
+      {
+        "accuracy": 0.855,
+        "balanced": 0.7497348116125737,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 55,
+          "4": 408,
+          "5": 85,
+          "6": 452
+        },
+        "confusion": [
+          [
+            32,
+            4,
+            1,
+            28
+          ],
+          [
+            12,
+            391,
+            0,
+            36
+          ],
+          [
+            0,
+            0,
+            80,
+            36
+          ],
+          [
+            11,
+            13,
+            4,
+            352
+          ]
+        ],
+        "prompt_tokens": 3779,
+        "seconds": 34.86132268799702
+      },
+      {
+        "accuracy": 0.889,
+        "balanced": 0.79779775020774,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 47,
+          "4": 435,
+          "5": 120,
+          "6": 398
+        },
+        "confusion": [
+          [
+            26,
+            9,
+            2,
+            28
+          ],
+          [
+            4,
+            409,
+            4,
+            22
+          ],
+          [
+            0,
+            0,
+            111,
+            5
+          ],
+          [
+            17,
+            17,
+            3,
+            343
+          ]
+        ],
+        "prompt_tokens": 3701,
+        "seconds": 33.67819651600439
+      },
+      {
+        "accuracy": 0.862,
+        "balanced": 0.811331985713727,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 65,
+          "4": 490,
+          "5": 116,
+          "6": 329
+        },
+        "confusion": [
+          [
+            38,
+            12,
+            3,
+            12
+          ],
+          [
+            3,
+            420,
+            2,
+            14
+          ],
+          [
+            0,
+            3,
+            107,
+            6
+          ],
+          [
+            24,
+            55,
+            4,
+            297
+          ]
+        ],
+        "prompt_tokens": 3667,
+        "seconds": 33.836447676992975
+      }
+    ],
+    "30": [
+      {
+        "accuracy": 0.848,
+        "balanced": 0.8068413809957969,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 90,
+          "4": 391,
+          "5": 113,
+          "6": 406
+        },
+        "confusion": [
+          [
+            40,
+            2,
+            3,
+            20
+          ],
+          [
+            22,
+            371,
+            5,
+            41
+          ],
+          [
+            1,
+            1,
+            103,
+            11
+          ],
+          [
+            27,
+            17,
+            2,
+            334
+          ]
+        ],
+        "prompt_tokens": 11230,
+        "seconds": 95.18277689699607
+      },
+      {
+        "accuracy": 0.841,
+        "balanced": 0.8242101828651859,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 82,
+          "4": 363,
+          "5": 127,
+          "6": 428
+        },
+        "confusion": [
+          [
+            42,
+            3,
+            3,
+            17
+          ],
+          [
+            17,
+            347,
+            8,
+            67
+          ],
+          [
+            0,
+            0,
+            112,
+            4
+          ],
+          [
+            23,
+            13,
+            4,
+            340
+          ]
+        ],
+        "prompt_tokens": 11384,
+        "seconds": 98.22261156700552
+      },
+      {
+        "accuracy": 0.83,
+        "balanced": 0.7751909171943775,
+        "digit_on_top": 1.0,
+        "predicted": {
+          "2": 93,
+          "4": 360,
+          "5": 106,
+          "6": 441
+        },
+        "confusion": [
+          [
+            35,
+            0,
+            1,
+            29
+          ],
+          [
+            40,
+            347,
+            5,
+            47
+          ],
+          [
+            0,
+            1,
+            99,
+            16
+          ],
+          [
+            18,
+            12,
+            1,
+            349
+          ]
+        ],
+        "prompt_tokens": 11872,
+        "seconds": 95.59369720199902
+      }
+    ],
+    "cache_check": {
+      "max_abs_diff": 2.574920654296875e-05,
+      "same_answers": true,
+      "prompts": 52
+    },
+    "example_prompt": "<|im_start|>system\nYou code OSHA severe-injury reports by event type. Answer with the digit only.<|im_end|>\n<|im_start|>user\nEvent types:\n2: Transportation incidents\n4: Falls, slips, trips\n5: Exposure to harmful substances or environments\n6: Contact with objects and equipment\n\nReport: An employee was re-roofing a residential roof in the rain. He slipped and fell from the roof, landing on the concrete ground 19 feet below. The employee suffered a broken leg.\nEvent type:<|im_end|>\n<|im_start|>assistant\n4<|im_end|>\n<|im_start|>user\nEvent types:\n2: Transportation incidents\n4: Falls, slips, trips\n5: Exposure to harmful substances or environments\n6: Contact with objects and equipment\n\nReport: <the report to code>\nEvent type:<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+    "all_examples_tokens": 1278161,
+    "context_tokens": 262144
+  },
+  "list_order": {
+    "2456": {
+      "2": 0,
+      "4": 455,
+      "5": 545,
+      "6": 0
+    },
+    "4562": {
+      "2": 1,
+      "4": 80,
+      "5": 584,
+      "6": 335
+    },
+    "5624": {
+      "2": 19,
+      "4": 135,
+      "5": 115,
+      "6": 731
+    },
+    "6245": {
+      "2": 17,
+      "4": 829,
+      "5": 146,
+      "6": 8
+    }
+  },
+  "qa": [
+    {
+      "question": "How far from the edge of the travel lane should a post-mounted sign be set back?",
+      "answerable": true,
+      "gold": [
+        "2A.16"
+      ],
+      "retrieved": [
+        "2E.20",
+        "2A.16",
+        "2G.10",
+        "2A.16",
+        "2A.15"
+      ],
+      "chunks": [
+        1202,
+        325,
+        1539,
+        324,
+        320
+      ],
+      "scores": [
+        0.7343770265579224,
+        0.728952169418335,
+        0.717087984085083,
+        0.7093386650085449,
+        0.7041751146316528
+      ],
+      "hit": true,
+      "gold_rank": 2,
+      "evidence_ranks": [
+        4
+      ],
+      "closed": "Not in the MUTCD. The MUTCD does not specify a minimum setback distance for post-mounted signs; it only requires them to be placed at least 10 feet from the edge of the travel lane.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "10"
+      ],
+      "closed_tokens": 43,
+      "closed_stopped": true,
+      "rag": "03 Where an expressway median is 12 feet or less in width, consideration should be given to spanning both roadways without a center support.",
+      "rag_outcome": "number only",
+      "rag_cited": [],
+      "rag_quotes_rule": false,
+      "rag_added": [
+        "03",
+        "12"
+      ],
+      "rag_tokens": 32,
+      "rag_stopped": true
+    },
+    {
+      "question": "What is the minimum height to the bottom of a warning sign on a freeway?",
+      "answerable": true,
+      "gold": [
+        "2A.15"
+      ],
+      "retrieved": [
+        "2A.15",
+        "2A.15",
+        "2N.06",
+        "2A.15",
+        "2C.73"
+      ],
+      "chunks": [
+        319,
+        318,
+        1939,
+        316,
+        870
+      ],
+      "scores": [
+        0.8110216856002808,
+        0.7251428365707397,
+        0.7210235595703125,
+        0.7110294103622437,
+        0.6942552924156189
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        1,
+        2
+      ],
+      "closed": "The minimum height to the bottom of a warning sign on a freeway is 12 inches (305 mm) from the ground. This is found in Section 11.1.1 of the MUTCD (11th Edition, 2023).",
+      "closed_outcome": "wrong",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "11.1.1",
+        "12",
+        "305"
+      ],
+      "closed_tokens": 57,
+      "closed_stopped": true,
+      "rag": "2A.15 Mounting Height: the minimum height, measured vertically from the bottom of the sign to the elevation of the near edge of the pavement, of signs installed on freeways shall be 7 feet.",
+      "rag_outcome": "correct",
+      "rag_cited": [
+        "2A.15"
+      ],
+      "rag_quotes_rule": false,
+      "rag_added": [
+        "7"
+      ],
+      "rag_tokens": 45,
+      "rag_stopped": true
+    },
+    {
+      "question": "How low can a sign be mounted if it sits 30 feet or more from the edge of the road?",
+      "answerable": true,
+      "gold": [
+        "2A.15"
+      ],
+      "retrieved": [
+        "2A.15",
+        "2A.15",
+        "2A.15",
+        "2A.15",
+        "2A.15"
+      ],
+      "chunks": [
+        320,
+        319,
+        316,
+        317,
+        318
+      ],
+      "scores": [
+        0.752750813961029,
+        0.7520139217376709,
+        0.7464913725852966,
+        0.7453485131263733,
+        0.7258668541908264
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        5
+      ],
+      "closed": "Not in the MUTCD. The MUTCD does not specify a minimum mounting height for signs, only a maximum height of 12 feet.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "12"
+      ],
+      "closed_tokens": 30,
+      "closed_stopped": true,
+      "rag": "Not in the MUTCD.",
+      "rag_outcome": "declined",
+      "rag_cited": [],
+      "rag_quotes_rule": false,
+      "rag_added": [],
+      "rag_tokens": 7,
+      "rag_stopped": true
+    },
+    {
+      "question": "How long should the yellow change interval of a traffic signal last?",
+      "answerable": true,
+      "gold": [
+        "4F.17",
+        "4J.03",
+        "4N.03"
+      ],
+      "retrieved": [
+        "4F.17",
+        "4H.11",
+        "4D.01",
+        "4F.17",
+        "4F.17"
+      ],
+      "chunks": [
+        2570,
+        2629,
+        2362,
+        2566,
+        2567
+      ],
+      "scores": [
+        0.7941881418228149,
+        0.7654740810394287,
+        0.7594142556190491,
+        0.7571995854377747,
+        0.750746488571167
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        1
+      ],
+      "closed": "The yellow change interval of a traffic signal should last at least 10 seconds.",
+      "closed_outcome": "wrong",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "10"
+      ],
+      "closed_tokens": 18,
+      "closed_stopped": true,
+      "rag": "Section 4F.17: The yellow change interval should have a minimum duration of 3 seconds and a maximum duration of 6 seconds.",
+      "rag_outcome": "correct",
+      "rag_cited": [
+        "4F.17"
+      ],
+      "rag_quotes_rule": true,
+      "rag_added": [
+        "3",
+        "6"
+      ],
+      "rag_tokens": 31,
+      "rag_stopped": true
+    },
+    {
+      "question": "What walking speed is used to time the pedestrian clearance interval at a signal?",
+      "answerable": true,
+      "gold": [
+        "4I.06",
+        "4U.02"
+      ],
+      "retrieved": [
+        "4I.06",
+        "4I.06",
+        "4I.06",
+        "4I.06",
+        "4I.06"
+      ],
+      "chunks": [
+        2660,
+        2664,
+        2663,
+        2659,
+        2662
+      ],
+      "scores": [
+        0.8451918363571167,
+        0.8443551063537598,
+        0.8405028581619263,
+        0.8262814283370972,
+        0.8152136206626892
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        4
+      ],
+      "closed": "The MUTCD does not specify a single walking speed for timing pedestrian clearance intervals at signals; instead, it requires drivers to use a **reasonable** speed that allows them to complete the required clearance time safely.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [],
+      "closed_tokens": 42,
+      "closed_stopped": true,
+      "rag": "Section 4I.06 states that a walking speed of **3 feet per second** is used to evaluate the sufficiency of the pedestrian clearance time at locations where an extended push button press function has been installed.",
+      "rag_outcome": "wrong",
+      "rag_cited": [
+        "4I.06"
+      ],
+      "rag_quotes_rule": false,
+      "rag_added": [
+        "3"
+      ],
+      "rag_tokens": 45,
+      "rag_stopped": true
+    },
+    {
+      "question": "How long are the dashes and the gaps of a broken lane line?",
+      "answerable": true,
+      "gold": [
+        "3A.04"
+      ],
+      "retrieved": [
+        "3A.04",
+        "3A.04",
+        "3A.04",
+        "3B.11",
+        "3B.07"
+      ],
+      "chunks": [
+        1956,
+        1955,
+        1954,
+        2013,
+        1996
+      ],
+      "scores": [
+        0.7259210348129272,
+        0.6496967673301697,
+        0.6459123492240906,
+        0.6419821381568909,
+        0.6376798152923584
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        1,
+        2
+      ],
+      "closed": "The MUTCD does not specify the exact length of dashes or gaps in a broken lane line; it only requires that the line be broken with at least one dash and one gap, and that the gaps be no more than 1/4 of the lane width.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "1/4"
+      ],
+      "closed_tokens": 54,
+      "closed_stopped": true,
+      "rag": "06 Broken lines should consist of 10-foot line segments and 30-foot gaps.",
+      "rag_outcome": "number only",
+      "rag_cited": [],
+      "rag_quotes_rule": true,
+      "rag_added": [
+        "06",
+        "10",
+        "30"
+      ],
+      "rag_tokens": 21,
+      "rag_stopped": true
+    },
+    {
+      "question": "How wide is a normal longitudinal pavement marking line?",
+      "answerable": true,
+      "gold": [
+        "3A.04"
+      ],
+      "retrieved": [
+        "3A.04",
+        "3A.04",
+        "3A.04",
+        "3A.04",
+        "3B.09"
+      ],
+      "chunks": [
+        1954,
+        1955,
+        1956,
+        1953,
+        2009
+      ],
+      "scores": [
+        0.7785177826881409,
+        0.7729276418685913,
+        0.7631819844245911,
+        0.7631751298904419,
+        0.7342782020568848
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        4
+      ],
+      "closed": "The MUTCD does not specify a single standard width for a normal longitudinal pavement marking line; it defines the line's position relative to the lane centerline and the edge of the roadway, but the specific width (e.g., 12 inches or 30 inches) is determined by the local jurisdiction's design guidelines. Not in the MUTCD.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "12",
+        "30"
+      ],
+      "closed_tokens": 72,
+      "closed_stopped": true,
+      "rag": "Section 3A.04 states that a normal longitudinal pavement marking line shall be 4 to 6 inches wide.",
+      "rag_outcome": "correct",
+      "rag_cited": [
+        "3A.04"
+      ],
+      "rag_quotes_rule": false,
+      "rag_added": [
+        "4",
+        "6"
+      ],
+      "rag_tokens": 26,
+      "rag_stopped": true
+    },
+    {
+      "question": "Posted speed limits must be multiples of what?",
+      "answerable": true,
+      "gold": [
+        "2B.21"
+      ],
+      "retrieved": [
+        "2B.21",
+        "2L.05",
+        "2B.21",
+        "4D.05",
+        "2B.21"
+      ],
+      "chunks": [
+        474,
+        1875,
+        469,
+        2377,
+        476
+      ],
+      "scores": [
+        0.6726652383804321,
+        0.6633929014205933,
+        0.6490685939788818,
+        0.648185133934021,
+        0.6470814943313599
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [],
+      "closed": "100. 11th Edition, Section 11.1.1",
+      "closed_outcome": "wrong",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "100",
+        "11.1.1"
+      ],
+      "closed_tokens": 19,
+      "closed_stopped": true,
+      "rag": "Section 2B.21 Speed Limit Sign (R2-1) states that posted speed limits must be multiples of 5 mph.",
+      "rag_outcome": "correct",
+      "rag_cited": [
+        "2B.21"
+      ],
+      "rag_quotes_rule": false,
+      "rag_added": [
+        "1",
+        "2",
+        "5"
+      ],
+      "rag_tokens": 30,
+      "rag_stopped": true
+    },
+    {
+      "question": "How tall must traffic cones be on a freeway or at night?",
+      "answerable": true,
+      "gold": [
+        "6K.03"
+      ],
+      "retrieved": [
+        "6K.03",
+        "6K.04",
+        "6K.03",
+        "6K.03",
+        "2C.70"
+      ],
+      "chunks": [
+        3097,
+        3100,
+        3098,
+        3099,
+        863
+      ],
+      "scores": [
+        0.7559558749198914,
+        0.678776741027832,
+        0.6737115979194641,
+        0.6529192924499512,
+        0.6478012800216675
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        1
+      ],
+      "closed": "Not in the MUTCD. The MUTCD does not specify minimum height requirements for traffic cones.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [],
+      "closed_tokens": 20,
+      "closed_stopped": true,
+      "rag": "02 Cones shall be a minimum of 28 inches in height when used on freeways and other high-speed highways, on all highways during nighttime, or whenever more conspicuous guidance is needed.",
+      "rag_outcome": "number only",
+      "rag_cited": [],
+      "rag_quotes_rule": true,
+      "rag_added": [
+        "02",
+        "28"
+      ],
+      "rag_tokens": 41,
+      "rag_stopped": true
+    },
+    {
+      "question": "What is the minimum height of traffic cones on a low-speed road in daytime?",
+      "answerable": true,
+      "gold": [
+        "6K.03"
+      ],
+      "retrieved": [
+        "6K.03",
+        "6K.03",
+        "2C.70",
+        "6K.04",
+        "2N.06"
+      ],
+      "chunks": [
+        3097,
+        3098,
+        863,
+        3100,
+        1939
+      ],
+      "scores": [
+        0.7306350469589233,
+        0.6618936061859131,
+        0.639919102191925,
+        0.6314935684204102,
+        0.6302365064620972
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        1
+      ],
+      "closed": "Not in the MUTCD. The MUTCD does not specify minimum height requirements for traffic cones on low-speed roads.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [],
+      "closed_tokens": 24,
+      "closed_stopped": true,
+      "rag": "03 Cones shall be not less than 18 inches in height for daytime and low-speed roadways.",
+      "rag_outcome": "number only",
+      "rag_cited": [],
+      "rag_quotes_rule": true,
+      "rag_added": [
+        "03",
+        "18"
+      ],
+      "rag_tokens": 24,
+      "rag_stopped": true
+    },
+    {
+      "question": "What ground clearance is needed under a sign larger than 50 square feet on multiple breakaway posts?",
+      "answerable": true,
+      "gold": [
+        "2A.15",
+        "6F.02"
+      ],
+      "retrieved": [
+        "2A.15",
+        "2A.15",
+        "6F.02",
+        "2A.15",
+        "2A.15"
+      ],
+      "chunks": [
+        320,
+        321,
+        2977,
+        319,
+        322
+      ],
+      "scores": [
+        0.7586459517478943,
+        0.7103877067565918,
+        0.6987359523773193,
+        0.6913422346115112,
+        0.6868841648101807
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        1,
+        3,
+        4
+      ],
+      "closed": "Not in the MUTCD. The MUTCD does not specify ground clearance requirements for signs larger than 50 square feet on multiple breakaway posts.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [],
+      "closed_tokens": 31,
+      "closed_stopped": true,
+      "rag": "12 Where large signs having an area exceeding 50 square feet are installed on multiple breakaway posts, the clearance from the ground to the bottom of the sign shall be at least 7 feet.",
+      "rag_outcome": "number only",
+      "rag_cited": [],
+      "rag_quotes_rule": true,
+      "rag_added": [
+        "12",
+        "7"
+      ],
+      "rag_tokens": 42,
+      "rag_stopped": true
+    },
+    {
+      "question": "What is the minimum size of a diamond-shaped warning sign on a multi-lane road with a speed limit above 35 mph?",
+      "answerable": true,
+      "gold": [
+        "2C.03"
+      ],
+      "retrieved": [
+        "2C.03",
+        "2C.03",
+        "2C.03",
+        "2C.03",
+        "2C.03"
+      ],
+      "chunks": [
+        700,
+        703,
+        699,
+        670,
+        701
+      ],
+      "scores": [
+        0.7648337483406067,
+        0.7349461317062378,
+        0.7280120253562927,
+        0.725193440914154,
+        0.7175264954566956
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        4
+      ],
+      "closed": "Not in the MUTCD. The MUTCD does not specify a minimum size for diamond-shaped warning signs on multi-lane roads with speeds above 35 mph.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [],
+      "closed_tokens": 34,
+      "closed_stopped": true,
+      "rag": "03 The minimum size for all diamond-shaped warning signs facing traffic on a multi-lane conventional road where the posted speed limit is higher than 35 mph shall be 36 x 36 inches.",
+      "rag_outcome": "number only",
+      "rag_cited": [],
+      "rag_quotes_rule": true,
+      "rag_added": [
+        "03",
+        "36"
+      ],
+      "rag_tokens": 44,
+      "rag_stopped": true
+    },
+    {
+      "question": "How far ahead of a crosswalk should Yield Here To Pedestrians signs be placed on a multi-lane approach?",
+      "answerable": true,
+      "gold": [
+        "2B.19"
+      ],
+      "retrieved": [
+        "3B.19",
+        "2B.19",
+        "2B.19",
+        "3B.19",
+        "3B.19"
+      ],
+      "chunks": [
+        2049,
+        449,
+        451,
+        2051,
+        2050
+      ],
+      "scores": [
+        0.7956125736236572,
+        0.7781736850738525,
+        0.7736941576004028,
+        0.7722311019897461,
+        0.7705461978912354
+      ],
+      "hit": true,
+      "gold_rank": 2,
+      "evidence_ranks": [
+        2
+      ],
+      "closed": "1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.",
+      "closed_outcome": "wrong",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1"
+      ],
+      "closed_tokens": 80,
+      "closed_stopped": false,
+      "rag": "15 If yield (stop) lines are used at a crosswalk that crosses an uncontrolled multi-lane approach, the yield (stop) line should be placed 20 to 50 feet in advance of the nearest crosswalk line.",
+      "rag_outcome": "number only",
+      "rag_cited": [],
+      "rag_quotes_rule": false,
+      "rag_added": [
+        "15",
+        "20",
+        "50"
+      ],
+      "rag_tokens": 51,
+      "rag_stopped": true
+    },
+    {
+      "question": "How wide is the reflective strip on the back of each Crossbuck blade at a passive grade crossing?",
+      "answerable": true,
+      "gold": [
+        "8B.03"
+      ],
+      "retrieved": [
+        "8B.04",
+        "8B.04",
+        "8B.04",
+        "8B.04",
+        "8B.04"
+      ],
+      "chunks": [
+        3596,
+        3590,
+        3601,
+        3602,
+        3604
+      ],
+      "scores": [
+        0.7541582584381104,
+        0.7525332570075989,
+        0.7504284381866455,
+        0.7455315589904785,
+        0.7406026721000671
+      ],
+      "hit": false,
+      "gold_rank": null,
+      "evidence_ranks": [],
+      "closed": "Not in the MUTCD. The MUTCD does not specify the width of the reflective strip on the back of a Crossbuck blade.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [],
+      "closed_tokens": 29,
+      "closed_stopped": true,
+      "rag": "Section 8B.04 Standard: 11. A vertical strip of retroreflective white material, not less than 2 inches in width, shall be used on each Crossbuck support at passive grade crossings for the full length of the back of the support from the Crossbuck sign or Number of Tracks plaque to within 2 feet above the near edge of the roadway.",
+      "rag_outcome": "number only",
+      "rag_cited": [
+        "8B.04"
+      ],
+      "rag_quotes_rule": false,
+      "rag_added": [
+        "2"
+      ],
+      "rag_tokens": 80,
+      "rag_stopped": true
+    },
+    {
+      "question": "How far in advance of the crosswalk should a stop line be placed at a controlled intersection?",
+      "answerable": true,
+      "gold": [
+        "3B.19"
+      ],
+      "retrieved": [
+        "3B.19",
+        "8C.03",
+        "8C.03",
+        "8E.04",
+        "8B.04"
+      ],
+      "chunks": [
+        2049,
+        3658,
+        3657,
+        3794,
+        3591
+      ],
+      "scores": [
+        0.7697486877441406,
+        0.7668636441230774,
+        0.7531269788742065,
+        0.7393372058868408,
+        0.7330408692359924
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [],
+      "closed": "1. 1.1.1.1.",
+      "closed_outcome": "wrong",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "1",
+        "1.1.1.1"
+      ],
+      "closed_tokens": 12,
+      "closed_stopped": true,
+      "rag": "Section 3B.19: 20 to 50 feet in advance of the nearest crosswalk line.",
+      "rag_outcome": "wrong",
+      "rag_cited": [
+        "3B.19"
+      ],
+      "rag_quotes_rule": false,
+      "rag_added": [
+        "20",
+        "50"
+      ],
+      "rag_tokens": 26,
+      "rag_stopped": true
+    },
+    {
+      "question": "What diameters are allowed for vehicular signal indications?",
+      "answerable": true,
+      "gold": [
+        "4E.02"
+      ],
+      "retrieved": [
+        "4E.02",
+        "4H.07",
+        "4E.02",
+        "4E.02",
+        "4M.02"
+      ],
+      "chunks": [
+        2416,
+        2622,
+        2417,
+        2418,
+        2739
+      ],
+      "scores": [
+        0.8605899810791016,
+        0.8022063970565796,
+        0.8011914491653442,
+        0.7883570790290833,
+        0.754790186882019
+      ],
+      "hit": true,
+      "gold_rank": 1,
+      "evidence_ranks": [
+        1
+      ],
+      "closed": "The MUTCD does not specify specific diameters for vehicular signal indications; instead, it requires that the signal be placed on a designated sign plate with a diameter of at least 12 inches (30 cm) and a minimum height of 12 inches (30 cm).",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "12",
+        "30"
+      ],
+      "closed_tokens": 59,
+      "closed_stopped": true,
+      "rag": "Section 4E.02 states that three nominal diameters are standard: 4 inches, 8 inches, and 12 inches.",
+      "rag_outcome": "correct",
+      "rag_cited": [
+        "4E.02"
+      ],
+      "rag_quotes_rule": false,
+      "rag_added": [
+        "12",
+        "4",
+        "8"
+      ],
+      "rag_tokens": 31,
+      "rag_stopped": true
+    },
+    {
+      "question": "What concrete compressive strength is required for a sign post foundation?",
+      "answerable": false,
+      "gold": [],
+      "retrieved": [
+        "2A.18",
+        "8D.01",
+        "2A.16",
+        "6F.02",
+        "4A.07"
+      ],
+      "chunks": [
+        329,
+        3677,
+        324,
+        2977,
+        2267
+      ],
+      "scores": [
+        0.6265873908996582,
+        0.6143137216567993,
+        0.5805127620697021,
+        0.574238657951355,
+        0.5733625888824463
+      ],
+      "hit": false,
+      "gold_rank": null,
+      "evidence_ranks": [],
+      "closed": "The MUTCD does not specify a minimum concrete compressive strength for sign post foundations; it only requires the foundation to be capable of supporting the load of the sign post.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [],
+      "closed_tokens": 35,
+      "closed_stopped": true,
+      "rag": "Not in the MUTCD.",
+      "rag_outcome": "declined",
+      "rag_cited": [],
+      "rag_quotes_rule": false,
+      "rag_added": [],
+      "rag_tokens": 7,
+      "rag_stopped": true
+    },
+    {
+      "question": "What asphalt binder grade should be used for a resurfacing overlay?",
+      "answerable": false,
+      "gold": [],
+      "retrieved": [
+        "6J.01",
+        "2C.25",
+        "3A.05",
+        "3B.17",
+        "3B.17"
+      ],
+      "chunks": [
+        3075,
+        768,
+        1957,
+        2038,
+        2039
+      ],
+      "scores": [
+        0.6240946054458618,
+        0.6003345251083374,
+        0.5824166536331177,
+        0.5771769285202026,
+        0.5770411491394043
+      ],
+      "hit": false,
+      "gold_rank": null,
+      "evidence_ranks": [],
+      "closed": "The MUTCD does not specify a single grade for asphalt binder resurfacing; instead, it requires the use of a **high-performance asphalt binder** (typically **A-1** or **A-2**) to ensure durability and resistance to cracking, as per Section 10.1.1.1.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "1",
+        "10.1.1.1",
+        "2"
+      ],
+      "closed_tokens": 65,
+      "closed_stopped": true,
+      "rag": "Not in the MUTCD. The provided excerpts cover pavement markings, low clearance signs, retroreflectivity, and raised pavement markers, but they do not specify the asphalt binder grade required for a resurfacing overlay.",
+      "rag_outcome": "declined",
+      "rag_cited": [],
+      "rag_quotes_rule": false,
+      "rag_added": [],
+      "rag_tokens": 44,
+      "rag_stopped": true
+    },
+    {
+      "question": "What is the maximum live-load deflection allowed for a steel bridge girder?",
+      "answerable": false,
+      "gold": [],
+      "retrieved": [
+        "4Q.02",
+        "6G.06",
+        "4Q.02",
+        "4Q.01",
+        "4Q.02"
+      ],
+      "chunks": [
+        2774,
+        2986,
+        2773,
+        2765,
+        2772
+      ],
+      "scores": [
+        0.600696861743927,
+        0.6001042723655701,
+        0.5833250880241394,
+        0.5791028738021851,
+        0.5727289915084839
+      ],
+      "hit": false,
+      "gold_rank": null,
+      "evidence_ranks": [],
+      "closed": "The maximum live-load deflection for a steel bridge girder is generally limited to 1/200 of the span length (0.5%) for standard steel girders, though this can vary based on the specific design code and bridge type. Not in the MUTCD.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "0.5",
+        "1/200"
+      ],
+      "closed_tokens": 59,
+      "closed_stopped": true,
+      "rag": "Not in the MUTCD. The provided excerpts cover design and location of movable bridge signals and gates, weight limits for signs, and traffic control for movable bridges, but they do not contain information regarding the maximum live-load deflection limits for steel bridge girders.",
+      "rag_outcome": "declined",
+      "rag_cited": [],
+      "rag_quotes_rule": false,
+      "rag_added": [],
+      "rag_tokens": 54,
+      "rag_stopped": true
+    },
+    {
+      "question": "What is the design life of a traffic signal controller cabinet?",
+      "answerable": false,
+      "gold": [],
+      "retrieved": [
+        "4C.01",
+        "4D.01",
+        "4B.05",
+        "8D.09",
+        "8D.12"
+      ],
+      "chunks": [
+        2291,
+        2361,
+        2284,
+        3719,
+        3760
+      ],
+      "scores": [
+        0.6288479566574097,
+        0.6260195970535278,
+        0.6243576407432556,
+        0.6232116222381592,
+        0.6225442886352539
+      ],
+      "hit": false,
+      "gold_rank": null,
+      "evidence_ranks": [],
+      "closed": "The MUTCD does not explicitly define a design life for traffic signal controller cabinets, as this is a specific engineering detail often covered in the \"Design\" section of the Manual.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [],
+      "closed_tokens": 36,
+      "closed_stopped": true,
+      "rag": "Not in the MUTCD.",
+      "rag_outcome": "declined",
+      "rag_cited": [],
+      "rag_quotes_rule": false,
+      "rag_added": [],
+      "rag_tokens": 7,
+      "rag_stopped": true
+    },
+    {
+      "question": "What pavement thickness is required for a bus-only lane?",
+      "answerable": false,
+      "gold": [],
+      "retrieved": [
+        "3H.07",
+        "3H.07",
+        "8B.12",
+        "3B.21",
+        "3H.08"
+      ],
+      "chunks": [
+        2200,
+        2201,
+        3623,
+        2057,
+        2205
+      ],
+      "scores": [
+        0.6478619575500488,
+        0.6440742015838623,
+        0.6406444907188416,
+        0.633392333984375,
+        0.6333523988723755
+      ],
+      "hit": false,
+      "gold_rank": null,
+      "evidence_ranks": [],
+      "closed": "The MUTCD does not specify a minimum pavement thickness for bus-only lanes; however, it requires that bus lanes be separated from regular traffic by a minimum of 12 inches of pavement.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "12"
+      ],
+      "closed_tokens": 39,
+      "closed_stopped": true,
+      "rag": "Not in the MUTCD.",
+      "rag_outcome": "declined",
+      "rag_cited": [],
+      "rag_quotes_rule": false,
+      "rag_added": [],
+      "rag_tokens": 7,
+      "rag_stopped": true
+    },
+    {
+      "question": "What slump should the concrete for a curb ramp have?",
+      "answerable": false,
+      "gold": [],
+      "retrieved": [
+        "3C.01",
+        "6P.01",
+        "6K.07",
+        "6H.10",
+        "2B.18"
+      ],
+      "chunks": [
+        2091,
+        3424,
+        3109,
+        3030,
+        447
+      ],
+      "scores": [
+        0.5710057020187378,
+        0.5692981481552124,
+        0.563195526599884,
+        0.5616559386253357,
+        0.5598711967468262
+      ],
+      "hit": false,
+      "gold_rank": null,
+      "evidence_ranks": [],
+      "closed": "The concrete for a curb ramp must slump to a maximum of 10% to ensure proper drainage and prevent water pooling. Not in the MUTCD.",
+      "closed_outcome": "declined",
+      "closed_cited": [],
+      "closed_quotes_rule": false,
+      "closed_added": [
+        "10"
+      ],
+      "closed_tokens": 32,
+      "closed_stopped": true,
+      "rag": "Not in the MUTCD.",
+      "rag_outcome": "declined",
+      "rag_cited": [],
+      "rag_quotes_rule": false,
+      "rag_added": [],
+      "rag_tokens": 7,
+      "rag_stopped": true
+    }
+  ],
+  "tally": {
+    "closed_answerable": {
+      "correct": 0,
+      "number only": 0,
+      "declined": 11,
+      "wrong": 5
+    },
+    "closed_answerable_extra": {
+      "declined_with_numbers": 5,
+      "number_only_quotes_rule": 0
+    },
+    "closed_unanswerable": {
+      "declined": 6,
+      "invented": 0
+    },
+    "closed_unanswerable_extra": {
+      "declined_with_numbers": 4,
+      "number_only_quotes_rule": 0
+    },
+    "rag_answerable": {
+      "correct": 5,
+      "number only": 8,
+      "declined": 1,
+      "wrong": 2
+    },
+    "rag_answerable_extra": {
+      "declined_with_numbers": 0,
+      "number_only_quotes_rule": 5
+    },
+    "rag_unanswerable": {
+      "declined": 6,
+      "invented": 0
+    },
+    "rag_unanswerable_extra": {
+      "declined_with_numbers": 0,
+      "number_only_quotes_rule": 0
+    }
+  },
+  "tally_pilot_declines": {
+    "closed_answerable": {
+      "correct": 0,
+      "number only": 0,
+      "declined": 11,
+      "wrong": 5
+    },
+    "closed_answerable_extra": {
+      "declined_with_numbers": 5,
+      "number_only_quotes_rule": 0
+    },
+    "closed_unanswerable": {
+      "declined": 5,
+      "invented": 1
+    },
+    "closed_unanswerable_extra": {
+      "declined_with_numbers": 4,
+      "number_only_quotes_rule": 0
+    },
+    "rag_answerable": {
+      "correct": 5,
+      "number only": 8,
+      "declined": 1,
+      "wrong": 2
+    },
+    "rag_answerable_extra": {
+      "declined_with_numbers": 0,
+      "number_only_quotes_rule": 5
+    },
+    "rag_unanswerable": {
+      "declined": 6,
+      "invented": 0
+    },
+    "rag_unanswerable_extra": {
+      "declined_with_numbers": 0,
+      "number_only_quotes_rule": 0
+    }
+  },
+  "qa_hits": 15,
+  "qa_hit_rate": 0.9375,
+  "qa_evidence_hits": 13,
+  "qa_short": {
+    "answers": 11,
+    "with_section": 10,
+    "with_evidence": 9
+  },
+  "qa_odd_sections": [
+    "10.1.1.1",
+    "11.1.1",
+    "11.1.1"
+  ],
+  "doc_start": "<|endoftext|>",
+  "coding_summary": {
+    "prompt_0": {
+      "balanced": {
+        "median": 0.4483004084518105,
+        "min": 0.4483004084518105,
+        "max": 0.4483004084518105
+      },
+      "accuracy": {
+        "median": 0.467,
+        "min": 0.467,
+        "max": 0.467
+      }
+    },
+    "prompt_1": {
+      "balanced": {
+        "median": 0.6956134759204555,
+        "min": 0.6211974969765216,
+        "max": 0.7345927383412035
+      },
+      "accuracy": {
+        "median": 0.814,
+        "min": 0.647,
+        "max": 0.838
+      }
+    },
+    "prompt_3": {
+      "balanced": {
+        "median": 0.7256550405987234,
+        "min": 0.6289752936582165,
+        "max": 0.7336708278781399
+      },
+      "accuracy": {
+        "median": 0.787,
+        "min": 0.764,
+        "max": 0.838
+      }
+    },
+    "prompt_10": {
+      "balanced": {
+        "median": 0.79779775020774,
+        "min": 0.7497348116125737,
+        "max": 0.811331985713727
+      },
+      "accuracy": {
+        "median": 0.862,
+        "min": 0.855,
+        "max": 0.889
+      }
+    },
+    "prompt_30": {
+      "balanced": {
+        "median": 0.8068413809957969,
+        "min": 0.7751909171943775,
+        "max": 0.8242101828651859
+      },
+      "accuracy": {
+        "median": 0.841,
+        "min": 0.83,
+        "max": 0.848
+      }
+    },
+    "probe_1": {
+      "balanced": {
+        "median": 0.6586800660633596,
+        "min": 0.43561940521351655,
+        "max": 0.7539951533713651
+      },
+      "accuracy": {
+        "median": 0.583,
+        "min": 0.549,
+        "max": 0.739
+      }
+    },
+    "probe_3": {
+      "balanced": {
+        "median": 0.7489076322992396,
+        "min": 0.6800229849546375,
+        "max": 0.7769789790739999
+      },
+      "accuracy": {
+        "median": 0.751,
+        "min": 0.741,
+        "max": 0.77
+      }
+    },
+    "probe_10": {
+      "balanced": {
+        "median": 0.8181721185209871,
+        "min": 0.8180691787428245,
+        "max": 0.8409337587138666
+      },
+      "accuracy": {
+        "median": 0.814,
+        "min": 0.805,
+        "max": 0.852
+      }
+    },
+    "probe_30": {
+      "balanced": {
+        "median": 0.8413246683078094,
+        "min": 0.8409064376953574,
+        "max": 0.8584776567891756
+      },
+      "accuracy": {
+        "median": 0.832,
+        "min": 0.821,
+        "max": 0.836
+      }
+    },
+    "probe_100": {
+      "balanced": {
+        "median": 0.870388968939027,
+        "min": 0.8614780118471377,
+        "max": 0.8745992480021829
+      },
+      "accuracy": {
+        "median": 0.863,
+        "min": 0.852,
+        "max": 0.878
+      }
+    },
+    "paired": {
+      "1": [
+        0.0194024150301616,
+        -0.03693340985709592,
+        -0.18557809176300505
+      ],
+      "3": [
+        0.0513239384752765,
+        0.015236804421099759,
+        0.05104769129642106
+      ],
+      "10": [
+        0.06843730690841343,
+        0.020271428535084457,
+        0.029601773000139553
+      ],
+      "30": [
+        0.051636275793378705,
+        0.017114485442623506,
+        0.06571552050097995
+      ]
+    }
+  },
+  "minutes": 24.620448979916787
+}

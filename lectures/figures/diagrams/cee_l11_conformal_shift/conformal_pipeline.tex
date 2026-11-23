@@ -1,0 +1,40 @@
+% CEE Lecture 11, "one picture": the course picture with split-conformal calibration as the focus
+% step. A linear forecast of log flow seven days ahead gets a 90% interval from the scores of a
+% calibration decade. The inset follows one forecast; numbers from numbers.tex (figure script).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes; the calibration step is this lecture's focus.
+  \node[data] (x) at (1.25,0) {past flows};
+  \node[op] (enc) at (4.75,0) {encoder\\lags, season};
+  \node[data] (z) at (7.6,0) {$\mathbf{z}$};
+  \node[op] (dec) at (10.45,0) {decoder: line\\$\ln\hat{y}$ in 7 days};
+  \node[focus, minimum width=3.4cm] (cal) at (14.7,0) {conformal\\$\ln\hat{y}\pm\hat{q}$};
+  \node[data] (out) at (18.75,0) {90\% interval};
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (dec);
+  \draw[flow] (dec) -- (cal);
+  \draw[flow] (cal) -- (out);
+
+  \node[data] (fit) at (10.45,2.0) {fit 1950--1969};
+  \node[data] (cd) at (16.3,2.0) {calibrate 1970--1979};
+  \draw[flow] (fit) -- (dec);
+  \draw[flow] (cd.south -| cal.north) -- (cal.north);
+
+  % Worked example: one forecast.
+  \node[insettitle] (ttl) at (0.0,-2.0) {Issued \DayIssued, for \DayTarget};
+  \node[note, anchor=north west] (xv) at (0.0,-2.65) {today \Today{} m³/s};
+  \node[note, anchor=north] (dv) at (10.45,-2.65) {forecast\\\key{\Pred{} m³/s}};
+  \node[note, anchor=north] (cv) at (14.7,-2.65) {\Kth th of \NCal:\\$\hat{q}$ = \Qhat, $\times/\div$ \Factor\\\Lo{} to \Hi{} m³/s};
+  \node[note, anchor=north east] (ov) at (20.3,-2.65) {came\\\key{\Obs{} m³/s}\\inside};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(xv)(dv)(cv)(ov)(out.east |- cv.south)] {};
+  \end{scope}
+  \draw[leader] (dec.south) -- ([yshift=3pt]dv.north);
+  \draw[leader] (cal.south) -- ([yshift=3pt]cv.north);
+  \draw[leader] (out.south) -- ([yshift=3pt]out.south |- ov.north);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,50 @@
+% CEE Lecture 3, "one picture": the course picture with the held-out error as the focus step.
+% The inset follows one held-out bridge (the attempt's bridge Q) through the pipeline with 1-NN,
+% under two ways of holding it out; numbers from numbers.tex (figure script).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes; the held-out error is this lecture's focus.
+  \node[data] (x) at (0.95,0) {bridge $\mathbf{x}$};
+  \node[op, minimum width=3.3cm] (enc) at (4.45,0) {encoder\\12 inputs, scaled};
+  \node[data] (z) at (7.5,0) {$\mathbf{z}$};
+  \node[op, minimum width=3.7cm] (dec) at (10.85,0) {decoder: average of\\the $k$ nearest records};
+  \node[data] (yhat) at (14.2,0) {$\hat{y}$};
+  \node[focus, minimum width=3.3cm] (loss) at (17.35,0) {held-out error\\$\sqrt{\mathrm{mean}\,(\hat{y}-y)^2}$};
+  \node[data] (y) at (20.75,0) {rating $y$};
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (dec);
+  \draw[flow] (dec) -- (yhat);
+  \draw[flow] (yhat) -- (loss);
+  \draw[flow] (y) -- (loss);
+
+  % k-NN stores the training records; the focus asks which records were held out.
+  \node[data] (train) at (10.85,1.75) {training: \NTrain{} records, 2014--2018};
+  \draw[flow] (train) -- (dec);
+  \node[note, anchor=south west, text=muted, align=left] (ask) at (18.0,0.75)
+    {honest only if the\\held-out bridges look\\like the next ones};
+
+  % Worked example: bridge Q held out two ways, one row each, column by column.
+  \node[insettitle] (ttl) at (0.0,-1.85) {One held-out bridge, $k=1$};
+  \node[note, anchor=north west] (xv) at (0.0,-2.5)
+    {\QFacility\\\QCounty{} County\\built \QBuilt, \QRebuilt\\\QADT{} vehicles a day};
+  \node[note, anchor=north] (zv) at (7.5,-2.5) {age \QAge{} y\\$\ln$ ADT \QLogADT\\and 10 more};
+  \node[note, anchor=north] (r1) at (11.3,-2.5) {\key{random folds:}\\its twin, \RandomMeters{} m away};
+  \node[note, anchor=north] (r2) at (11.3,-4.0) {\key{county held out:}\\\CountyName, \CountyKm{} km away};
+  \node[note, anchor=north] (p1) at (14.2,-2.5) {$\hat{y}$ = \key{\RandomPred}};
+  \node[note, anchor=north] (p2) at (14.2,-4.0) {$\hat{y}$ = \key{\CountyPred}};
+  \node[note, anchor=north] (e1) at (17.35,-2.5) {error \RandomErr};
+  \node[note, anchor=north] (e2) at (17.35,-4.0) {error \CountyErr};
+  \node[note, anchor=north] (yv) at (20.75,-2.5) {$y$ = \QRating\\poor ($\le$ \Poor)};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(xv)(zv)(r1)(r2)(p2)(e2)(yv)(y.east |- r2.south)] {};
+  \end{scope}
+  \draw[leader] (z.south) -- (zv.north);
+  \draw[leader] (dec.south) -- (dec.south |- r1.north);
+  \draw[leader] (yhat.south) -- (p1.north);
+  \draw[leader] (loss.south) -- (e1.north);
+\end{tikzpicture}
+\end{document}

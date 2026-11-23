@@ -1,0 +1,45 @@
+% CEE Lecture 10, "one picture": the course picture with the pinball loss as the focus step. The
+% decoder predicts the 5% quantile of strength instead of the mean. The inset follows Lecture 5's
+% proposed mix P (held out in the first split); numbers from numbers.tex (figure script).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes; the loss is this lecture's focus.
+  \node[data] (x) at (0.8,0) {mix $\mathbf{x}$};
+  \node[op] (enc) at (4.75,0) {encoder\\dimensionless groups};
+  \node[data] (z) at (8.35,0) {$\mathbf{z}$};
+  \node[op, minimum width=3.4cm] (dec) at (11.2,0) {decoder: line\\$\mathbf{w}_{\tau}^{\top}\mathbf{z}$};
+  \node[data] (q) at (14.2,0) {$\hat{q}_{\tau}$};
+  \node[focus, minimum width=3.6cm] (loss) at (17.25,0) {pinball loss\\$\rho_{\tau}(y-\hat{q}_{\tau})$};
+  \node[data] (y) at (21.1,0) {measured $y$};  % a gap from the loss box
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (dec);
+  \draw[flow] (dec) -- (q);
+  \draw[flow] (q) -- (loss);
+  \draw[flow] (y) -- (loss);
+
+  % Training: a linear program over the training tests.
+  \node[data] (train) at (4.75,1.85) {training: \NTrain{} tests, designs held out};
+  \draw[flow] (train.east) -| ([xshift=-0.9cm]dec.north);
+  \draw[train] (loss.north) |- ([xshift=0.9cm]dec.north |- train.east) -- ([xshift=0.9cm]dec.north);
+  \node[note, anchor=west, text=alertc] at ([xshift=4pt]loss.north |- train.east)
+    {$\tau=0.05$: a linear program};
+
+  % Worked example: the proposed mix P, held out.
+  \node[insettitle] (ttl) at (0.0,-1.85) {Proposed mix P (held out)};
+  \node[note, anchor=north west] (xv) at (0.0,-2.5)
+    {cement \Cement{} kg/m³\\water \Water{} kg/m³\\no admixtures, 28 d};
+  \node[note, anchor=north] (dv) at (11.6,-2.5)
+    {mean prediction \Mean{} MPa\\mean $-$ 1.645 $\times$ \SD{} = \QNorm{}\\5\% quantile line: \key{\QQR{} MPa}};
+  \node[note, anchor=north] (yv) at (18.6,-2.5)
+    {$y$ = \Meas{} MPa\\above both 5\% values};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(xv)(dv)(yv)(y.east |- dv.south)] {};
+  \end{scope}
+  \draw[leader] (dec.south) -- (dec.south |- dv.north);
+  \draw[leader] (y.south) -- (y.south |- yv.north);
+\end{tikzpicture}
+\end{document}

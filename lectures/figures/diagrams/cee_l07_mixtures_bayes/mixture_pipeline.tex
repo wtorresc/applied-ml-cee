@@ -1,0 +1,48 @@
+% CEE Lecture 7, "one picture": the course picture with a generative decoder as the focus step:
+% a two-regime Gaussian mixture of occupancy and Bayes' rule. EM fits it without labels. The
+% inset follows one 5-minute reading at Glisan; numbers from numbers.tex (figure script).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes; the decoder is this lecture's focus.
+  \node[data] (x) at (1.45,0) {loop reading};
+  \node[op] (enc) at (5.65,0) {encoder\\occupancy, 5 min};
+  \node[data] (z) at (8.65,0) {$x$};
+  \node[focus, minimum width=4.4cm] (dec) at (12.0,0) {decoder: Bayes' rule\\$\pi_k\,\mathcal{N}(x;\mu_k,\sigma_k)$};
+  \node[data] (p) at (16.25,0) {$P(\text{cong.}\mid x)$};
+  \node[op, minimum width=3.0cm] (dcd) at (20.0,0) {meter on\\if $P>0.5$};
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (dec);
+  \draw[flow] (dec) -- (p);
+  \draw[flow] (p) -- (dcd);
+
+  % Training: EM maximizes the likelihood of unlabeled readings.
+  \node[data] (train) at (5.65,1.95) {\NRec{} readings, no labels};
+  \node[op] (loss) at (17.6,1.95) {loss: $-\sum_i\ln\sum_k\pi_k\mathcal{N}(x_i)$};
+  \draw[flow] (train.east) -- ([xshift=-1.1cm]dec.north |- train.east) -- ([xshift=-1.1cm]dec.north);
+  \draw[train] (loss.west) -- ([xshift=1.1cm]dec.north |- loss.west) -- ([xshift=1.1cm]dec.north);
+  \node[note, anchor=west, text=alertc] at ([xshift=4pt]loss.east) {EM};
+
+  % Worked example: one reading, 14:45 on October 6, 2011.
+  \node[insettitle] (ttl) at (0.0,-2.0) {Glisan SB, Oct 6, 2011, 14:45};
+  \node[note, anchor=north west] (xv) at (0.0,-2.65)
+    {$x$: occupancy \Occ\%\\flow \Flow{} veh/h/lane};
+  \node[anchor=north, inner sep=2pt] (dv) at (11.2,-2.65) {%
+    \renewcommand{\arraystretch}{1.1}%
+    \begin{tabular}{@{}l@{\hspace{9pt}}r@{\hspace{9pt}}r@{\hspace{9pt}}r@{}}
+      regime & $\pi_k$ & $\mu_k\pm\sigma_k$ & $\pi_k\mathcal{N}(x)$\\
+      free & \PiF & \MuF{} $\pm$ \SdF & $\JF$\\
+      congested & \PiC & \MuC{} $\pm$ \SdC & $\JC$\\
+    \end{tabular}};
+  \node[note, anchor=north east] (cv) at (21.5,-2.65)
+    {$P(\text{congested})$ = \key{\Post}\\$\rightarrow$ meter on\\measured: \key{\Speed{} mph}};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(xv)(dv)(cv)(dcd.east |- dv.south)] {};
+  \end{scope}
+  \draw[leader] (dec.south) -- (dec.south |- dv.north);
+  \draw[leader] (dcd.south) -- (dcd.south |- cv.north);
+\end{tikzpicture}
+\end{document}

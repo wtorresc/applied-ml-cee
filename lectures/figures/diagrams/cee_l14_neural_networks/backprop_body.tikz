@@ -1,0 +1,41 @@
+% Backpropagation on the attempt's hand-made network, PRV-2 -> two ramps -> y-hat -> loss, at
+% PRV-2 = 47 m; numbers from numbers.tex (figure script). Input by the frames backprop_1..4.tex,
+% which set \step: 1 forward values, 2 the loss's gradient, 3 output weights, 4 the kinks.
+\begin{tikzpicture}
+  \tikzset{
+    unit/.style={circle, draw=navy, line width=1.2pt, minimum size=1.3cm, fill=white},
+    val/.style={font=\fontsize{14}{17}\selectfont, text=ink, align=center},
+    grad/.style={font=\fontsize{14}{17}\selectfont, text=alertc, align=left},
+    hot/.style={draw=alertc, line width=2pt, rounded corners=4pt, inner sep=4pt},
+  }
+  \node[unit] (x) at (0,0) {$s_2$};
+  \node[unit] (h1) at (6,2.4) {ramp};
+  \node[unit] (h2) at (6,-2.4) {ramp};
+  \node[unit] (y) at (13,0) {$\hat y$};
+  \node[op] (L) at (20.4,0) {loss\\$(\hat y-y)^2$};
+  \draw[flow] (x) -- node[pos=0.5, above, sloped, val] {kink \BpCOne{} m} (h1);
+  \draw[flow] (x) -- node[pos=0.5, below, sloped, val] {kink \BpCTwo{} m} (h2);
+  \draw[flow] (h1) -- node[pos=0.45, above, sloped, val] {$b$ = \BpB} (y);
+  \draw[flow] (h2) -- node[pos=0.3, below=2pt, sloped, val] {$d$ = \BpD} (y);
+  \draw[flow] (y) -- (L);
+
+  % forward pass
+  \node[val, anchor=north] at (0,-0.8) {PRV-2\\\key{\BpS{} m}};
+  \node[val, anchor=south] at (6,3.15) {$\max(0,\,\BpS-\BpCOne)$ = \key{\BpHOne}};
+  \node[val, anchor=north] at (6,-3.15) {$\max(0,\,\BpS-\BpCTwo)$ = \key{\BpHTwo}};
+  \node[val, anchor=north] at (14.2,-0.8) {$a$ + \BpB{} $\times$ \BpHOne{} + (\BpD) $\times$ \BpHTwo\\= \BpA{} + \BpBH{} $-$ \BpDHabs\\= \key{\BpYhat{} m}};
+  \node[val, anchor=north] at (20.4,-0.8) {simulator: \BpY{} m\\loss = \key{\BpLoss}};
+
+  \ifnum\step>1
+    \node[grad, anchor=south] (gL) at (20.4,1.2) {$\partial L/\partial\hat y$ = 2(\BpYhat{} $-$ \BpY)\\= \textbf{\BpG}};
+    \ifnum\step=2 \node[hot, fit=(gL)] {}; \fi
+  \fi
+  \ifnum\step>2
+    \node[grad, anchor=south] (gw) at (12.6,2.3) {$\partial L/\partial b$ = \BpG{} $\times$ \BpHOne{} = \textbf{\BpDb}\\$\partial L/\partial d$ = \BpG{} $\times$ \BpHTwo{} = \textbf{\BpDd}\\$\partial L/\partial a$ = \textbf{\BpG}};
+    \ifnum\step=3 \node[hot, fit=(gw)] {}; \fi
+  \fi
+  \ifnum\step>3
+    \node[grad, anchor=north west] (gk) at (-0.6,-4.6) {Both ramps are on, so each kink gets $-$(\BpG) $\times$ its weight.\\Upper kink: \textbf{\BpDcOne}, it moves left.\quad Lower kink: \textbf{\BpDcTwo}, it moves right.};
+    \node[hot, fit=(gk)] {};
+  \fi
+\end{tikzpicture}

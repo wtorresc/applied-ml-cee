@@ -1,0 +1,44 @@
+% CEE Lecture 12, "one picture": the course picture with the Gaussian process as the focus step,
+% inside the loop of Bayesian optimization (the decision picks the next simulator run). The inset
+% follows the attempt's four runs to one prediction; numbers from numbers.tex (figure script).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes; the Gaussian process is this lecture's focus.
+  \node[data] (x) at (1.2,0) {settings};
+  \node[op] (enc) at (4.3,0) {encoder\\scale to box};
+  \node[data] (z) at (6.9,0) {$\mathbf{z}$};
+  \node[focus, minimum width=3.6cm] (gp) at (10.2,0) {Gaussian process\\$\mu(\mathbf{z})\pm2\sigma(\mathbf{z})$};
+  \node[op] (dec) at (14.6,0) {decide\\EI $\times$ P(feasible)};
+  \node[data] (nx) at (18.5,0) {next run};
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (gp);
+  \draw[flow] (gp) -- (dec);
+  \draw[flow] (dec) -- (nx);
+
+  % The loop: the simulator answers; its runs condition the process, and the evidence fits l.
+  \node[op] (sim) at (18.5,2.3) {simulator\\EPANET, one day};
+  \node[data] (runs) at (11.2,2.3) {runs so far};
+  \node[op] (loss) at (5.6,2.3) {evidence\\$-\log p(\mathbf{y}\mid\ell)$};
+  \draw[flow] (nx) -- (sim);
+  \draw[flow] (sim) -- (runs);
+  \draw[flow] (runs.south) -- (runs.south |- gp.north);
+  \draw[train] (loss.east) -| ([xshift=20pt]gp.north west);
+
+  % Worked example: the attempt's four runs, one prediction.
+  \node[insettitle] (ttl) at (0.0,-1.95) {Four runs, PRV-1 at \SliceS{} m};
+  \node[note, anchor=north west] (xv) at (0.0,-2.65) {PRV-2 $\to$ lowest:\\\RunRows\\predict at \key{\TraceS{} m}};
+  \node[note, anchor=north] (gv) at (9.9,-2.65) {weights on the runs:\\\Wvals\\$\mu$ = \Ybar{} + $\sum w_i(y_i-\bar y)$\\= \key{\Mean{} m}, $\pm2\sigma$: \Lo{} to \Hi{}\\($\ell$ = \Ell{} m)};
+  \node[note, anchor=north] (dv) at (15.6,-2.65) {P(feasible)\\= \Pof\\infeasible};
+  \node[note, anchor=north east] (sv) at (20.1,-2.65) {simulator:\\\key{\Truth{} m}\\feasible};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(xv)(gv)(dv)(sv)] {};
+  \end{scope}
+  \draw[leader] (gp.south) -- (gp.south |- gv.north);
+  \draw[leader] (dec.south) -- (dec.south |- dv.north);
+  \draw[leader] (nx.south) -- (nx.south |- sv.north);
+\end{tikzpicture}
+\end{document}

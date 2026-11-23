@@ -1,0 +1,644 @@
+{
+  "data": {
+    "train_bridges_two_county_codes": 10,
+    "train_records_two_county_codes": 30,
+    "train_bridges_split_by_own_codes": 2,
+    "years": [
+      2014,
+      2016,
+      2018,
+      2020,
+      2022,
+      2024
+    ],
+    "records": 131851,
+    "bridges": 23464,
+    "counties": 102,
+    "bridges_per_year_min": 21935,
+    "bridges_per_year_max": 22015,
+    "train_inventory_records": 65928,
+    "repeated_inspections": 10773,
+    "train_records": 55155,
+    "train_bridges": 22720,
+    "test_records": 21964,
+    "mean_rating": {
+      "2014": 6.48,
+      "2016": 6.39,
+      "2018": 6.32,
+      "2020": 6.23,
+      "2022": 6.18,
+      "2024": 6.13
+    },
+    "poor_pct": {
+      "2014": 9.0,
+      "2016": 9.2,
+      "2018": 9.6,
+      "2020": 10.0,
+      "2022": 10.2,
+      "2024": 10.5
+    },
+    "train_sd": 1.44,
+    "n_features": 12
+  },
+  "curves": {
+    "k": [
+      1,
+      2,
+      3,
+      5,
+      7,
+      10,
+      15,
+      20,
+      30,
+      50,
+      70,
+      100
+    ],
+    "random": [
+      0.9289,
+      0.9022,
+      0.9198,
+      0.9409,
+      0.9526,
+      0.9626,
+      0.9758,
+      0.9843,
+      0.9951,
+      1.01,
+      1.0204,
+      1.0316
+    ],
+    "bridge": [
+      1.3149,
+      1.2036,
+      1.1495,
+      1.0913,
+      1.0658,
+      1.0456,
+      1.0341,
+      1.0294,
+      1.0257,
+      1.029,
+      1.0336,
+      1.0405
+    ],
+    "county": [
+      1.4512,
+      1.3389,
+      1.2786,
+      1.2111,
+      1.1748,
+      1.1462,
+      1.1211,
+      1.1097,
+      1.098,
+      1.091,
+      1.0894,
+      1.0902
+    ],
+    "test_2020": [
+      0.9278,
+      0.9101,
+      0.9077,
+      0.9275,
+      0.9412,
+      0.9572,
+      0.9737,
+      0.9832,
+      0.9974,
+      1.0122,
+      1.0216,
+      1.0313
+    ],
+    "bias_2020": [
+      0.1591,
+      0.1693,
+      0.1754,
+      0.1729,
+      0.1678,
+      0.1625,
+      0.1595,
+      0.1572,
+      0.1554,
+      0.1531,
+      0.1521,
+      0.1524
+    ],
+    "test_2022": [
+      1.0654,
+      1.0088,
+      0.9857,
+      0.9716,
+      0.9701,
+      0.9717,
+      0.9753,
+      0.9786,
+      0.9836,
+      0.9901,
+      0.9945,
+      1.0005
+    ],
+    "bias_2022": [
+      0.1795,
+      0.1721,
+      0.1632,
+      0.1442,
+      0.1342,
+      0.1228,
+      0.1135,
+      0.1092,
+      0.1035,
+      0.0984,
+      0.0943,
+      0.0928
+    ],
+    "test_2024": [
+      1.1992,
+      1.1213,
+      1.0802,
+      1.0458,
+      1.0307,
+      1.0225,
+      1.0152,
+      1.0116,
+      1.0083,
+      1.0087,
+      1.0103,
+      1.0143
+    ],
+    "bias_2024": [
+      0.2024,
+      0.1905,
+      0.1794,
+      0.1579,
+      0.1469,
+      0.1375,
+      0.1303,
+      0.127,
+      0.1191,
+      0.1126,
+      0.1102,
+      0.1076
+    ],
+    "test_2024_new_counties": [
+      1.4712,
+      1.3514,
+      1.2753,
+      1.2012,
+      1.1637,
+      1.1315,
+      1.1027,
+      1.0881,
+      1.073,
+      1.062,
+      1.0584,
+      1.0572
+    ],
+    "own_nn_pct_2020": 70.0,
+    "own_nn_pct_2022": 56.0,
+    "own_nn_pct_2024": 42.0,
+    "best_k": {
+      "random": 2,
+      "bridge": 30,
+      "county": 70
+    },
+    "test_2024_at_chosen_k": {
+      "random": 1.12,
+      "bridge": 1.01,
+      "county": 1.01
+    },
+    "test_2024_new_counties_at_county_k": 1.06
+  },
+  "baseline": {
+    "mean_county_cv": 1.44
+  },
+  "floor": {
+    "pairs": 872,
+    "same_rating_pct": 77.0,
+    "within_one_pct": 97.0,
+    "rms_difference": 0.58,
+    "floor": 0.41,
+    "pairs_same_month": 772,
+    "same_month_pct": 89.0,
+    "pairs_other_months": 100,
+    "floor_other_months": 0.66
+  },
+  "overlap": {
+    "own_bridge_in_train_pct": 88.0,
+    "twin_in_train_pct": 99.0
+  },
+  "verify_listing": {
+    "records": 55155,
+    "k1": {
+      "match": 55043,
+      "differ": 112,
+      "ties": 2092,
+      "max_abs_diff": 4.0
+    },
+    "k50": {
+      "match": 55107,
+      "differ": 48,
+      "ties": 865,
+      "max_abs_diff": 0.06
+    }
+  },
+  "bias_variance": {
+    "held_out_records": 11052,
+    "draws": 20,
+    "k_max": 1000,
+    "held_out_counties": 18,
+    "variance_k1": 0.67,
+    "variance_k10": 0.12,
+    "variance_k100": 0.01,
+    "variance_k1000": 0.0,
+    "bias2_noise_k1": 1.41,
+    "bias2_noise_k100": 1.12,
+    "bias2_noise_min": 1.11,
+    "bias2_noise_min_k": 50,
+    "bias2_noise_k1000": 1.24,
+    "mse_k1": 2.08,
+    "mse_best": 1.13,
+    "mse_k1000": 1.24,
+    "mse_best_k": 100,
+    "train_mse_k1": 0.001,
+    "variance_ratio_k1_k10": 5.6
+  },
+  "folds_map": {
+    "random_held_out_counties": 102,
+    "county_held_out_counties": 18
+  },
+  "drift": {
+    "age_bins": [
+      "0–9",
+      "10–19",
+      "20–29",
+      "30–39",
+      "40–49",
+      "50–59",
+      "60–79",
+      "80+"
+    ],
+    "mean_by_age_2014": [
+      7.96,
+      7.48,
+      7.0,
+      6.37,
+      5.8,
+      5.66,
+      5.52,
+      4.97
+    ],
+    "mean_by_age_2024": [
+      7.58,
+      7.01,
+      6.74,
+      6.35,
+      5.8,
+      5.44,
+      5.34,
+      5.09
+    ],
+    "rmse_k1_2020": 0.93,
+    "rmse_k50_2020": 1.01,
+    "bias_k1_2020": 0.16,
+    "bias_k50_2020": 0.15,
+    "rmse_k1_2022": 1.07,
+    "rmse_k50_2022": 0.99,
+    "bias_k1_2022": 0.18,
+    "bias_k50_2022": 0.1,
+    "rmse_k1_2024": 1.2,
+    "rmse_k50_2024": 1.01,
+    "bias_k1_2024": 0.2,
+    "bias_k50_2024": 0.11
+  },
+  "leakage": {
+    "records": 55045,
+    "dropped": 110,
+    "inventory only": {
+      "county_k50": 1.1,
+      "county_k1": 1.46,
+      "random_k1": 0.93,
+      "random_k50": 1.01
+    },
+    "+ inspection interval": {
+      "county_k50": 0.94,
+      "county_k1": 1.23,
+      "random_k1": 0.77,
+      "random_k50": 0.88
+    },
+    "+ structural evaluation": {
+      "county_k50": 0.61,
+      "county_k1": 0.74,
+      "random_k1": 0.49,
+      "random_k50": 0.57
+    },
+    "+ both": {
+      "county_k50": 0.61,
+      "county_k1": 0.73,
+      "random_k1": 0.47,
+      "random_k50": 0.57
+    },
+    "mean_rating_by_interval": {
+      "12": 3.8,
+      "24": 5.7,
+      "48": 7.6
+    },
+    "structural_eval_le_min_sup_sub_pct": 100.0
+  },
+  "screening": {
+    "flag_share_pct": 10,
+    "poor_test_bridges": 2307,
+    "poor_train_pct": 10.5,
+    "promised_pct": 60.0,
+    "delivered_pct": 43.0,
+    "delivered_k50_pct": 37.0
+  },
+  "county_errors": {
+    "counties_300_plus": 79,
+    "best": {
+      "county": "Franklin",
+      "rmse": 0.76
+    },
+    "worst": {
+      "county": "White",
+      "rmse": 1.39
+    },
+    "cook": 1.06,
+    "rmse_sd": 0.13,
+    "null": {
+      "permutations": 500,
+      "sd_median": 0.06,
+      "sd_p95": 0.07,
+      "min_median": 0.95,
+      "min_interval": [
+        0.89,
+        0.99
+      ],
+      "max_median": 1.25,
+      "max_interval": [
+        1.2,
+        1.33
+      ],
+      "draws_min_at_or_below_best_pct": 0.0,
+      "draws_max_at_or_above_worst_pct": 0.0,
+      "sd_ratio": 2.1
+    }
+  },
+  "attempt": {
+    "table": [
+      {
+        "nbi_year": 2018,
+        "structure": "016112100000000",
+        "county": "Cook",
+        "facility": "IL  53 SB",
+        "crosses": "KIRCHOFF RD",
+        "built": 1963,
+        "rebuilt": null,
+        "design": "steel beams",
+        "adt": 157100,
+        "length_m": 60.0,
+        "km_from_q": 0.0,
+        "rating": 4,
+        "deck": 4,
+        "superstructure": 4,
+        "substructure": 7,
+        "letter": "A"
+      },
+      {
+        "nbi_year": 2016,
+        "structure": "016037600000000",
+        "county": "Cook",
+        "facility": "IL  53 NB",
+        "crosses": "KIRCHOFF RD",
+        "built": 1963,
+        "rebuilt": null,
+        "design": "steel beams",
+        "adt": 147600,
+        "length_m": 60.0,
+        "km_from_q": 0.0,
+        "rating": 4,
+        "deck": 4,
+        "superstructure": 5,
+        "substructure": 7,
+        "letter": "B"
+      },
+      {
+        "nbi_year": 2018,
+        "structure": "022009500000000",
+        "county": "DuPage",
+        "facility": "I-290 WB",
+        "crosses": "ADDISON RD",
+        "built": 1970,
+        "rebuilt": 1985,
+        "design": "steel beams",
+        "adt": 75750,
+        "length_m": 62.0,
+        "km_from_q": 15.9,
+        "rating": 6,
+        "deck": 7,
+        "superstructure": 6,
+        "substructure": 6,
+        "letter": "C"
+      },
+      {
+        "nbi_year": 2018,
+        "structure": "022010400000000",
+        "county": "DuPage",
+        "facility": "I-290 EB",
+        "crosses": "ADDISON RD",
+        "built": 1971,
+        "rebuilt": 1985,
+        "design": "steel beams",
+        "adt": 75750,
+        "length_m": 62.0,
+        "km_from_q": 15.9,
+        "rating": 6,
+        "deck": 7,
+        "superstructure": 6,
+        "substructure": 6,
+        "letter": "D"
+      }
+    ],
+    "trace": {
+      "q": {
+        "nbi_year": 2018,
+        "structure": "016037600000000",
+        "county": "Cook",
+        "facility": "IL  53 NB",
+        "crosses": "KIRCHOFF RD",
+        "built": 1963,
+        "rebuilt": null,
+        "design": "steel beams",
+        "adt": 157100,
+        "length_m": 60.0,
+        "km_from_q": 0.0,
+        "rating": 4,
+        "deck": 4,
+        "superstructure": 4,
+        "substructure": 7
+      },
+      "q_row": 40248,
+      "q_history": {
+        "2014": 6,
+        "2016": 4,
+        "2018": 4
+      },
+      "q_inputs": {
+        "age": 54,
+        "years_since_work": 54,
+        "log_adt": 12.0,
+        "pct_truck": 4
+      },
+      "random_k1": 4,
+      "county_k1": 6,
+      "random_k1_m": 10,
+      "county_k1_km": 15.9,
+      "county_k1_county": "DuPage",
+      "random_k5": [
+        "twin",
+        "own",
+        "twin",
+        "twin",
+        "other"
+      ],
+      "random_k5_mean": 4.4,
+      "county_k5_mean": 5.0,
+      "random_k50": 5.54,
+      "county_k50": 5.2,
+      "random_k50_own_or_twin": 4,
+      "county_k50_nearest_km": 14.48,
+      "n_train": 55155,
+      "n_train_random": 44124,
+      "n_train_county": 44103,
+      "candidates": 3
+    },
+    "estimates": {
+      "with_all": 5.0,
+      "without_ab": 6.0
+    }
+  },
+  "tiny_loo": {
+    "rows": [
+      {
+        "record": "Q",
+        "rating": 4,
+        "rec_nearest": "A",
+        "rec_pred": 4,
+        "cty_nearest": "C",
+        "cty_pred": 6
+      },
+      {
+        "record": "A",
+        "rating": 4,
+        "rec_nearest": "Q",
+        "rec_pred": 4,
+        "cty_nearest": "C",
+        "cty_pred": 6
+      },
+      {
+        "record": "B",
+        "rating": 4,
+        "rec_nearest": "Q",
+        "rec_pred": 4,
+        "cty_nearest": "C",
+        "cty_pred": 6
+      },
+      {
+        "record": "C",
+        "rating": 6,
+        "rec_nearest": "D",
+        "rec_pred": 6,
+        "cty_nearest": "B",
+        "cty_pred": 4
+      },
+      {
+        "record": "D",
+        "rating": 6,
+        "rec_nearest": "C",
+        "rec_pred": 6,
+        "cty_nearest": "B",
+        "cty_pred": 4
+      }
+    ],
+    "rmse_by_record": 0.0,
+    "rmse_by_county": 2.0
+  },
+  "K": 50,
+  "cited": {
+    "moore_2001": {
+      "within_one_point_pct": 68,
+      "within_two_points_pct": 95,
+      "sigma_points": 1,
+      "inspectors": 49,
+      "states": 25,
+      "source": "Moore et al. (2001), Reliability of Visual Inspection for Highway Bridges, FHWA-RD-01-020"
+    },
+    "ploton_2020": {
+      "trees_million": 11.8,
+      "random_cv": "predicts more than half",
+      "spatial_cv": "quasi-null predictive power",
+      "source": "Ploton et al. (2020), Nature Communications 11, abstract"
+    },
+    "jakubik_2023": {
+      "pretraining_tb": 1,
+      "source": "Jakubik et al. (2023), Foundation Models for Generalist Geospatial Artificial Intelligence (Prithvi), arXiv:2310.18660, abstract"
+    },
+    "sainz_2023": {
+      "quote": "contamination causes an overestimation of the performance",
+      "source": "Sainz et al. (2023), Findings of EMNLP 2023"
+    }
+  },
+  "recall_l02": {
+    "water_distance_share_pct": 1.2,
+    "random_split_mpa": 5.7,
+    "designs_held_out_mpa": 6.9
+  },
+  "ratings": {
+    "bridges_2018": 22015,
+    "count_by_rating": {
+      "0": 29,
+      "1": 12,
+      "2": 145,
+      "3": 477,
+      "4": 1444,
+      "5": 3655,
+      "6": 5861,
+      "7": 5349,
+      "8": 4707,
+      "9": 336
+    },
+    "poor_pct_2018": 9.6
+  },
+  "resample": {
+    "variance_by_k": {
+      "1": 0.99,
+      "30": 0.04,
+      "1000": 0.0
+    },
+    "bias2_by_k": {
+      "1": 0.22,
+      "30": 0.01,
+      "1000": 1.09
+    },
+    "fit_range_by_k": {
+      "1": [
+        0.0,
+        9.0
+      ],
+      "30": [
+        4.13,
+        8.43
+      ],
+      "1000": [
+        6.27,
+        6.38
+      ]
+    },
+    "truth_age_0": 8.39,
+    "truth_age_max": 4.77,
+    "age_max": 110,
+    "samples": 6,
+    "bridges_per_sample": 1000
+  }
+}

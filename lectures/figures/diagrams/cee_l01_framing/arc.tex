@@ -1,0 +1,29 @@
+% CEE Lecture 1: every lecture runs the same eight steps (lesson arc, version 2), in two rows,
+% with the evidence behind four of them as notes.
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\begin{document}
+\begin{tikzpicture}[
+    stepbox/.style={op, text width=3.3cm, minimum height=1.25cm, font=\fontsize{13}{16}\selectfont},
+    num/.style={circle, fill=navy, text=white, font=\fontsize{12}{12}\selectfont\bfseries,
+      inner sep=1.5pt, minimum size=0.6cm},
+    ev/.style={note, font=\fontsize{11.5}{14}\selectfont, text=muted, text width=3.6cm,
+      align=center},
+  ]
+  \foreach \i/\t/\x/\y in {0/Warm-up: recall/0/0, 1/Question: you try first/4.6/0,
+      2/One picture/9.2/0, 3/Derive from the assumption/13.8/0,
+      4/Build and verify/13.8/-4.0, 5/Break it/9.2/-4.0, 6/Decide: vote twice/4.6/-4.0,
+      7/Exit question/0/-4.0} {
+    \node[stepbox] (s\i) at (\x,\y) {\t};
+    \node[num] at (s\i.north west) {\i};
+  }
+  \foreach \a/\b in {0/1, 1/2, 2/3, 3/4, 4/5, 5/6, 6/7} \draw[flow] (s\a) -- (s\b);
+  \node[ev, below=0.15cm of s0] {recall beats rereading};
+  \node[ev, below=0.15cm of s1] {try first: d = 0.36,\\53 studies};
+  \node[ev, above=0.15cm of s5] {predict before\\every reveal};
+  \node[ev, above=0.15cm of s6] {peer discussion\\between votes};
+  \node[note, anchor=west, font=\fontsize{12}{15}\selectfont, text width=3.6cm] at (16.0,-2.0)
+    {\key{1.5×} as likely to fail with lecture only;\\[3pt] active classes learn more but
+    \emph{feel} they learn less};
+\end{tikzpicture}
+\end{document}

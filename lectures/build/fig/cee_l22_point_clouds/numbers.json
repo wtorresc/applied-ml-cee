@@ -1,0 +1,2083 @@
+{
+  "counts": {
+    "total": 584701977,
+    "paper_ceiling": 288024661,
+    "file_ceiling": 228024661,
+    "paper_sum": 644701977
+  },
+  "settings": {
+    "classes": 6,
+    "voxel": 0.03,
+    "block": 1.5,
+    "points": 4096,
+    "epochs": 100,
+    "lr": 0.001,
+    "weight_decay": 0.01,
+    "k_eig": 24,
+    "sparse": 0.1,
+    "caps": [
+      1.0,
+      0.5,
+      0.2,
+      0.1
+    ],
+    "cover_d": 0.05,
+    "seen": 0.1,
+    "assign_d": 0.3,
+    "min_points": 100,
+    "tree_rounds": 300,
+    "off": 0.05,
+    "dev_max": 0.1,
+    "converged": 0.01
+  },
+  "rooms_check": {
+    "x": [
+      [
+        0.4,
+        7.1,
+        7.95,
+        10.3,
+        11.1,
+        17.9
+      ],
+      [
+        0.45,
+        7.05,
+        8.05,
+        10.35,
+        11.05,
+        17.85
+      ]
+    ],
+    "y_right": [
+      [
+        -3.95,
+        3.15,
+        11.1,
+        19.95
+      ],
+      [
+        -3.95,
+        3.15,
+        11.15,
+        19.95
+      ]
+    ]
+  },
+  "data": {
+    "sample": 11688653,
+    "voxel_points": 1577190,
+    "rooms": {
+      "108": 570387,
+      "109": 281749,
+      "110": 259354,
+      "111": 223204,
+      "175": 242496
+    },
+    "share": {
+      "ceiling": 0.3168140092948397,
+      "floor": 0.17013587995959562,
+      "wall": 0.19273316694139914,
+      "door": 0.02822351287526942,
+      "window": 0.03597226665363628,
+      "clutter": 0.2561211642752598
+    },
+    "ignored": 0.16956168882633038
+  },
+  "labelling": {
+    "methods": {
+      "height lookup": {
+        "iou": {
+          "ceiling": 0.8144330124915956,
+          "floor": 0.9411006872431287,
+          "wall": 0.3042524120165843,
+          "door": 0.0,
+          "window": 0.0,
+          "clutter": 0.5342823697915082
+        },
+        "miou": 0.4323447469238028,
+        "accuracy": 0.7412493443450283,
+        "per_room": {
+          "108": 0.4415326567594458,
+          "109": 0.47417074363487927,
+          "110": 0.45853654657408294,
+          "111": 0.46744635693279907,
+          "175": 0.2688463617417466
+        }
+      },
+      "covariance + trees": {
+        "iou": {
+          "ceiling": 0.9176636856494138,
+          "floor": 0.9618111434909312,
+          "wall": 0.5830060264443978,
+          "door": 0.3755349993096783,
+          "window": 0.1363509894619692,
+          "clutter": 0.673906922290338
+        },
+        "miou": 0.6080456277744547,
+        "accuracy": 0.8485416019282936,
+        "per_room": {
+          "108": 0.582454661381287,
+          "109": 0.6872523419147337,
+          "110": 0.7140233395778249,
+          "111": 0.731206794217058,
+          "175": 0.476906847266447
+        },
+        "rounds": {
+          "108": 45,
+          "109": 68,
+          "110": 58,
+          "111": 63,
+          "175": 51
+        }
+      },
+      "PointNet, no global feature": {
+        "iou": {
+          "ceiling": 0.8865930701732793,
+          "floor": 0.9578222734738093,
+          "wall": 0.4388984123154271,
+          "door": 0.11761221144922099,
+          "window": 0.11677079717690617,
+          "clutter": 0.5879139311990085
+        },
+        "miou": 0.5176017826312752,
+        "accuracy": 0.7927236995508334,
+        "per_room": {
+          "108": 0.504440773276592,
+          "109": 0.5614980067259117,
+          "110": 0.5986523830169136,
+          "111": 0.6078870979727756,
+          "175": 0.37634699222587237
+        },
+        "training": {
+          "108": {
+            "seconds": 58.88403132800886,
+            "final_loss": 0.2952497214078903
+          },
+          "109": {
+            "seconds": 75.56501813999785,
+            "final_loss": 0.3370584150776267
+          },
+          "110": {
+            "seconds": 102.35638133499015,
+            "final_loss": 0.34722710868646933
+          },
+          "111": {
+            "seconds": 91.81785712200508,
+            "final_loss": 0.3627443929964846
+          },
+          "175": {
+            "seconds": 145.75941433101252,
+            "final_loss": 0.3118028356915429
+          }
+        }
+      },
+      "PointNet": {
+        "iou": {
+          "ceiling": 0.883460951196064,
+          "floor": 0.9464944729084026,
+          "wall": 0.486783684924889,
+          "door": 0.2905488831518689,
+          "window": 0.1330942704597976,
+          "clutter": 0.635663709530591
+        },
+        "miou": 0.5626743286952688,
+        "accuracy": 0.8116348122059096,
+        "per_room": {
+          "108": 0.5382889212272337,
+          "109": 0.6272666048439451,
+          "110": 0.697413643288059,
+          "111": 0.7633684715523982,
+          "175": 0.40070607461852276
+        },
+        "training": {
+          "108": {
+            "seconds": 112.19406105499365,
+            "final_loss": 0.09655032667020956
+          },
+          "109": {
+            "seconds": 149.13720759699936,
+            "final_loss": 0.0901287354528904
+          },
+          "110": {
+            "seconds": 156.7513066149986,
+            "final_loss": 0.09110225338575452
+          },
+          "111": {
+            "seconds": 162.86558490600146,
+            "final_loss": 0.0991144295443188
+          },
+          "175": {
+            "seconds": 156.82225639699027,
+            "final_loss": 0.08590540440664404
+          }
+        }
+      },
+      "PointNet + covariance": {
+        "iou": {
+          "ceiling": 0.9189533330560216,
+          "floor": 0.9641336692327274,
+          "wall": 0.5905193475579962,
+          "door": 0.46794954662135957,
+          "window": 0.12847281550080306,
+          "clutter": 0.6892238923247845
+        },
+        "miou": 0.6265421007156154,
+        "accuracy": 0.8536791883086888,
+        "per_room": {
+          "108": 0.5760662687595149,
+          "109": 0.7084815509811239,
+          "110": 0.7748481168471298,
+          "111": 0.8168775769011636,
+          "175": 0.5060419663302244
+        },
+        "training": {
+          "108": {
+            "seconds": 352.2869590969931,
+            "final_loss": 0.06279280136028925
+          },
+          "109": {
+            "seconds": 453.6534328340058,
+            "final_loss": 0.0583134023938328
+          },
+          "110": {
+            "seconds": 530.6255928330065,
+            "final_loss": 0.05822169529490693
+          },
+          "111": {
+            "seconds": 688.0636360120116,
+            "final_loss": 0.06803810909729112
+          },
+          "175": {
+            "seconds": 479.59491938700376,
+            "final_loss": 0.05550901653865973
+          }
+        }
+      }
+    },
+    "sparse": {
+      "covariance + trees": {
+        "iou": {
+          "ceiling": 0.8114582598678798,
+          "floor": 0.8642347037251495,
+          "wall": 0.5317143490796186,
+          "door": 0.00026609898882384245,
+          "window": 0.09185064050149905,
+          "clutter": 0.6251830841838514
+        },
+        "miou": 0.4874511893911369,
+        "accuracy": 0.7904024035931888
+      },
+      "PointNet": {
+        "iou": {
+          "ceiling": 0.8840899372060048,
+          "floor": 0.9440816152302899,
+          "wall": 0.49594841360419994,
+          "door": 0.27564102564102566,
+          "window": 0.1260053619302949,
+          "clutter": 0.6399230449251248
+        },
+        "miou": 0.56094823308949,
+        "accuracy": 0.811288957349947
+      },
+      "PointNet + covariance": {
+        "iou": {
+          "ceiling": 0.860559702354817,
+          "floor": 0.9367806364251862,
+          "wall": 0.5120881287428839,
+          "door": 0.09153560699770277,
+          "window": 0.08526148969889065,
+          "clutter": 0.6197223828802776
+        },
+        "miou": 0.517657991183293,
+        "accuracy": 0.7990498486315838
+      },
+      "keep": 0.1
+    },
+    "density": {
+      "points_read": 4096,
+      "test_column_median": 8999.0,
+      "sparse_column_median": 895.0,
+      "train_column_median": 7386.0,
+      "set_share_full": 0.45516168463162576,
+      "set_points_drop": 4.576536312849162
+    },
+    "random_split": {
+      "iou": {
+        "ceiling": 0.9808208584212561,
+        "floor": 0.9720390874771959,
+        "wall": 0.7020786343648077,
+        "door": 0.4601040213116834,
+        "window": 0.35594170403587444,
+        "clutter": 0.7637946365891328
+      },
+      "miou": 0.7057964903666584,
+      "accuracy": 0.9103414116398373,
+      "columns": 206,
+      "test_columns": 41,
+      "rounds": 63,
+      "rooms_held_out_same_points": {
+        "iou": {
+          "ceiling": 0.9314513085392022,
+          "floor": 0.9647301047354758,
+          "wall": 0.6214232494729,
+          "door": 0.39628074385122974,
+          "window": 0.17686494392979035,
+          "clutter": 0.6964709799134391
+        },
+        "miou": 0.6312035550736729,
+        "accuracy": 0.8737944454272067
+      }
+    },
+    "parameters": {
+      "PointNet, no global feature": 347718,
+      "PointNet": 872006,
+      "PointNet + covariance": 872390
+    },
+    "room_110": {
+      "confusion": [
+        [
+          60448,
+          0,
+          2791,
+          0,
+          430,
+          238
+        ],
+        [
+          0,
+          49500,
+          42,
+          2,
+          0,
+          869
+        ],
+        [
+          1505,
+          131,
+          33691,
+          302,
+          234,
+          4475
+        ],
+        [
+          140,
+          120,
+          535,
+          2054,
+          0,
+          2835
+        ],
+        [
+          262,
+          0,
+          625,
+          0,
+          2772,
+          20
+        ],
+        [
+          0,
+          854,
+          10452,
+          319,
+          127,
+          58795
+        ]
+      ],
+      "recall": {
+        "ceiling": 0.9458744738448057,
+        "floor": 0.9818895919703251,
+        "wall": 0.8352174128613218,
+        "door": 0.3613652357494722,
+        "window": 0.7534656156564283,
+        "clutter": 0.8334160205253236
+      },
+      "mistaken_for": {
+        "ceiling": [
+          "wall",
+          0.043672837091398437
+        ],
+        "floor": [
+          "clutter",
+          0.01723761728125682
+        ],
+        "wall": [
+          "clutter",
+          0.11093757747037533
+        ],
+        "door": [
+          "clutter",
+          0.4987684729064039
+        ],
+        "window": [
+          "wall",
+          0.16988312041315576
+        ],
+        "clutter": [
+          "wall",
+          0.14815654811685827
+        ]
+      },
+      "slice_wrong": 0.17787700995214162
+    }
+  },
+  "picture": {
+    "checks": {
+      "permutation_max_diff": 7.993605777301127e-15,
+      "critical_points": 576,
+      "points": 4096,
+      "critical_global_max_diff": 2.220446049250313e-16
+    },
+    "column": {
+      "centre": [
+        12.950499534606934,
+        3.9005000591278076
+      ],
+      "points": 14816,
+      "share": {
+        "ceiling": 0.17995385798513203,
+        "floor": 0.095872853114586,
+        "wall": 0.14175852345552423,
+        "door": 0.0,
+        "window": 0.033068443988720844,
+        "clutter": 0.5493463214560369
+      },
+      "critical": 576,
+      "accuracy": 0.8018456805947193
+    }
+  },
+  "registration": {
+    "elements": 135,
+    "bim_points": 1297494,
+    "reference": {
+      "points": 379916,
+      "coarse": [
+        -9.935757772811243,
+        -0.2855025437394936,
+        0.6304999971389773
+      ],
+      "shift": [
+        -9.848693884713795,
+        -0.3890843704823051,
+        1.253512438788063
+      ],
+      "turn_deg": [
+        -0.01161146290040094,
+        -0.010564327899567821,
+        0.7751460816695239
+      ],
+      "history": [
+        {
+          "cap": 1.0,
+          "iterations": 72,
+          "paired": 0.9999894713568263,
+          "median": 0.026214407746912728
+        },
+        {
+          "cap": 0.5,
+          "iterations": 31,
+          "paired": 0.9995999115593973,
+          "median": 0.026220143062509325
+        },
+        {
+          "cap": 0.2,
+          "iterations": 61,
+          "paired": 0.9885685256740964,
+          "median": 0.026130366113998296
+        },
+        {
+          "cap": 0.1,
+          "iterations": 62,
+          "paired": 0.9695327388159488,
+          "median": 0.02554147613825338
+        }
+      ]
+    },
+    "checks": {
+      "kabsch_vs_scipy": 4.440892098500626e-16,
+      "kabsch_vs_truth": 3.885780586188048e-15,
+      "icp_known_rms": 4.465714128923699e-15,
+      "icp_known_iterations": 39,
+      "icp_points": 92568
+    },
+    "PointNet's structure": {
+      "points": 444717,
+      "error": 0.0022830714983727426
+    },
+    "all points": {
+      "points": 653065,
+      "error": 0.005662080660366824
+    },
+    "turns": {
+      "0": 0.0012052977423788636,
+      "10": 0.0012052977423774429,
+      "20": 0.0012052977423860887,
+      "30": 1.1560198214983886,
+      "45": 6.4483098497967735,
+      "90": 12.652343232502647,
+      "180": 17.243289458825675
+    },
+    "basin_points": 85467,
+    "no_coarse_start": 7.046499715945134,
+    "no cap, structure": 0.010530464742037856,
+    "no cap, all points": 0.23908555617728847,
+    "cap, 10 cm, all points": 0.009101514424953642,
+    "cap, 10 cm, PointNet's structure": 0.0033588755471946085,
+    "walls": {
+      "n": 61,
+      "min_points": 100,
+      "within": 31,
+      "off": 7,
+      "conflicting": 2,
+      "unlabelled": 14,
+      "hidden": 7,
+      "seen": 54,
+      "judged": 40,
+      "measure": 9,
+      "measure_list": [
+        {
+          "verdict": "conflicting",
+          "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:942215",
+          "deviation": 0.28067992083500204,
+          "points": 3270,
+          "unassigned_deviation": 0.023405880076849413,
+          "unassigned_points": 21407,
+          "coverage": 0.20660364433484038,
+          "area": 36.495000000000005
+        },
+        {
+          "verdict": "off",
+          "name": "Basic Wall:(10cm) Drywall:981441",
+          "deviation": 0.196976284198531,
+          "points": 6246,
+          "unassigned_deviation": 0.19610904254947215,
+          "unassigned_points": 1415,
+          "coverage": 0.0,
+          "area": 4.120000000000001
+        },
+        {
+          "verdict": "off",
+          "name": "Basic Wall:(10cm) Drywall:976607",
+          "deviation": 0.1689967314276823,
+          "points": 25572,
+          "unassigned_deviation": 0.08961573583393584,
+          "unassigned_points": 3261,
+          "coverage": 0.018008474576271187,
+          "area": 4.720000000000001
+        },
+        {
+          "verdict": "off",
+          "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:941802",
+          "deviation": 0.1490833580417444,
+          "points": 14758,
+          "unassigned_deviation": 0.14881748552525317,
+          "unassigned_points": 1104,
+          "coverage": 0.0,
+          "area": 36.40500000000001
+        },
+        {
+          "verdict": "off",
+          "name": "Basic Wall:(10cm) Drywall:976859",
+          "deviation": 0.09382893361778977,
+          "points": 17059,
+          "unassigned_deviation": 0.17173679826162047,
+          "unassigned_points": 1964,
+          "coverage": 0.10861650485436893,
+          "area": 4.120000000000001
+        },
+        {
+          "verdict": "off",
+          "name": "Basic Wall:(35cm) Tijolo cerâmico acabamento pintura branca:1534316",
+          "deviation": 0.09321686308444598,
+          "points": 1557,
+          "unassigned_deviation": 0.15841953387346114,
+          "unassigned_points": 8,
+          "coverage": 0.03254626675175495,
+          "area": 3.917500000000001
+        },
+        {
+          "verdict": "off",
+          "name": "Basic Wall:(10cm) Drywall:976743",
+          "deviation": 0.05837825821240421,
+          "points": 60419,
+          "unassigned_deviation": 0.15223008358717305,
+          "unassigned_points": 1916,
+          "coverage": 0.09931972789115646,
+          "area": 5.512500000000001
+        },
+        {
+          "verdict": "conflicting",
+          "name": "Basic Wall:(10cm) Drywall:981948",
+          "deviation": 0.05832671516727898,
+          "points": 1322,
+          "unassigned_deviation": 0.016537903415039412,
+          "unassigned_points": 10682,
+          "coverage": 0.3755296610169492,
+          "area": 4.720000000000001
+        },
+        {
+          "verdict": "off",
+          "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:921993",
+          "deviation": 0.05045766693933532,
+          "points": 10031,
+          "unassigned_deviation": 0.07708372761136206,
+          "unassigned_points": 48,
+          "coverage": 0.0748026227753245,
+          "area": 18.682500000000005
+        }
+      ],
+      "fewest_points_measure": 1322,
+      "judged_median_deviation": 0.03967911938589326,
+      "within_unassigned_beyond": 20,
+      "by_min_points": {
+        "25": {
+          "within": 31,
+          "off": 7,
+          "conflicting": 2,
+          "unlabelled": 14,
+          "hidden": 7
+        },
+        "50": {
+          "within": 31,
+          "off": 7,
+          "conflicting": 2,
+          "unlabelled": 14,
+          "hidden": 7
+        },
+        "100": {
+          "within": 31,
+          "off": 7,
+          "conflicting": 2,
+          "unlabelled": 14,
+          "hidden": 7
+        },
+        "200": {
+          "within": 31,
+          "off": 7,
+          "conflicting": 2,
+          "unlabelled": 14,
+          "hidden": 7
+        },
+        "400": {
+          "within": 30,
+          "off": 7,
+          "conflicting": 2,
+          "unlabelled": 15,
+          "hidden": 7
+        },
+        "1000": {
+          "within": 26,
+          "off": 7,
+          "conflicting": 2,
+          "unlabelled": 14,
+          "hidden": 12
+        }
+      },
+      "low_cover": 22,
+      "low_cover_judged": 12,
+      "low_cover_measure": 6,
+      "covered_unlabelled": 10,
+      "covered_hidden": 1,
+      "column_points": 0,
+      "column_unassigned_points": 81
+    },
+    "coverage": {
+      "wall": {
+        "n": 61,
+        "median": 0.23204540493342066,
+        "below_10pct": 22
+      },
+      "slab": {
+        "n": 5,
+        "median": 0.015011209669558436,
+        "below_10pct": 4
+      },
+      "ceiling": {
+        "n": 7,
+        "median": 0.8238416892815403,
+        "below_10pct": 1
+      },
+      "column": {
+        "n": 10,
+        "median": 0.00041597337770382697,
+        "below_10pct": 10
+      },
+      "door": {
+        "n": 6,
+        "median": 0.40918084685397704,
+        "below_10pct": 0
+      },
+      "window": {
+        "n": 44,
+        "median": 0.4393787575150301,
+        "below_10pct": 8
+      },
+      "stair": {
+        "n": 2,
+        "median": 0.15952604096933995,
+        "below_10pct": 1
+      }
+    },
+    "elements_table": [
+      {
+        "type": "wall",
+        "name": "Basic Wall:(35cm) Tijolo cerâmico acabamento pintura branca:914875",
+        "coverage": 0.31085162811256817,
+        "area": 135.74000000000004,
+        "points": 196317,
+        "deviation": 0.00781983991300093,
+        "unassigned_points": 12507,
+        "unassigned_deviation": 0.15976991156083112
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(20cm) Tijolo cerâmico acabamento pintura branca:915037",
+        "coverage": 0.22392281548075868,
+        "area": 114.01250000000002,
+        "points": 118056,
+        "deviation": 0.023230020098381047,
+        "unassigned_points": 13926,
+        "unassigned_deviation": 0.05404860603334857
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(35cm) Tijolo cerâmico acabamento pintura branca:919433",
+        "coverage": 0.2763644443033756,
+        "area": 157.52750000000003,
+        "points": 247749,
+        "deviation": 0.015638271820086445,
+        "unassigned_points": 21530,
+        "unassigned_deviation": 0.07256874191125376
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:919855",
+        "coverage": 0.3666391412056152,
+        "area": 42.385000000000005,
+        "points": 87298,
+        "deviation": 0.01036506277638952,
+        "unassigned_points": 8377,
+        "unassigned_deviation": 0.0777439072637614
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:921367",
+        "coverage": 0.30319650861052133,
+        "area": 42.39000000000001,
+        "points": 58394,
+        "deviation": 0.01159322862730169,
+        "unassigned_points": 3504,
+        "unassigned_deviation": 0.11784862621957506
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:921993",
+        "coverage": 0.0748026227753245,
+        "area": 18.682500000000005,
+        "points": 10031,
+        "deviation": 0.05045766693933532,
+        "unassigned_points": 48,
+        "unassigned_deviation": 0.07708372761136206
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:941802",
+        "coverage": 0.0,
+        "area": 36.40500000000001,
+        "points": 14758,
+        "deviation": 0.1490833580417444,
+        "unassigned_points": 1104,
+        "unassigned_deviation": 0.14881748552525317
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:941905",
+        "coverage": 0.0,
+        "area": 3.357500000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 5,
+        "unassigned_deviation": 0.1598465165008986
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:942215",
+        "coverage": 0.20660364433484038,
+        "area": 36.495000000000005,
+        "points": 3270,
+        "deviation": 0.28067992083500204,
+        "unassigned_points": 21407,
+        "unassigned_deviation": 0.023405880076849413
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:942423",
+        "coverage": 0.22491349480968859,
+        "area": 2.1675000000000004,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 8163,
+        "unassigned_deviation": 0.16390151962959237
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:942595",
+        "coverage": 0.11286890554167824,
+        "area": 27.022500000000004,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 1201,
+        "unassigned_deviation": 0.03446174039672478
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(15cm) Tijolo cerâmico acabamento pintura branca:942675",
+        "coverage": 0.050766609880749575,
+        "area": 7.337500000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 739,
+        "unassigned_deviation": 0.0365557411261138
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:961571",
+        "coverage": 0.6924368619022031,
+        "area": 37.220000000000006,
+        "points": 136050,
+        "deviation": 0.004136810280082928,
+        "unassigned_points": 26558,
+        "unassigned_deviation": 0.1686886972336692
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:962256",
+        "coverage": 0.22148058252427186,
+        "area": 4.120000000000001,
+        "points": 15,
+        "deviation": 0.02559056375036519,
+        "unassigned_points": 4990,
+        "unassigned_deviation": 0.14362623400606764
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:962455",
+        "coverage": 0.006067961165048544,
+        "area": 4.120000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 4,
+        "unassigned_deviation": 0.010035811931409361
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:962532",
+        "coverage": 0.3013804272383743,
+        "area": 32.417500000000004,
+        "points": 98659,
+        "deviation": 0.04909155330172353,
+        "unassigned_points": 17414,
+        "unassigned_deviation": 0.11204336396173814
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:963112",
+        "coverage": 0.06408898305084745,
+        "area": 4.720000000000001,
+        "points": 9034,
+        "deviation": 0.04544134731510015,
+        "unassigned_points": 8559,
+        "unassigned_deviation": 0.1277705952802966
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:963340",
+        "coverage": 0.3790660225442834,
+        "area": 7.762500000000001,
+        "points": 22267,
+        "deviation": 0.04563032476539081,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:963457",
+        "coverage": 0.040413533834586464,
+        "area": 5.320000000000001,
+        "points": 892,
+        "deviation": 0.048268762923125416,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:963729",
+        "coverage": 0.33102338819453037,
+        "area": 20.202500000000004,
+        "points": 30050,
+        "deviation": 0.03263539392463382,
+        "unassigned_points": 5480,
+        "unassigned_deviation": 0.03619058789054211
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:964066",
+        "coverage": 0.4475635593220339,
+        "area": 4.720000000000001,
+        "points": 27115,
+        "deviation": 0.030825427052658807,
+        "unassigned_points": 2866,
+        "unassigned_deviation": 0.09379241751688924
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:964467",
+        "coverage": 0.00424757281553398,
+        "area": 4.120000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 7758,
+        "unassigned_deviation": 0.11110189898141928
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:964660",
+        "coverage": 0.4496822033898305,
+        "area": 4.720000000000001,
+        "points": 11830,
+        "deviation": 0.021970932142132533,
+        "unassigned_points": 1740,
+        "unassigned_deviation": 0.10862008322528724
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:965536",
+        "coverage": 0.0,
+        "area": 5.320000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:965657",
+        "coverage": 0.0,
+        "area": 4.120000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(20cm) Tijolo cerâmico acabamento pintura branca:966022",
+        "coverage": 0.024345064831966128,
+        "area": 9.447500000000002,
+        "points": 1,
+        "deviation": 0.07980889554676274,
+        "unassigned_points": 2297,
+        "unassigned_deviation": 0.0828530547708177
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:968591",
+        "coverage": 0.058792372881355935,
+        "area": 4.720000000000001,
+        "points": 10109,
+        "deviation": 0.04418814796520577,
+        "unassigned_points": 13518,
+        "unassigned_deviation": 0.13082520203330184
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:969917",
+        "coverage": 0.3484623751606843,
+        "area": 25.282500000000006,
+        "points": 31112,
+        "deviation": 0.043819465365715564,
+        "unassigned_points": 181,
+        "unassigned_deviation": 0.07487547833042624
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:970116",
+        "coverage": 0.0,
+        "area": 4.120000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:970282",
+        "coverage": 0.0,
+        "area": 4.120000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:970639",
+        "coverage": 0.20963855421686747,
+        "area": 4.150000000000001,
+        "points": 631,
+        "deviation": 0.0321364966411639,
+        "unassigned_points": 276,
+        "unassigned_deviation": 0.12235645520364988
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:971319",
+        "coverage": 0.33509532577062423,
+        "area": 42.09250000000001,
+        "points": 113891,
+        "deviation": 0.04028055047094502,
+        "unassigned_points": 6114,
+        "unassigned_deviation": 0.05630518478264396
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:971683",
+        "coverage": 0.055388320288982544,
+        "area": 4.152500000000001,
+        "points": 2541,
+        "deviation": 0.0399278009530155,
+        "unassigned_points": 321,
+        "unassigned_deviation": 0.24706833367194647
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:973242",
+        "coverage": 0.7276329930145083,
+        "area": 37.220000000000006,
+        "points": 205866,
+        "deviation": 0.014134977731799786,
+        "unassigned_points": 25348,
+        "unassigned_deviation": 0.03299551074880248
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:976258",
+        "coverage": 0.2597701149425287,
+        "area": 4.3500000000000005,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 19303,
+        "unassigned_deviation": 0.08284034161883916
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:976316",
+        "coverage": 0.42829331602855286,
+        "area": 3.852500000000001,
+        "points": 281,
+        "deviation": 0.039430437818771015,
+        "unassigned_points": 11864,
+        "unassigned_deviation": 0.00375918480257582
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:976607",
+        "coverage": 0.018008474576271187,
+        "area": 4.720000000000001,
+        "points": 25572,
+        "deviation": 0.1689967314276823,
+        "unassigned_points": 3261,
+        "unassigned_deviation": 0.08961573583393584
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:976743",
+        "coverage": 0.09931972789115646,
+        "area": 5.512500000000001,
+        "points": 60419,
+        "deviation": 0.05837825821240421,
+        "unassigned_points": 1916,
+        "unassigned_deviation": 0.15223008358717305
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:976859",
+        "coverage": 0.10861650485436893,
+        "area": 4.120000000000001,
+        "points": 17059,
+        "deviation": 0.09382893361778977,
+        "unassigned_points": 1964,
+        "unassigned_deviation": 0.17173679826162047
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:977311",
+        "coverage": 0.420021186440678,
+        "area": 4.720000000000001,
+        "points": 6311,
+        "deviation": 0.0487753725086263,
+        "unassigned_points": 29201,
+        "unassigned_deviation": 0.011057182934374212
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:978670",
+        "coverage": 0.08792372881355932,
+        "area": 4.720000000000001,
+        "points": 9450,
+        "deviation": 0.04143929423457748,
+        "unassigned_points": 14776,
+        "unassigned_deviation": 0.18551882102328907
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:979093",
+        "coverage": 0.30783567601149336,
+        "area": 32.19250000000001,
+        "points": 83524,
+        "deviation": 0.03698372503844973,
+        "unassigned_points": 8184,
+        "unassigned_deviation": 0.1321087278036459
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:980786",
+        "coverage": 0.35267681590921857,
+        "area": 44.50250000000001,
+        "points": 185929,
+        "deviation": 0.037801852655448186,
+        "unassigned_points": 11308,
+        "unassigned_deviation": 0.07898397967824015
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:981172",
+        "coverage": 0.23964461519990396,
+        "area": 20.822500000000005,
+        "points": 24269,
+        "deviation": 0.03677322323813701,
+        "unassigned_points": 13354,
+        "unassigned_deviation": 0.03709671434576907
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:981242",
+        "coverage": 0.4362864077669903,
+        "area": 4.120000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 4942,
+        "unassigned_deviation": 0.022878473193523815
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:981441",
+        "coverage": 0.0,
+        "area": 4.120000000000001,
+        "points": 6246,
+        "deviation": 0.196976284198531,
+        "unassigned_points": 1415,
+        "unassigned_deviation": 0.19610904254947215
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:981664",
+        "coverage": 0.4318062137967351,
+        "area": 4.7475000000000005,
+        "points": 547,
+        "deviation": 0.03933968582829929,
+        "unassigned_points": 18786,
+        "unassigned_deviation": 0.007396845401739562
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:981948",
+        "coverage": 0.3755296610169492,
+        "area": 4.720000000000001,
+        "points": 1322,
+        "deviation": 0.05832671516727898,
+        "unassigned_points": 10682,
+        "unassigned_deviation": 0.016537903415039412
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:982078",
+        "coverage": 0.47759532424158085,
+        "area": 8.982500000000002,
+        "points": 27148,
+        "deviation": 0.03594771119261389,
+        "unassigned_points": 3512,
+        "unassigned_deviation": 0.04784031843135696
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:982142",
+        "coverage": 0.09223300970873786,
+        "area": 4.120000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 9387,
+        "unassigned_deviation": 0.11473780312891474
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:982351",
+        "coverage": 0.07838983050847458,
+        "area": 4.720000000000001,
+        "points": 10801,
+        "deviation": 0.03504662887628941,
+        "unassigned_points": 3862,
+        "unassigned_deviation": 0.11233037885102816
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:983725",
+        "coverage": 0.3289194915254237,
+        "area": 4.720000000000001,
+        "points": 1875,
+        "deviation": 0.04074159569814635,
+        "unassigned_points": 6714,
+        "unassigned_deviation": 0.02560849583366494
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:983854",
+        "coverage": 0.4577989859827021,
+        "area": 8.382500000000002,
+        "points": 75758,
+        "deviation": 0.03773866550237968,
+        "unassigned_points": 3744,
+        "unassigned_deviation": 0.03382581611035631
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(10cm) Drywall:1047423",
+        "coverage": 0.320578231292517,
+        "area": 2.9400000000000004,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 14964,
+        "unassigned_deviation": 0.03371460853000502
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(20cm) Tijolo cerâmico acabamento pastilha azul:1156417",
+        "coverage": 0.10182849936948297,
+        "area": 23.790000000000006,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 677,
+        "unassigned_deviation": 0.11702671667472177
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(20cm) Tijolo cerâmico acabamento pastilha azul:1156524",
+        "coverage": 0.28361916026020106,
+        "area": 21.137500000000003,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 6419,
+        "unassigned_deviation": 0.05650125056830257
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(20cm) Tijolo cerâmico acabamento pastilha azul:1156595",
+        "coverage": 0.23204540493342066,
+        "area": 22.905000000000005,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 3147,
+        "unassigned_deviation": 0.11484406719374908
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(40cm) Tijolo cerâmico acabamento pastilha:1157062",
+        "coverage": 0.25912128848471566,
+        "area": 22.817500000000006,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 2389,
+        "unassigned_deviation": 0.08539118535043755
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(45cm) Tijolo cerâmico acabamento pintura branca 2:1438546",
+        "coverage": 0.6290151782562654,
+        "area": 7.082500000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(45cm) Tijolo cerâmico acabamento pintura branca 2:1439236",
+        "coverage": 0.569366391184573,
+        "area": 22.687500000000004,
+        "points": 447,
+        "deviation": 0.011197724256262764,
+        "unassigned_points": 106,
+        "unassigned_deviation": 0.059099510155972014
+      },
+      {
+        "type": "wall",
+        "name": "Basic Wall:(35cm) Tijolo cerâmico acabamento pintura branca:1534316",
+        "coverage": 0.03254626675175495,
+        "area": 3.917500000000001,
+        "points": 1557,
+        "deviation": 0.09321686308444598,
+        "unassigned_points": 8,
+        "unassigned_deviation": 0.15841953387346114
+      },
+      {
+        "type": "slab",
+        "name": "Floor:(15cm) Piso + Porcelanato cinza claro 60 X 60:911079",
+        "coverage": 0.34112516796389725,
+        "area": 788.8600000000001,
+        "points": 18204,
+        "deviation": 0.024389432500917792,
+        "unassigned_points": 213048,
+        "unassigned_deviation": 0.013547585327343365
+      },
+      {
+        "type": "slab",
+        "name": "Cast-In-Place Stair:Stair:975096 Landing 1",
+        "coverage": 0.015011209669558436,
+        "area": 25.647500000000004,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 12,
+        "unassigned_deviation": 0.005493796644589209
+      },
+      {
+        "type": "slab",
+        "name": "Floor:(15cm) Piso + Pastilha azul:1155985",
+        "coverage": 0.0,
+        "area": 43.18000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "slab",
+        "name": "Floor:(12cm) Laje:1305914",
+        "coverage": 0.030034267284821607,
+        "area": 12.402500000000002,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 240,
+        "unassigned_deviation": 0.11675960823147878
+      },
+      {
+        "type": "slab",
+        "name": "Floor:(12cm) Laje:1307523",
+        "coverage": 0.0,
+        "area": 3.7775000000000007,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "ceiling",
+        "name": "Compound Ceiling:Forro de gesso:1426759",
+        "coverage": 0.8220048983214289,
+        "area": 292.95750000000004,
+        "points": 12034,
+        "deviation": 0.09056324577026188,
+        "unassigned_points": 10817,
+        "unassigned_deviation": 0.1341656638267396
+      },
+      {
+        "type": "ceiling",
+        "name": "Compound Ceiling:Forro de gesso:1428296",
+        "coverage": 0.8238416892815403,
+        "area": 126.20750000000002,
+        "points": 200,
+        "deviation": 0.0023526611669159496,
+        "unassigned_points": 7281,
+        "unassigned_deviation": 0.03233458305544846
+      },
+      {
+        "type": "ceiling",
+        "name": "Compound Ceiling:Forro de gesso:1428995",
+        "coverage": 0.8727563178096781,
+        "area": 112.67750000000002,
+        "points": 3275,
+        "deviation": 0.26637177944115975,
+        "unassigned_points": 240,
+        "unassigned_deviation": 0.27766937211014997
+      },
+      {
+        "type": "ceiling",
+        "name": "Compound Ceiling:Forro de gesso:1429616",
+        "coverage": 0.9998708210613342,
+        "area": 96.76500000000001,
+        "points": 3804,
+        "deviation": 0.011958158277182579,
+        "unassigned_points": 619,
+        "unassigned_deviation": 0.008293495233815222
+      },
+      {
+        "type": "ceiling",
+        "name": "Compound Ceiling:Forro de gesso:1431675",
+        "coverage": 0.057499239428049895,
+        "area": 98.61000000000001,
+        "points": 11031,
+        "deviation": 0.09622189336138035,
+        "unassigned_points": 12487,
+        "unassigned_deviation": 0.007701461865316666
+      },
+      {
+        "type": "ceiling",
+        "name": "Compound Ceiling:Forro de gesso:1499853",
+        "coverage": 0.9812601752745159,
+        "area": 72.17250000000001,
+        "points": 11451,
+        "deviation": 0.17157482811421093,
+        "unassigned_points": 16102,
+        "unassigned_deviation": 0.11073284252999249
+      },
+      {
+        "type": "ceiling",
+        "name": "Forros 1:Forros 1:1537527",
+        "coverage": 0.7421974522292993,
+        "area": 31.400000000000006,
+        "points": 9799,
+        "deviation": 0.09844530913480233,
+        "unassigned_points": 3958,
+        "unassigned_deviation": 0.21635301767094672
+      },
+      {
+        "type": "column",
+        "name": "M_Concrete-Rectangular-Column:350 x 750mm:1161207",
+        "coverage": 0.0,
+        "area": 6.905000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "column",
+        "name": "M_Concrete-Rectangular-Column:350 x 750mm:1162205",
+        "coverage": 0.0,
+        "area": 6.905000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 1,
+        "unassigned_deviation": 0.05697870846540513
+      },
+      {
+        "type": "column",
+        "name": "M_Concrete-Rectangular-Column:350 x 750mm:1162223",
+        "coverage": 0.007603186097031137,
+        "area": 6.905000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 62,
+        "unassigned_deviation": 0.09064885726828263
+      },
+      {
+        "type": "column",
+        "name": "M_Concrete-Rectangular-Column:350 x 750mm:1162307",
+        "coverage": 0.0,
+        "area": 6.905000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "column",
+        "name": "M_Concrete-Rectangular-Column:150 x 350mm:1163156",
+        "coverage": 0.0008319467554076539,
+        "area": 3.005000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 3,
+        "unassigned_deviation": 0.02253399838900716
+      },
+      {
+        "type": "column",
+        "name": "M_Concrete-Rectangular-Column:150 x 350mm:1164179",
+        "coverage": 0.011647254575707155,
+        "area": 3.005000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 3,
+        "unassigned_deviation": 0.018780130017848742
+      },
+      {
+        "type": "column",
+        "name": "M_Concrete-Rectangular-Column:150 x 350mm:1164268",
+        "coverage": 0.0,
+        "area": 3.005000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "column",
+        "name": "M_Concrete-Rectangular-Column:150 x 350mm:1164269",
+        "coverage": 0.0,
+        "area": 3.005000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "column",
+        "name": "M_Concrete-Rectangular-Column:150 x 350mm:1164279",
+        "coverage": 0.0016638935108153079,
+        "area": 3.005000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 1,
+        "unassigned_deviation": 0.028302819971073975
+      },
+      {
+        "type": "column",
+        "name": "M_Concrete-Rectangular-Column:150 x 350mm:1164280",
+        "coverage": 0.005818786367414797,
+        "area": 3.0075000000000007,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 11,
+        "unassigned_deviation": 0.04916191143297018
+      },
+      {
+        "type": "door",
+        "name": "Doors_Door-sets_Swedoor_JELD-WEN_Exterior_Steel_4210_GS1T_Unequal_Double_40:SDE30 - M15 (M10) x M20 - EI30:1027536",
+        "coverage": 0.3196148265400343,
+        "area": 18.952500000000004,
+        "points": 42850,
+        "deviation": 0.015073461565916364,
+        "unassigned_points": 8682,
+        "unassigned_deviation": 0.08949428115271983
+      },
+      {
+        "type": "door",
+        "name": "Doors_Door-sets_Swedoor_JELD-WEN_Interior_Steel_4210_GS1R_Double_40:SD20 - M17 x M21 - Unclassified:1042187",
+        "coverage": 0.725519981304043,
+        "area": 21.395000000000003,
+        "points": 10781,
+        "deviation": 0.007618067660153245,
+        "unassigned_points": 945,
+        "unassigned_deviation": 0.06978494988455755
+      },
+      {
+        "type": "door",
+        "name": "Doors_Door-sets_Swedoor_JELD-WEN_Exterior_Steel_4210_GS1T_Unequal_Double_40:SDE30 - M15 (M10) x M20 - EI30:1043337",
+        "coverage": 0.41590819153146025,
+        "area": 18.952500000000004,
+        "points": 8018,
+        "deviation": 0.03477901104374576,
+        "unassigned_points": 16649,
+        "unassigned_deviation": 0.0046185769738815285
+      },
+      {
+        "type": "door",
+        "name": "Doors_Door-sets_Swedoor_JELD-WEN_Exterior_Steel_4210_GS1T_Unequal_Double_40:SDE30 - M15 (M10) x M20 - EI30:1044681",
+        "coverage": 0.531724046959504,
+        "area": 18.952500000000004,
+        "points": 63793,
+        "deviation": 0.015515572876213588,
+        "unassigned_points": 8273,
+        "unassigned_deviation": 0.10308203717163036
+      },
+      {
+        "type": "door",
+        "name": "Doors_Door-sets_Swedoor_JELD-WEN_Exterior_Steel_4210_GS1T_Unequal_Double_40:SDE30 - M15 (M10) x M20 - EI30:1045240",
+        "coverage": 0.3702677746999077,
+        "area": 18.952500000000004,
+        "points": 38465,
+        "deviation": 0.018987493030373212,
+        "unassigned_points": 4468,
+        "unassigned_deviation": 0.13232083011192508
+      },
+      {
+        "type": "door",
+        "name": "Doors_Door-sets_Swedoor_JELD-WEN_Exterior_Steel_4210_GS1T_Unequal_Double_40:SDE30 - M15 (M10) x M20 - EI30:1148239",
+        "coverage": 0.4024535021764939,
+        "area": 18.952500000000004,
+        "points": 42439,
+        "deviation": 0.016507507131757297,
+        "unassigned_points": 7619,
+        "unassigned_deviation": 0.07100045459052284
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1133672",
+        "coverage": 0.5020040080160321,
+        "area": 2.4950000000000006,
+        "points": 750,
+        "deviation": 0.0331850322252549,
+        "unassigned_points": 80,
+        "unassigned_deviation": 0.007964443082186148
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134755",
+        "coverage": 0.06913827655310621,
+        "area": 2.4950000000000006,
+        "points": 738,
+        "deviation": 0.0928433441044614,
+        "unassigned_points": 10,
+        "unassigned_deviation": 0.03069913900494009
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134763",
+        "coverage": 0.43887775551102204,
+        "area": 2.4950000000000006,
+        "points": 834,
+        "deviation": 0.03805424088238357,
+        "unassigned_points": 23,
+        "unassigned_deviation": 0.007050701927449006
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134771",
+        "coverage": 0.3156312625250501,
+        "area": 2.4950000000000006,
+        "points": 140,
+        "deviation": 0.01619448629994383,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134779",
+        "coverage": 0.530060120240481,
+        "area": 2.4950000000000006,
+        "points": 341,
+        "deviation": 0.03869345661496808,
+        "unassigned_points": 164,
+        "unassigned_deviation": 0.005091251680107927
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134787",
+        "coverage": 0.6082164328657315,
+        "area": 2.4950000000000006,
+        "points": 519,
+        "deviation": 0.021848525331767014,
+        "unassigned_points": 144,
+        "unassigned_deviation": 0.0104688262072301
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134795",
+        "coverage": 0.5791583166332666,
+        "area": 2.4950000000000006,
+        "points": 372,
+        "deviation": 0.03424696538771632,
+        "unassigned_points": 197,
+        "unassigned_deviation": 0.008560721154012458
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134803",
+        "coverage": 0.4168336673346693,
+        "area": 2.4950000000000006,
+        "points": 743,
+        "deviation": 0.04966439786959275,
+        "unassigned_points": 338,
+        "unassigned_deviation": 0.009437017764901693
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134811",
+        "coverage": 0.4729458917835671,
+        "area": 2.4950000000000006,
+        "points": 729,
+        "deviation": 0.03320210604156468,
+        "unassigned_points": 193,
+        "unassigned_deviation": 0.005167917163081405
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134873",
+        "coverage": 0.49298597194388777,
+        "area": 2.4950000000000006,
+        "points": 1069,
+        "deviation": 0.029118528035691166,
+        "unassigned_points": 135,
+        "unassigned_deviation": 0.05238733102831991
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134881",
+        "coverage": 0.16933867735470942,
+        "area": 2.4950000000000006,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 46,
+        "unassigned_deviation": 0.038551482928943705
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134889",
+        "coverage": 0.48396793587174347,
+        "area": 2.4950000000000006,
+        "points": 889,
+        "deviation": 0.012313063767666735,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134897",
+        "coverage": 0.21643286573146292,
+        "area": 2.4950000000000006,
+        "points": 946,
+        "deviation": 0.05014423026844414,
+        "unassigned_points": 49,
+        "unassigned_deviation": 0.05366412783517645
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134905",
+        "coverage": 0.43987975951903807,
+        "area": 2.4950000000000006,
+        "points": 818,
+        "deviation": 0.04271529327737485,
+        "unassigned_points": 14,
+        "unassigned_deviation": 0.06386878280121949
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134913",
+        "coverage": 0.44288577154308617,
+        "area": 2.4950000000000006,
+        "points": 578,
+        "deviation": 0.03258795937145409,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1134992",
+        "coverage": 0.3937875751503006,
+        "area": 2.4950000000000006,
+        "points": 102,
+        "deviation": 0.039727593047983206,
+        "unassigned_points": 115,
+        "unassigned_deviation": 0.007465100901405412
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135058",
+        "coverage": 0.08517034068136273,
+        "area": 2.4950000000000006,
+        "points": 47,
+        "deviation": 0.06024678391256183,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135445",
+        "coverage": 0.05110220440881764,
+        "area": 2.4950000000000006,
+        "points": 1311,
+        "deviation": 0.0669402171799664,
+        "unassigned_points": 31,
+        "unassigned_deviation": 0.05298116638795002
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135453",
+        "coverage": 0.001002004008016032,
+        "area": 2.4950000000000006,
+        "points": 822,
+        "deviation": 0.09072831064049941,
+        "unassigned_points": 40,
+        "unassigned_deviation": 0.06196391265169916
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135461",
+        "coverage": 0.011022044088176353,
+        "area": 2.4950000000000006,
+        "points": 568,
+        "deviation": 0.07470004885899313,
+        "unassigned_points": 30,
+        "unassigned_deviation": 0.06634944592773462
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135469",
+        "coverage": 0.21643286573146292,
+        "area": 2.4950000000000006,
+        "points": 195,
+        "deviation": 0.051697869211825745,
+        "unassigned_points": 18,
+        "unassigned_deviation": 0.04909633240516588
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135477",
+        "coverage": 0.09118236472945891,
+        "area": 2.4950000000000006,
+        "points": 1269,
+        "deviation": 0.06257151740893162,
+        "unassigned_points": 19,
+        "unassigned_deviation": 0.06082409295573335
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135485",
+        "coverage": 0.08216432865731463,
+        "area": 2.4950000000000006,
+        "points": 1172,
+        "deviation": 0.06723574059451119,
+        "unassigned_points": 26,
+        "unassigned_deviation": 0.06449282631274203
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135493",
+        "coverage": 0.06913827655310621,
+        "area": 2.4950000000000006,
+        "points": 779,
+        "deviation": 0.0698008375100424,
+        "unassigned_points": 27,
+        "unassigned_deviation": 0.06161637228171138
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135501",
+        "coverage": 0.39178356713426854,
+        "area": 2.4950000000000006,
+        "points": 693,
+        "deviation": 0.02860919061401718,
+        "unassigned_points": 13,
+        "unassigned_deviation": 0.03509714798291823
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135509",
+        "coverage": 0.42084168336673344,
+        "area": 2.4950000000000006,
+        "points": 558,
+        "deviation": 0.028363846532747275,
+        "unassigned_points": 26,
+        "unassigned_deviation": 0.07477856351607894
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135517",
+        "coverage": 0.5070140280561122,
+        "area": 2.4950000000000006,
+        "points": 466,
+        "deviation": 0.014089214016133066,
+        "unassigned_points": 35,
+        "unassigned_deviation": 0.06664929007820973
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135525",
+        "coverage": 0.41282565130260523,
+        "area": 2.4950000000000006,
+        "points": 603,
+        "deviation": 0.019271769992320737,
+        "unassigned_points": 18,
+        "unassigned_deviation": 0.06259575053474721
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135533",
+        "coverage": 0.39178356713426854,
+        "area": 2.4950000000000006,
+        "points": 354,
+        "deviation": 0.011089363536534662,
+        "unassigned_points": 3,
+        "unassigned_deviation": 0.07117908555061095
+      },
+      {
+        "type": "window",
+        "name": "Window-Westcoas_Windows-FKG-Fixed-Frame_Option_115mm:FKG Triple Glazed 36mm:1135541",
+        "coverage": 0.5681362725450901,
+        "area": 2.4950000000000006,
+        "points": 495,
+        "deviation": 0.00802281720284783,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-79N-ST_E_Alu_Window-1sash-FIX_ENG_R-00213:1230 x 1480:1147596",
+        "coverage": 0.2120978120978121,
+        "area": 9.712500000000002,
+        "points": 2304,
+        "deviation": 0.04978254995458313,
+        "unassigned_points": 3342,
+        "unassigned_deviation": 0.027780716585121573
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-79N-ST_E_Alu_Window-1sash-FIX_ENG_R-00213:1230 x 1480:1148157",
+        "coverage": 0.22316602316602316,
+        "area": 9.712500000000002,
+        "points": 4263,
+        "deviation": 0.055559884143387285,
+        "unassigned_points": 5267,
+        "unassigned_deviation": 0.023616383523724145
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-79N-ST_E_Alu_Window-1sash-FIX_ENG_R-00213:1230 x 1480:1148166",
+        "coverage": 0.5917631917631918,
+        "area": 9.712500000000002,
+        "points": 6289,
+        "deviation": 0.04350574642871931,
+        "unassigned_points": 13270,
+        "unassigned_deviation": 0.036396745849722176
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-79N-SI_E_Alu_Window-3sash-FIX-Tilt-and-Slide-FIX_ENG_R-00460:3690 x 1480:1154752",
+        "coverage": 0.3604898828541001,
+        "area": 23.475000000000005,
+        "points": 31048,
+        "deviation": 0.01832904729316055,
+        "unassigned_points": 10834,
+        "unassigned_deviation": 0.024148986226156716
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-86-ST_E_Alu_Window-1sash-FIX_ENG_R-00037:720 x 480:1469175",
+        "coverage": 0.7859195402298851,
+        "area": 1.7400000000000004,
+        "points": 959,
+        "deviation": 0.008381866493130587,
+        "unassigned_points": 13,
+        "unassigned_deviation": 0.12986050095250368
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-86-ST_E_Alu_Window-1sash-FIX_ENG_R-00037:1200 x 480:1470160",
+        "coverage": 0.6529850746268657,
+        "area": 2.0100000000000002,
+        "points": 2702,
+        "deviation": 0.009508840990328669,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-86-ST_E_Alu_Window-1sash-FIX_ENG_R-00037:1200 x 480:1470293",
+        "coverage": 0.6430348258706468,
+        "area": 2.0100000000000002,
+        "points": 3654,
+        "deviation": 0.009677608491435487,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-86-ST_E_Alu_Window-1sash-FIX_ENG_R-00037:1200 x 480:1470511",
+        "coverage": 0.6417910447761194,
+        "area": 2.0100000000000002,
+        "points": 2440,
+        "deviation": 0.008998628425603932,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-86-ST_E_Alu_Window-1sash-FIX_ENG_R-00037:1200 x 480:1470959",
+        "coverage": 0.7039800995024875,
+        "area": 2.0100000000000002,
+        "points": 1799,
+        "deviation": 0.01007663350004781,
+        "unassigned_points": 4,
+        "unassigned_deviation": 0.028724762779013945
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-86-ST_E_Alu_Window-1sash-FIX_ENG_R-00037:720 x 480:1471681",
+        "coverage": 0.8002873563218391,
+        "area": 1.7400000000000004,
+        "points": 629,
+        "deviation": 0.007012242439437251,
+        "unassigned_points": 17,
+        "unassigned_deviation": 0.00522073926116893
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-86-ST_E_Alu_Window-1sash-FIX_ENG_R-00037:1200 x 480:1471857",
+        "coverage": 0.6753731343283582,
+        "area": 2.0100000000000002,
+        "points": 1010,
+        "deviation": 0.006737895718424558,
+        "unassigned_points": 20,
+        "unassigned_deviation": 0.008057161931209412
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-86-ST_E_Alu_Window-1sash-FIX_ENG_R-00037:1200 x 480:1472119",
+        "coverage": 0.6703980099502488,
+        "area": 2.0100000000000002,
+        "points": 1416,
+        "deviation": 0.006495955951793014,
+        "unassigned_points": 4,
+        "unassigned_deviation": 0.021826733791410178
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-86-ST_E_Alu_Window-1sash-FIX_ENG_R-00037:1200 x 480:1472259",
+        "coverage": 0.6741293532338308,
+        "area": 2.0100000000000002,
+        "points": 2217,
+        "deviation": 0.006892050912794548,
+        "unassigned_points": 1,
+        "unassigned_deviation": 0.016065682844010578
+      },
+      {
+        "type": "window",
+        "name": "Aluprof_MB-86-ST_E_Alu_Window-1sash-FIX_ENG_R-00037:1200 x 480:1472381",
+        "coverage": 0.7052238805970149,
+        "area": 2.0100000000000002,
+        "points": 4107,
+        "deviation": 0.00650112372853484,
+        "unassigned_points": 27,
+        "unassigned_deviation": 0.009058944574933128
+      },
+      {
+        "type": "stair",
+        "name": "Cast-In-Place Stair:Stair:975096 Run 1",
+        "coverage": 0.3190520819386799,
+        "area": 18.672500000000003,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 838,
+        "unassigned_deviation": 0.013877096206628012
+      },
+      {
+        "type": "stair",
+        "name": "Cast-In-Place Stair:Stair:975096 Run 2",
+        "coverage": 0.0,
+        "area": 8.440000000000001,
+        "points": 0,
+        "deviation": null,
+        "unassigned_points": 0,
+        "unassigned_deviation": null
+      }
+    ],
+    "deviation": {
+      "structure_median": 0.005834818786143144,
+      "structure_p90": 0.04012028687817476,
+      "structure_within_5cm": 0.9409461729748126,
+      "walls_median": 0.023745098348864506,
+      "clutter_median": 0.44237779409732253
+    }
+  },
+  "minutes": 76.09940567815016
+}

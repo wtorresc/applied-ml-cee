@@ -1,0 +1,414 @@
+{
+  "data": {
+    "tests": 1030,
+    "n_28day": 425,
+    "designs": 315
+  },
+  "abrams_28day": {
+    "A": 123.8,
+    "B": 16.5
+  },
+  "lecture2": {
+    "warmup_neighbor_wb": 0.3,
+    "warmup_proposed_wb": 0.4,
+    "water_share_pct": 1.2,
+    "knn_raw": 9.95,
+    "median_gain_per_ln_day": 8.7,
+    "mass_min": 2195.0,
+    "mass_max": 2551.0
+  },
+  "attempt": {
+    "mixes": [
+      {
+        "letter": "A",
+        "row": 825,
+        "cement": 397.0,
+        "water": 185.0,
+        "wc": 0.47,
+        "mpa": 39.1,
+        "lnf": 3.666,
+        "coarse": 1040.0,
+        "fine": 734.0
+      },
+      {
+        "letter": "B",
+        "row": 802,
+        "cement": 339.0,
+        "water": 185.0,
+        "wc": 0.55,
+        "mpa": 31.6,
+        "lnf": 3.453,
+        "coarse": 1060.0,
+        "fine": 754.0
+      },
+      {
+        "letter": "C",
+        "row": 779,
+        "cement": 295.0,
+        "water": 185.0,
+        "wc": 0.63,
+        "mpa": 25.2,
+        "lnf": 3.227,
+        "coarse": 1069.0,
+        "fine": 769.0
+      },
+      {
+        "letter": "D",
+        "row": 801,
+        "cement": 252.0,
+        "water": 185.0,
+        "wc": 0.73,
+        "mpa": 19.7,
+        "lnf": 2.981,
+        "coarse": 1111.0,
+        "fine": 784.0
+      }
+    ],
+    "proposed": {
+      "row": 638,
+      "cement": 375.0,
+      "water": 186.0,
+      "coarse": 1038.0,
+      "fine": 758.0,
+      "wc": 0.5,
+      "mpa": 38.2
+    },
+    "xbar": 0.595,
+    "ybar": 3.332,
+    "dx": [
+      -0.125,
+      -0.045,
+      0.035,
+      0.135
+    ],
+    "sxx": 0.0371,
+    "sxy": -0.0983,
+    "slope": -2.65,
+    "intercept": 4.91,
+    "abrams_A": 135.5,
+    "abrams_B": 14.2,
+    "pred_P": 36.0,
+    "err_P": -2.2,
+    "interp_P": 36.3,
+    "wc_for_fc": 0.51,
+    "wc_for_fc_3dp": 0.511,
+    "cement_for_fc": 362,
+    "max_abs_resid_ln": 0.012
+  },
+  "verify": {
+    "groups": {
+      "kappa_X": 640.0,
+      "kappa_XtX": 400000.0,
+      "qr_rel": 4e-14,
+      "qr_allclose": true,
+      "svd_rel": 4e-14,
+      "svd_allclose": true,
+      "inverse_rel": 1e-12,
+      "inverse_allclose": true
+    },
+    "raw": {
+      "kappa_X": 100000.0,
+      "kappa_XtX": 10000000000.0,
+      "qr_rel": 1e-13,
+      "qr_allclose": true,
+      "svd_rel": 2e-13,
+      "svd_allclose": true,
+      "inverse_rel": 6e-12,
+      "inverse_allclose": true
+    },
+    "weights": {
+      "intercept": 54.0,
+      "w/b": -96.83,
+      "slag / b": -11.07,
+      "fly ash / b": -27.74,
+      "SP / b": 29.83,
+      "aggregate / b": 1.25,
+      "ln age": 8.34
+    },
+    "n_train": 746,
+    "n_train_designs": 236,
+    "n_test": 284,
+    "test_rmse_split0": 7.82,
+    "raw_water_weight": -0.16,
+    "raw_cement_weight": 0.12
+  },
+  "trace": {
+    "z": {
+      "w/b": 0.5,
+      "slag / b": 0.0,
+      "fly ash / b": 0.0,
+      "SP / b": 0.0,
+      "aggregate / b": 4.79,
+      "ln age": 3.33
+    },
+    "intercept": 54.0,
+    "terms": {
+      "w/b": -48.0,
+      "slag / b": 0.0,
+      "fly ash / b": 0.0,
+      "SP / b": 0.0,
+      "aggregate / b": 6.0,
+      "ln age": 27.8
+    },
+    "pred": 39.8,
+    "y": 38.2,
+    "err": 1.6
+  },
+  "features": {
+    "raw kg/m³ and days": {
+      "mean": 10.62,
+      "sd": 0.49
+    },
+    "raw, ln age": {
+      "mean": 7.41,
+      "sd": 0.42
+    },
+    "Lecture 2 groups": {
+      "mean": 7.55,
+      "sd": 0.52
+    },
+    "groups_random_split": 7.38,
+    "groups_train_rmse": 7.38,
+    "knn_groups": 6.87,
+    "knn_groups_random_split": 5.65,
+    "groups_log_target": 9.01,
+    "ridge_groups": 7.55,
+    "ridge_alpha_median": 3.16,
+    "ridge_alpha_lower_edge": 2,
+    "ridge_max_shrink_pct": 4.8,
+    "predict_mean": 17.0,
+    "floor": 1.4,
+    "floor_groups": 9,
+    "floor_mixes": 3
+  },
+  "lasso": {
+    "order": [
+      "w/b",
+      "ln age",
+      "cement",
+      "fly ash / b",
+      "water",
+      "superplasticizer",
+      "slag",
+      "age",
+      "fine_agg",
+      "coarse_agg",
+      "fly_ash",
+      "slag / b",
+      "aggregate / b",
+      "SP / b"
+    ],
+    "first_two": [
+      "w/b",
+      "ln age"
+    ],
+    "cv_kept": 13,
+    "cv_dropped": [
+      "w/b"
+    ],
+    "cv_index": 92,
+    "cv_grid_size": 100,
+    "splits": {
+      "n": 30,
+      "wb_dropped": 12,
+      "distinct_sets": 22,
+      "most_common_set_splits": 3,
+      "kept_min": 8,
+      "kept_max": 14,
+      "none_dropped": 3,
+      "grid_extended": 3,
+      "lambda_to_zero": 2
+    }
+  },
+  "collinear": {
+    "columns": 10,
+    "rank": 9,
+    "cement_weight_8": [
+      0.1,
+      0.15
+    ],
+    "cement_weight_svd": [
+      0.04,
+      0.05
+    ],
+    "cement_weight_ridge": [
+      0.04,
+      0.05
+    ],
+    "rmse": {
+      "8 inputs": 10.62,
+      "SVD": 10.62,
+      "ridge": 10.62
+    },
+    "svd_equals_8_inputs": true,
+    "checks": {
+      "kappa_X_above_1e15": true,
+      "inverse_weight_takes_both_signs": true,
+      "inverse_rmse_above_predict_mean": true,
+      "qr_max_abs_weight_above_1e10": true
+    },
+    "roundoff": {
+      "kappa_X": 3.6e+16,
+      "cement_weight_inverse": [
+        -1.84,
+        1.68
+      ],
+      "rmse_inverse": 42.88,
+      "rmse_QR": 10.65,
+      "qr_max_abs_weight_split0": 2000000000000.0,
+      "kappa_X_order": 1e+16,
+      "qr_max_abs_weight_order": 1000000000000.0
+    }
+  },
+  "extrapolation": {
+    "n_train": 774,
+    "n_test": 136,
+    "n_test_designs": 39,
+    "n_test_mixes": 41,
+    "n_test_28day": 43,
+    "rmse": {
+      "raw, ln age": 9.9,
+      "raw kg/m³ and days": 14.6,
+      "Lecture 2 groups": 8.9,
+      "5-NN": 12.6
+    },
+    "bias": {
+      "raw, ln age": 4.7,
+      "raw kg/m³ and days": 6.1,
+      "Lecture 2 groups": -2.3,
+      "5-NN": -8.5
+    },
+    "bias_28day": {
+      "raw, ln age": 0.4,
+      "raw kg/m³ and days": -3.0,
+      "Lecture 2 groups": -5.5,
+      "5-NN": -7.7
+    },
+    "rmse_gap": 1.1,
+    "bias_ci": [
+      1.9,
+      6.9
+    ],
+    "rmse_gap_ci": [
+      -1.2,
+      3.1
+    ],
+    "knn": {
+      "train_max": 81.8,
+      "test_above_train_max": 0,
+      "test_above_all_neighbours": 64,
+      "test_within_neighbour_range": 72,
+      "bias_within_neighbour_range": -2.4
+    },
+    "wb_inside_share": 0.92,
+    "all_ratios_inside_share": 0.82,
+    "abrams_mpa_per_kg_300": 0.13,
+    "abrams_mpa_per_kg_500": 0.09,
+    "raw_ln_age_cement_weight": 0.16,
+    "cement_max": 540.0
+  },
+  "ridge_units": {
+    "alpha": 100.0,
+    "ols": 61.1,
+    "unscaled_days": 61.1,
+    "unscaled_years": 63.9,
+    "scaled_days": 60.4,
+    "scaled_years": 60.4,
+    "unscaled_days_alpha1": 61.1,
+    "age_weight_kept_years_pct": 22
+  },
+  "audit": {
+    "query": {
+      "cement": 600.0,
+      "slag": 0.0,
+      "fly_ash": 0.0,
+      "water": 165.0,
+      "superplasticizer": 10.0,
+      "coarse_agg": 1000.0,
+      "fine_agg": 650.0,
+      "age": 28.0
+    },
+    "raw kg/m³ and days": 61.1,
+    "raw, ln age": 65.5,
+    "Lecture 2 groups": 59.9,
+    "5-NN": 53.9,
+    "query_wc": 0.275,
+    "wb_range": [
+      0.24,
+      0.9
+    ],
+    "agg_b_query": 2.75,
+    "agg_b_range": [
+      2.38,
+      9.85
+    ],
+    "cement_max": 540.0,
+    "tested_near_wc": {
+      "n": 42,
+      "mixes": 35,
+      "min": 33.7,
+      "max": 80.0
+    }
+  },
+  "decision": {
+    "margin": 9.0,
+    "n_tests": 3179,
+    "n_distinct_tests": 425,
+    "held_out_per_test_min": 1,
+    "held_out_per_test_max": 14,
+    "margin_per_split_median": 8.8,
+    "margin_per_split_min": 5.0,
+    "margin_per_split_max": 11.6,
+    "cement_mean": 337,
+    "cement_margin": 418,
+    "extra_cement": 81,
+    "extra_pct": 24,
+    "target": 44.0,
+    "share_overpredicted": 0.57,
+    "share_overpredicted_per_test": 0.58,
+    "curve_at_250": 19.0,
+    "curve_at_540": 53.0,
+    "wc_mean": 0.55,
+    "wc_margin": 0.44,
+    "wc_max_cement": 0.34,
+    "extra_cement_max": 203,
+    "resid_sd_pred_below_30": 6.5,
+    "resid_sd_pred_above_50": 11.1,
+    "log_target_resid_sd_pred_below_30": 6.4,
+    "log_target_resid_sd_pred_above_50": 11.6
+  },
+  "cement_question": {
+    "tests": 58,
+    "cement_min": 200.0,
+    "cement_max": 528.0,
+    "strength_min": 12.2,
+    "strength_max": 56.8
+  },
+  "bowl": {
+    "raw": {
+      "condition": 198.0
+    },
+    "centred": {
+      "condition": 108.0
+    }
+  },
+  "trough": {
+    "n": 425,
+    "slope": -0.329,
+    "min_norm": -0.164,
+    "ridge": [
+      -0.11,
+      -0.11
+    ],
+    "shrink": 0.667
+  },
+  "paths": {
+    "corr": -0.89,
+    "w_ls": [
+      -6.21,
+      4.72
+    ],
+    "lasso_first": "w/b",
+    "n": 1030
+  }
+}

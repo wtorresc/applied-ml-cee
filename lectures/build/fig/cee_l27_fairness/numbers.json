@@ -1,0 +1,1336 @@
+{
+  "svi": {
+    "low": {
+      "counties": 26,
+      "population": 1012787,
+      "rpl_range": [
+        0.0,
+        0.2475
+      ],
+      "bridges_per_10k": 34.5
+    },
+    "low-mid": {
+      "counties": 25,
+      "population": 2648214,
+      "rpl_range": [
+        0.2574,
+        0.495
+      ],
+      "bridges_per_10k": 21.3
+    },
+    "mid-high": {
+      "counties": 25,
+      "population": 1742541,
+      "rpl_range": [
+        0.505,
+        0.7426
+      ],
+      "bridges_per_10k": 25.0
+    },
+    "high": {
+      "counties": 26,
+      "population": 7354092,
+      "rpl_range": [
+        0.7525,
+        1.0
+      ],
+      "bridges_per_10k": 8.4
+    }
+  },
+  "cook": {
+    "rpl": 0.9505,
+    "bridges": 1246,
+    "share_of_high_pct": 20.0
+  },
+  "threshold": 0.0476,
+  "R": 20,
+  "overall": {
+    "bridges": 19637,
+    "counties": 102,
+    "turned_poor": 793,
+    "tp": 631,
+    "fn": 162,
+    "fp": 5545,
+    "tn": 13299,
+    "healthy": 18844,
+    "base_pct": 4.0,
+    "flagged_pct": 31.5,
+    "tpr_pct": 79.6,
+    "fpr_pct": 29.4,
+    "ppv_pct": 10.2,
+    "mean_p_pct": 5.0,
+    "calib_gap_pct": 1.0
+  },
+  "by_quartile": {
+    "low": {
+      "bridges": 3493,
+      "counties": 26,
+      "turned_poor": 164,
+      "tp": 130,
+      "fn": 34,
+      "fp": 854,
+      "tn": 2475,
+      "healthy": 3329,
+      "base_pct": 4.7,
+      "flagged_pct": 28.2,
+      "tpr_pct": 79.3,
+      "fpr_pct": 25.7,
+      "ppv_pct": 13.2,
+      "mean_p_pct": 4.7,
+      "calib_gap_pct": 0.0,
+      "ci_pct": {
+        "tpr": [
+          70.6,
+          88.0
+        ],
+        "fpr": [
+          20.9,
+          31.1
+        ],
+        "flagged": [
+          22.9,
+          33.9
+        ],
+        "base": [
+          2.9,
+          6.7
+        ],
+        "mean_p": [
+          3.9,
+          5.6
+        ],
+        "calib_gap": [
+          -1.8,
+          1.6
+        ]
+      }
+    },
+    "low-mid": {
+      "bridges": 5633,
+      "counties": 25,
+      "turned_poor": 201,
+      "tp": 171,
+      "fn": 30,
+      "fp": 1734,
+      "tn": 3698,
+      "healthy": 5432,
+      "base_pct": 3.6,
+      "flagged_pct": 33.8,
+      "tpr_pct": 85.1,
+      "fpr_pct": 31.9,
+      "ppv_pct": 9.0,
+      "mean_p_pct": 5.2,
+      "calib_gap_pct": 1.6,
+      "ci_pct": {
+        "tpr": [
+          78.8,
+          91.3
+        ],
+        "fpr": [
+          26.7,
+          37.1
+        ],
+        "flagged": [
+          28.7,
+          38.9
+        ],
+        "base": [
+          2.6,
+          4.5
+        ],
+        "mean_p": [
+          4.6,
+          5.8
+        ],
+        "calib_gap": [
+          0.5,
+          2.7
+        ]
+      }
+    },
+    "mid-high": {
+      "bridges": 4348,
+      "counties": 25,
+      "turned_poor": 176,
+      "tp": 128,
+      "fn": 48,
+      "fp": 1021,
+      "tn": 3151,
+      "healthy": 4172,
+      "base_pct": 4.0,
+      "flagged_pct": 26.4,
+      "tpr_pct": 72.7,
+      "fpr_pct": 24.5,
+      "ppv_pct": 11.1,
+      "mean_p_pct": 4.2,
+      "calib_gap_pct": 0.1,
+      "ci_pct": {
+        "tpr": [
+          58.8,
+          85.4
+        ],
+        "fpr": [
+          20.0,
+          29.0
+        ],
+        "flagged": [
+          21.6,
+          31.3
+        ],
+        "base": [
+          2.6,
+          5.3
+        ],
+        "mean_p": [
+          3.5,
+          4.8
+        ],
+        "calib_gap": [
+          -1.0,
+          1.5
+        ]
+      }
+    },
+    "high": {
+      "bridges": 6163,
+      "counties": 26,
+      "turned_poor": 252,
+      "tp": 202,
+      "fn": 50,
+      "fp": 1936,
+      "tn": 3975,
+      "healthy": 5911,
+      "base_pct": 4.1,
+      "flagged_pct": 34.7,
+      "tpr_pct": 80.2,
+      "fpr_pct": 32.8,
+      "ppv_pct": 9.4,
+      "mean_p_pct": 5.7,
+      "calib_gap_pct": 1.6,
+      "ci_pct": {
+        "tpr": [
+          64.9,
+          88.8
+        ],
+        "fpr": [
+          23.4,
+          41.0
+        ],
+        "flagged": [
+          25.2,
+          43.0
+        ],
+        "base": [
+          3.0,
+          5.0
+        ],
+        "mean_p": [
+          4.2,
+          7.0
+        ],
+        "calib_gap": [
+          0.1,
+          2.6
+        ]
+      }
+    }
+  },
+  "by_quartile_val": {
+    "low": {
+      "bridges": 3567,
+      "counties": 26,
+      "turned_poor": 198,
+      "tp": 158,
+      "fn": 40,
+      "fp": 779,
+      "tn": 2590,
+      "healthy": 3369,
+      "base_pct": 5.6,
+      "flagged_pct": 26.3,
+      "tpr_pct": 79.8,
+      "fpr_pct": 23.1,
+      "ppv_pct": 16.9,
+      "mean_p_pct": 4.3,
+      "calib_gap_pct": -1.2
+    },
+    "low-mid": {
+      "bridges": 5674,
+      "counties": 25,
+      "turned_poor": 224,
+      "tp": 181,
+      "fn": 43,
+      "fp": 1487,
+      "tn": 3963,
+      "healthy": 5450,
+      "base_pct": 3.9,
+      "flagged_pct": 29.4,
+      "tpr_pct": 80.8,
+      "fpr_pct": 27.3,
+      "ppv_pct": 10.9,
+      "mean_p_pct": 4.5,
+      "calib_gap_pct": 0.6
+    },
+    "mid-high": {
+      "bridges": 4333,
+      "counties": 25,
+      "turned_poor": 156,
+      "tp": 124,
+      "fn": 32,
+      "fp": 911,
+      "tn": 3266,
+      "healthy": 4177,
+      "base_pct": 3.6,
+      "flagged_pct": 23.9,
+      "tpr_pct": 79.5,
+      "fpr_pct": 21.8,
+      "ppv_pct": 12.0,
+      "mean_p_pct": 4.0,
+      "calib_gap_pct": 0.4
+    },
+    "high": {
+      "bridges": 6203,
+      "counties": 26,
+      "turned_poor": 320,
+      "tp": 258,
+      "fn": 62,
+      "fp": 1702,
+      "tn": 4181,
+      "healthy": 5883,
+      "base_pct": 5.2,
+      "flagged_pct": 31.6,
+      "tpr_pct": 80.6,
+      "fpr_pct": 28.9,
+      "ppv_pct": 13.2,
+      "mean_p_pct": 5.0,
+      "calib_gap_pct": -0.1
+    }
+  },
+  "overall_val": {
+    "bridges": 19777,
+    "counties": 102,
+    "turned_poor": 898,
+    "tp": 721,
+    "fn": 177,
+    "fp": 4879,
+    "tn": 14000,
+    "healthy": 18879,
+    "base_pct": 4.5,
+    "flagged_pct": 28.3,
+    "tpr_pct": 80.3,
+    "fpr_pct": 25.8,
+    "ppv_pct": 12.9,
+    "mean_p_pct": 4.5,
+    "calib_gap_pct": 0.0
+  },
+  "high_split": {
+    "Cook County": {
+      "bridges": 1246,
+      "counties": 1,
+      "turned_poor": 67,
+      "tp": 64,
+      "fn": 3,
+      "fp": 633,
+      "tn": 546,
+      "healthy": 1179,
+      "base_pct": 5.4,
+      "flagged_pct": 55.9,
+      "tpr_pct": 95.5,
+      "fpr_pct": 53.7,
+      "ppv_pct": 9.2,
+      "mean_p_pct": 9.3,
+      "calib_gap_pct": 3.9
+    },
+    "the other 25": {
+      "bridges": 4917,
+      "counties": 25,
+      "turned_poor": 185,
+      "tp": 138,
+      "fn": 47,
+      "fp": 1303,
+      "tn": 3429,
+      "healthy": 4732,
+      "base_pct": 3.8,
+      "flagged_pct": 29.3,
+      "tpr_pct": 74.6,
+      "fpr_pct": 27.5,
+      "ppv_pct": 9.6,
+      "mean_p_pct": 4.8,
+      "calib_gap_pct": 1.0
+    }
+  },
+  "high_split_val": {
+    "Cook County": {
+      "bridges": 1296,
+      "counties": 1,
+      "turned_poor": 116,
+      "tp": 109,
+      "fn": 7,
+      "fp": 545,
+      "tn": 635,
+      "healthy": 1180,
+      "base_pct": 9.0,
+      "flagged_pct": 50.5,
+      "tpr_pct": 94.0,
+      "fpr_pct": 46.2,
+      "ppv_pct": 16.7,
+      "mean_p_pct": 7.8,
+      "calib_gap_pct": -1.2,
+      "expected": 100.7
+    },
+    "the other 25": {
+      "bridges": 4907,
+      "counties": 25,
+      "turned_poor": 204,
+      "tp": 149,
+      "fn": 55,
+      "fp": 1157,
+      "tn": 3546,
+      "healthy": 4703,
+      "base_pct": 4.2,
+      "flagged_pct": 26.6,
+      "tpr_pct": 73.0,
+      "fpr_pct": 24.6,
+      "ppv_pct": 11.4,
+      "mean_p_pct": 4.3,
+      "calib_gap_pct": 0.1,
+      "expected": 210.1
+    }
+  },
+  "cook_expected_test": 115.5,
+  "identity": {
+    "low": {
+      "fpr": 25.65,
+      "implied": 25.65
+    },
+    "low-mid": {
+      "fpr": 31.92,
+      "implied": 31.92
+    },
+    "mid-high": {
+      "fpr": 24.47,
+      "implied": 24.47
+    },
+    "high": {
+      "fpr": 32.75,
+      "implied": 32.75
+    }
+  },
+  "proxies": {
+    "all": {
+      "auc": 0.697,
+      "auc_county_folds": [
+        0.601,
+        0.597,
+        0.598,
+        0.595,
+        0.605,
+        0.636,
+        0.59,
+        0.599,
+        0.606,
+        0.565
+      ],
+      "auc_county_folds_median": 0.599,
+      "auc_county_folds_range": [
+        0.565,
+        0.636
+      ],
+      "signal_kept_pct": 50.0
+    },
+    "no_location": {
+      "auc": 0.646,
+      "auc_county_folds": [
+        0.581,
+        0.547,
+        0.57,
+        0.555,
+        0.55,
+        0.579,
+        0.576,
+        0.598,
+        0.573,
+        0.571
+      ],
+      "auc_county_folds_median": 0.572,
+      "auc_county_folds_range": [
+        0.547,
+        0.598
+      ],
+      "signal_kept_pct": 50.0
+    },
+    "no_location_drop": {
+      "traffic": 0.614,
+      "material": 0.634,
+      "age": 0.646,
+      "size": 0.645,
+      "ratings": 0.644
+    },
+    "traffic_material_alone": 0.644
+  },
+  "identity_figure": {
+    "precisions": [
+      0.09,
+      0.11,
+      0.13
+    ],
+    "catch_rate": 0.8
+  },
+  "post": {
+    "target_pct": 80.3,
+    "thresholds": {
+      "low": 0.0475,
+      "low-mid": 0.0494,
+      "mid-high": 0.0474,
+      "high": 0.0509
+    },
+    "one": {
+      "low": {
+        "bridges": 3493,
+        "counties": 26,
+        "turned_poor": 164,
+        "tp": 130,
+        "fn": 34,
+        "fp": 854,
+        "tn": 2475,
+        "healthy": 3329,
+        "base_pct": 4.7,
+        "flagged_pct": 28.2,
+        "tpr_pct": 79.3,
+        "fpr_pct": 25.7,
+        "ppv_pct": 13.2,
+        "mean_p_pct": 4.7,
+        "calib_gap_pct": 0.0
+      },
+      "low-mid": {
+        "bridges": 5633,
+        "counties": 25,
+        "turned_poor": 201,
+        "tp": 171,
+        "fn": 30,
+        "fp": 1734,
+        "tn": 3698,
+        "healthy": 5432,
+        "base_pct": 3.6,
+        "flagged_pct": 33.8,
+        "tpr_pct": 85.1,
+        "fpr_pct": 31.9,
+        "ppv_pct": 9.0,
+        "mean_p_pct": 5.2,
+        "calib_gap_pct": 1.6
+      },
+      "mid-high": {
+        "bridges": 4348,
+        "counties": 25,
+        "turned_poor": 176,
+        "tp": 128,
+        "fn": 48,
+        "fp": 1021,
+        "tn": 3151,
+        "healthy": 4172,
+        "base_pct": 4.0,
+        "flagged_pct": 26.4,
+        "tpr_pct": 72.7,
+        "fpr_pct": 24.5,
+        "ppv_pct": 11.1,
+        "mean_p_pct": 4.2,
+        "calib_gap_pct": 0.1
+      },
+      "high": {
+        "bridges": 6163,
+        "counties": 26,
+        "turned_poor": 252,
+        "tp": 202,
+        "fn": 50,
+        "fp": 1936,
+        "tn": 3975,
+        "healthy": 5911,
+        "base_pct": 4.1,
+        "flagged_pct": 34.7,
+        "tpr_pct": 80.2,
+        "fpr_pct": 32.8,
+        "ppv_pct": 9.4,
+        "mean_p_pct": 5.7,
+        "calib_gap_pct": 1.6
+      }
+    },
+    "group": {
+      "low": {
+        "bridges": 3493,
+        "counties": 26,
+        "turned_poor": 164,
+        "tp": 130,
+        "fn": 34,
+        "fp": 856,
+        "tn": 2473,
+        "healthy": 3329,
+        "base_pct": 4.7,
+        "flagged_pct": 28.2,
+        "tpr_pct": 79.3,
+        "fpr_pct": 25.7,
+        "ppv_pct": 13.2,
+        "mean_p_pct": 4.7,
+        "calib_gap_pct": 0.0
+      },
+      "low-mid": {
+        "bridges": 5633,
+        "counties": 25,
+        "turned_poor": 201,
+        "tp": 167,
+        "fn": 34,
+        "fp": 1654,
+        "tn": 3778,
+        "healthy": 5432,
+        "base_pct": 3.6,
+        "flagged_pct": 32.3,
+        "tpr_pct": 83.1,
+        "fpr_pct": 30.4,
+        "ppv_pct": 9.2,
+        "mean_p_pct": 5.2,
+        "calib_gap_pct": 1.6
+      },
+      "mid-high": {
+        "bridges": 4348,
+        "counties": 25,
+        "turned_poor": 176,
+        "tp": 128,
+        "fn": 48,
+        "fp": 1026,
+        "tn": 3146,
+        "healthy": 4172,
+        "base_pct": 4.0,
+        "flagged_pct": 26.5,
+        "tpr_pct": 72.7,
+        "fpr_pct": 24.6,
+        "ppv_pct": 11.1,
+        "mean_p_pct": 4.2,
+        "calib_gap_pct": 0.1
+      },
+      "high": {
+        "bridges": 6163,
+        "counties": 26,
+        "turned_poor": 252,
+        "tp": 196,
+        "fn": 56,
+        "fp": 1821,
+        "tn": 4090,
+        "healthy": 5911,
+        "base_pct": 4.1,
+        "flagged_pct": 32.7,
+        "tpr_pct": 77.8,
+        "fpr_pct": 30.8,
+        "ppv_pct": 9.7,
+        "mean_p_pct": 5.7,
+        "calib_gap_pct": 1.6
+      }
+    },
+    "flags_one": 6176,
+    "flags_group": 5978,
+    "caught_one": 631,
+    "caught_group": 621,
+    "cost_one": 0.447,
+    "cost_group": 0.448
+  },
+  "cells": {
+    "high | city": {
+      "bridges": 650,
+      "counties": 22,
+      "turned_poor": 45,
+      "tp": 43,
+      "fn": 2,
+      "fp": 251,
+      "tn": 354,
+      "healthy": 605,
+      "base_pct": 6.9,
+      "flagged_pct": 45.2,
+      "tpr_pct": 95.6,
+      "fpr_pct": 41.5,
+      "ppv_pct": 14.6,
+      "mean_p_pct": 7.4,
+      "calib_gap_pct": 0.4,
+      "ci_pct": {
+        "tpr": [
+          72.7,
+          100.0
+        ],
+        "fpr": [
+          24.5,
+          48.2
+        ],
+        "flagged": [
+          27.7,
+          51.8
+        ],
+        "base": [
+          4.2,
+          7.9
+        ],
+        "mean_p": [
+          4.2,
+          8.6
+        ],
+        "calib_gap": [
+          -2.2,
+          1.6
+        ]
+      }
+    },
+    "high | county": {
+      "bridges": 879,
+      "counties": 26,
+      "turned_poor": 50,
+      "tp": 42,
+      "fn": 8,
+      "fp": 199,
+      "tn": 630,
+      "healthy": 829,
+      "base_pct": 5.7,
+      "flagged_pct": 27.4,
+      "tpr_pct": 84.0,
+      "fpr_pct": 24.0,
+      "ppv_pct": 17.4,
+      "mean_p_pct": 4.7,
+      "calib_gap_pct": -1.0,
+      "ci_pct": {
+        "tpr": [
+          70.4,
+          94.3
+        ],
+        "fpr": [
+          16.1,
+          32.4
+        ],
+        "flagged": [
+          19.2,
+          36.2
+        ],
+        "base": [
+          3.7,
+          7.7
+        ],
+        "mean_p": [
+          3.5,
+          6.1
+        ],
+        "calib_gap": [
+          -2.7,
+          0.4
+        ]
+      }
+    },
+    "high | state": {
+      "bridges": 2095,
+      "counties": 26,
+      "turned_poor": 96,
+      "tp": 78,
+      "fn": 18,
+      "fp": 992,
+      "tn": 1007,
+      "healthy": 1999,
+      "base_pct": 4.6,
+      "flagged_pct": 51.1,
+      "tpr_pct": 81.2,
+      "fpr_pct": 49.6,
+      "ppv_pct": 7.3,
+      "mean_p_pct": 8.1,
+      "calib_gap_pct": 3.6,
+      "ci_pct": {
+        "tpr": [
+          53.7,
+          94.2
+        ],
+        "fpr": [
+          39.6,
+          56.0
+        ],
+        "flagged": [
+          41.3,
+          57.1
+        ],
+        "base": [
+          3.0,
+          5.9
+        ],
+        "mean_p": [
+          6.3,
+          9.4
+        ],
+        "calib_gap": [
+          1.2,
+          5.1
+        ]
+      }
+    },
+    "high | township": {
+      "bridges": 2232,
+      "counties": 26,
+      "turned_poor": 55,
+      "tp": 36,
+      "fn": 19,
+      "fp": 376,
+      "tn": 1801,
+      "healthy": 2177,
+      "base_pct": 2.5,
+      "flagged_pct": 18.5,
+      "tpr_pct": 65.5,
+      "fpr_pct": 17.3,
+      "ppv_pct": 8.7,
+      "mean_p_pct": 3.2,
+      "calib_gap_pct": 0.7,
+      "ci_pct": {
+        "tpr": [
+          49.3,
+          82.9
+        ],
+        "fpr": [
+          12.2,
+          22.2
+        ],
+        "flagged": [
+          13.4,
+          23.5
+        ],
+        "base": [
+          1.6,
+          3.5
+        ],
+        "mean_p": [
+          2.4,
+          4.0
+        ],
+        "calib_gap": [
+          -0.6,
+          1.8
+        ]
+      }
+    },
+    "low | city": {
+      "bridges": 122,
+      "counties": 23,
+      "turned_poor": 15,
+      "tp": 12,
+      "fn": 3,
+      "fp": 36,
+      "tn": 71,
+      "healthy": 107,
+      "base_pct": 12.3,
+      "flagged_pct": 39.3,
+      "tpr_pct": 80.0,
+      "fpr_pct": 33.6,
+      "ppv_pct": 25.0,
+      "mean_p_pct": 6.7,
+      "calib_gap_pct": -5.6,
+      "ci_pct": {
+        "tpr": [
+          50.0,
+          100.0
+        ],
+        "fpr": [
+          25.0,
+          44.8
+        ],
+        "flagged": [
+          27.9,
+          51.5
+        ],
+        "base": [
+          3.9,
+          20.5
+        ],
+        "mean_p": [
+          4.9,
+          8.7
+        ],
+        "calib_gap": [
+          -12.3,
+          1.9
+        ]
+      }
+    },
+    "low | county": {
+      "bridges": 522,
+      "counties": 26,
+      "turned_poor": 23,
+      "tp": 22,
+      "fn": 1,
+      "fp": 124,
+      "tn": 375,
+      "healthy": 499,
+      "base_pct": 4.4,
+      "flagged_pct": 28.0,
+      "tpr_pct": 95.7,
+      "fpr_pct": 24.8,
+      "ppv_pct": 15.1,
+      "mean_p_pct": 4.6,
+      "calib_gap_pct": 0.2,
+      "ci_pct": {
+        "tpr": [
+          83.3,
+          100.0
+        ],
+        "fpr": [
+          19.6,
+          30.2
+        ],
+        "flagged": [
+          22.0,
+          34.0
+        ],
+        "base": [
+          2.3,
+          6.5
+        ],
+        "mean_p": [
+          3.8,
+          5.4
+        ],
+        "calib_gap": [
+          -1.6,
+          2.0
+        ]
+      }
+    },
+    "low | state": {
+      "bridges": 776,
+      "counties": 26,
+      "turned_poor": 22,
+      "tp": 18,
+      "fn": 4,
+      "fp": 321,
+      "tn": 433,
+      "healthy": 754,
+      "base_pct": 2.8,
+      "flagged_pct": 43.7,
+      "tpr_pct": 81.8,
+      "fpr_pct": 42.6,
+      "ppv_pct": 5.3,
+      "mean_p_pct": 6.9,
+      "calib_gap_pct": 4.1,
+      "ci_pct": {
+        "tpr": [
+          53.8,
+          100.0
+        ],
+        "fpr": [
+          32.7,
+          53.8
+        ],
+        "flagged": [
+          33.6,
+          54.9
+        ],
+        "base": [
+          1.6,
+          3.9
+        ],
+        "mean_p": [
+          5.1,
+          9.0
+        ],
+        "calib_gap": [
+          2.2,
+          6.3
+        ]
+      }
+    },
+    "low | township": {
+      "bridges": 2064,
+      "counties": 26,
+      "turned_poor": 104,
+      "tp": 78,
+      "fn": 26,
+      "fp": 370,
+      "tn": 1590,
+      "healthy": 1960,
+      "base_pct": 5.0,
+      "flagged_pct": 21.7,
+      "tpr_pct": 75.0,
+      "fpr_pct": 18.9,
+      "ppv_pct": 17.4,
+      "mean_p_pct": 3.8,
+      "calib_gap_pct": -1.3,
+      "ci_pct": {
+        "tpr": [
+          64.6,
+          87.9
+        ],
+        "fpr": [
+          14.7,
+          23.4
+        ],
+        "flagged": [
+          16.8,
+          26.7
+        ],
+        "base": [
+          2.6,
+          7.8
+        ],
+        "mean_p": [
+          3.1,
+          4.4
+        ],
+        "calib_gap": [
+          -3.9,
+          0.9
+        ]
+      }
+    },
+    "low-mid | city": {
+      "bridges": 242,
+      "counties": 20,
+      "turned_poor": 21,
+      "tp": 19,
+      "fn": 2,
+      "fp": 57,
+      "tn": 164,
+      "healthy": 221,
+      "base_pct": 8.7,
+      "flagged_pct": 31.4,
+      "tpr_pct": 90.5,
+      "fpr_pct": 25.8,
+      "ppv_pct": 25.0,
+      "mean_p_pct": 5.5,
+      "calib_gap_pct": -3.2,
+      "ci_pct": {
+        "tpr": [
+          71.4,
+          100.0
+        ],
+        "fpr": [
+          18.3,
+          30.6
+        ],
+        "flagged": [
+          24.2,
+          36.2
+        ],
+        "base": [
+          5.8,
+          11.5
+        ],
+        "mean_p": [
+          4.3,
+          6.5
+        ],
+        "calib_gap": [
+          -6.2,
+          -0.6
+        ]
+      }
+    },
+    "low-mid | county": {
+      "bridges": 835,
+      "counties": 25,
+      "turned_poor": 39,
+      "tp": 32,
+      "fn": 7,
+      "fp": 211,
+      "tn": 585,
+      "healthy": 796,
+      "base_pct": 4.7,
+      "flagged_pct": 29.1,
+      "tpr_pct": 82.1,
+      "fpr_pct": 26.5,
+      "ppv_pct": 13.2,
+      "mean_p_pct": 4.6,
+      "calib_gap_pct": -0.1,
+      "ci_pct": {
+        "tpr": [
+          66.7,
+          95.5
+        ],
+        "fpr": [
+          20.4,
+          33.0
+        ],
+        "flagged": [
+          22.8,
+          36.0
+        ],
+        "base": [
+          3.0,
+          6.7
+        ],
+        "mean_p": [
+          3.9,
+          5.5
+        ],
+        "calib_gap": [
+          -2.0,
+          1.6
+        ]
+      }
+    },
+    "low-mid | state": {
+      "bridges": 1546,
+      "counties": 25,
+      "turned_poor": 48,
+      "tp": 41,
+      "fn": 7,
+      "fp": 631,
+      "tn": 867,
+      "healthy": 1498,
+      "base_pct": 3.1,
+      "flagged_pct": 43.5,
+      "tpr_pct": 85.4,
+      "fpr_pct": 42.1,
+      "ppv_pct": 6.1,
+      "mean_p_pct": 6.3,
+      "calib_gap_pct": 3.2,
+      "ci_pct": {
+        "tpr": [
+          70.8,
+          100.0
+        ],
+        "fpr": [
+          31.0,
+          52.1
+        ],
+        "flagged": [
+          32.5,
+          53.5
+        ],
+        "base": [
+          2.1,
+          4.1
+        ],
+        "mean_p": [
+          5.0,
+          7.6
+        ],
+        "calib_gap": [
+          1.4,
+          4.9
+        ]
+      }
+    },
+    "low-mid | township": {
+      "bridges": 2856,
+      "counties": 25,
+      "turned_poor": 91,
+      "tp": 77,
+      "fn": 14,
+      "fp": 794,
+      "tn": 1971,
+      "healthy": 2765,
+      "base_pct": 3.2,
+      "flagged_pct": 30.5,
+      "tpr_pct": 84.6,
+      "fpr_pct": 28.7,
+      "ppv_pct": 8.8,
+      "mean_p_pct": 4.8,
+      "calib_gap_pct": 1.6,
+      "ci_pct": {
+        "tpr": [
+          77.1,
+          91.0
+        ],
+        "fpr": [
+          21.8,
+          35.4
+        ],
+        "flagged": [
+          23.9,
+          36.7
+        ],
+        "base": [
+          1.9,
+          4.7
+        ],
+        "mean_p": [
+          4.0,
+          5.6
+        ],
+        "calib_gap": [
+          -0.1,
+          3.2
+        ]
+      }
+    },
+    "mid-high | city": {
+      "bridges": 207,
+      "counties": 19,
+      "turned_poor": 16,
+      "tp": 10,
+      "fn": 6,
+      "fp": 56,
+      "tn": 135,
+      "healthy": 191,
+      "base_pct": 7.7,
+      "flagged_pct": 31.9,
+      "tpr_pct": 62.5,
+      "fpr_pct": 29.3,
+      "ppv_pct": 15.2,
+      "mean_p_pct": 4.9,
+      "calib_gap_pct": -2.8,
+      "ci_pct": {
+        "tpr": [
+          28.6,
+          83.3
+        ],
+        "fpr": [
+          19.4,
+          38.8
+        ],
+        "flagged": [
+          21.5,
+          39.9
+        ],
+        "base": [
+          1.9,
+          12.2
+        ],
+        "mean_p": [
+          3.6,
+          6.0
+        ],
+        "calib_gap": [
+          -7.1,
+          2.1
+        ]
+      }
+    },
+    "mid-high | county": {
+      "bridges": 649,
+      "counties": 25,
+      "turned_poor": 33,
+      "tp": 23,
+      "fn": 10,
+      "fp": 133,
+      "tn": 483,
+      "healthy": 616,
+      "base_pct": 5.1,
+      "flagged_pct": 24.0,
+      "tpr_pct": 69.7,
+      "fpr_pct": 21.6,
+      "ppv_pct": 14.7,
+      "mean_p_pct": 4.0,
+      "calib_gap_pct": -1.1,
+      "ci_pct": {
+        "tpr": [
+          50.0,
+          85.7
+        ],
+        "fpr": [
+          16.1,
+          26.8
+        ],
+        "flagged": [
+          19.0,
+          29.1
+        ],
+        "base": [
+          2.9,
+          7.2
+        ],
+        "mean_p": [
+          3.3,
+          4.7
+        ],
+        "calib_gap": [
+          -3.4,
+          1.1
+        ]
+      }
+    },
+    "mid-high | state": {
+      "bridges": 1080,
+      "counties": 25,
+      "turned_poor": 37,
+      "tp": 33,
+      "fn": 4,
+      "fp": 393,
+      "tn": 650,
+      "healthy": 1043,
+      "base_pct": 3.4,
+      "flagged_pct": 39.4,
+      "tpr_pct": 89.2,
+      "fpr_pct": 37.7,
+      "ppv_pct": 7.7,
+      "mean_p_pct": 5.6,
+      "calib_gap_pct": 2.2,
+      "ci_pct": {
+        "tpr": [
+          70.8,
+          97.7
+        ],
+        "fpr": [
+          31.5,
+          43.5
+        ],
+        "flagged": [
+          33.3,
+          44.9
+        ],
+        "base": [
+          1.8,
+          5.1
+        ],
+        "mean_p": [
+          4.9,
+          6.3
+        ],
+        "calib_gap": [
+          0.5,
+          3.9
+        ]
+      }
+    },
+    "mid-high | township": {
+      "bridges": 2338,
+      "counties": 25,
+      "turned_poor": 89,
+      "tp": 62,
+      "fn": 27,
+      "fp": 414,
+      "tn": 1835,
+      "healthy": 2249,
+      "base_pct": 3.8,
+      "flagged_pct": 20.4,
+      "tpr_pct": 69.7,
+      "fpr_pct": 18.4,
+      "ppv_pct": 13.0,
+      "mean_p_pct": 3.5,
+      "calib_gap_pct": -0.3,
+      "ci_pct": {
+        "tpr": [
+          50.3,
+          90.0
+        ],
+        "fpr": [
+          12.8,
+          25.2
+        ],
+        "flagged": [
+          14.1,
+          27.3
+        ],
+        "base": [
+          2.3,
+          5.0
+        ],
+        "mean_p": [
+          2.7,
+          4.4
+        ],
+        "calib_gap": [
+          -1.8,
+          1.4
+        ]
+      }
+    }
+  },
+  "cells_under_30_poor": 5,
+  "tpr_undefined_draws": {
+    "low | city": 5,
+    "mid-high | city": 6
+  },
+  "settings": {
+    "seed": 27,
+    "boot": 1000,
+    "poor": 4,
+    "proxy_c": 1.0,
+    "proxy_folds": 10,
+    "proxy_repeats": 10
+  }
+}

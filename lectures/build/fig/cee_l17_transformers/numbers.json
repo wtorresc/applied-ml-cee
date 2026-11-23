@@ -1,0 +1,1092 @@
+{
+  "concrete": {
+    "knn_rmse_median": 6.707673579012678,
+    "attention_rmse_median": 6.558275802990389,
+    "attention_better": 25,
+    "splits": 30,
+    "tau_values": [
+      0.2,
+      0.5
+    ],
+    "tau_median": 0.2
+  },
+  "picture": {
+    "tau": 0.2,
+    "keys": 1028,
+    "key_mixes": 427,
+    "top_weights": [
+      0.09565311718410417,
+      0.09460330723446443,
+      0.09405696336351288,
+      0.09149389293258964,
+      0.0728157234284458,
+      0.0603139251343548,
+      0.05801349105726131,
+      0.057533367463739785
+    ],
+    "top_values": [
+      37.42475728,
+      37.437857324,
+      37.42475728,
+      22.489328168,
+      31.35047372,
+      39.604880392,
+      36.93522932,
+      33.082437432
+    ],
+    "top_share": 0.6244837877984728,
+    "prediction": 35.259446089025275,
+    "knn5": 33.225434754400005,
+    "tested": 38.21075992,
+    "row": 638
+  },
+  "tokens": {
+    "reports": 105996,
+    "train_reports": 79307,
+    "test_reports": 26689,
+    "words_total": 3683085,
+    "word_vocab": 15041,
+    "word_vocab_5plus": 6783,
+    "test_words_unseen": 0.002072198512869625,
+    "first_merges": [
+      "h + e",
+      "i + n",
+      "a + n",
+      "t + he",
+      "in + g",
+      "l + o",
+      "e + r",
+      "e + e",
+      "m + p",
+      "e + d",
+      "e + mp",
+      "a + s"
+    ],
+    "merges_identical": 50,
+    "per_report": {
+      "characters": 196.5,
+      "words": 38.0,
+      "bpe_osha": 39.0,
+      "bert_wordpiece": 41.0
+    },
+    "splits": {
+      "scaffold": {
+        "bert": [
+          "sc",
+          "##af",
+          "##fold"
+        ],
+        "osha": [
+          "scaffold"
+        ]
+      },
+      "excavator": {
+        "bert": [
+          "ex",
+          "##ca",
+          "##vat",
+          "##or"
+        ],
+        "osha": [
+          "excavator"
+        ]
+      },
+      "trench": {
+        "bert": [
+          "trench"
+        ],
+        "osha": [
+          "trench"
+        ]
+      },
+      "forklift": {
+        "bert": [
+          "fork",
+          "##lift"
+        ],
+        "osha": [
+          "forklift"
+        ]
+      },
+      "amputated": {
+        "bert": [
+          "amp",
+          "##uta",
+          "##ted"
+        ],
+        "osha": [
+          "amputated"
+        ]
+      },
+      "lacerated": {
+        "bert": [
+          "lace",
+          "##rated"
+        ],
+        "osha": [
+          "lacerated"
+        ]
+      },
+      "skid": {
+        "bert": [
+          "ski",
+          "##d"
+        ],
+        "osha": [
+          "skid"
+        ]
+      },
+      "rebar": {
+        "bert": [
+          "re",
+          "##bar"
+        ],
+        "osha": [
+          "rebar"
+        ]
+      },
+      "drywall": {
+        "bert": [
+          "dry",
+          "##wall"
+        ],
+        "osha": [
+          "drywall"
+        ]
+      },
+      "trencher": {
+        "bert": [
+          "trench",
+          "##er"
+        ],
+        "osha": [
+          "trencher"
+        ]
+      }
+    },
+    "bpe_vocab": 8000,
+    "bert_vocab": 30522
+  },
+  "word2vec": {
+    "vocab": 6783,
+    "pairs_per_epoch": 1853654,
+    "loss": 2.257361888885498,
+    "minutes": 5.348325533300007
+  },
+  "neighbours": {
+    "ladder": [
+      [
+        "rung",
+        0.9465038776397705
+      ],
+      [
+        "rungs",
+        0.9373140931129456
+      ],
+      [
+        "climbing",
+        0.9246635437011719
+      ],
+      [
+        "extension",
+        0.9238770008087158
+      ]
+    ],
+    "scaffold": [
+      [
+        "baker",
+        0.9374390840530396
+      ],
+      [
+        "plastering",
+        0.9195448756217957
+      ],
+      [
+        "stucco",
+        0.9130181670188904
+      ],
+      [
+        "bakers",
+        0.9124215841293335
+      ]
+    ],
+    "trench": [
+      [
+        "excavation",
+        0.8931899666786194
+      ],
+      [
+        "caved",
+        0.8816922903060913
+      ],
+      [
+        "soil",
+        0.8678572177886963
+      ],
+      [
+        "buried",
+        0.8056724667549133
+      ]
+    ],
+    "forklift": [
+      [
+        "standup",
+        0.8911076188087463
+      ],
+      [
+        "backing",
+        0.8791340589523315
+      ],
+      [
+        "forklifts",
+        0.876851499080658
+      ],
+      [
+        "reversing",
+        0.8759035468101501
+      ]
+    ],
+    "amputated": [
+      [
+        "matcher",
+        0.9459586143493652
+      ],
+      [
+        "middle",
+        0.9388402104377747
+      ],
+      [
+        "amputating",
+        0.935362696647644
+      ],
+      [
+        "fingertips",
+        0.9343288540840149
+      ]
+    ],
+    "finger": [
+      [
+        "fingertip",
+        0.9414889812469482
+      ],
+      [
+        "amputating",
+        0.9262454509735107
+      ],
+      [
+        "amputation",
+        0.9241602420806885
+      ],
+      [
+        "ring",
+        0.9206337332725525
+      ]
+    ]
+  },
+  "try_it": {
+    "sentence": "the worker held the ladder there, then the ladder fell",
+    "first_counts": [
+      [
+        "h + e",
+        6
+      ],
+      [
+        "t + h",
+        5
+      ],
+      [
+        "e + r",
+        4
+      ]
+    ],
+    "second_counts": [
+      [
+        "t + he",
+        5
+      ],
+      [
+        "e + r",
+        3
+      ],
+      [
+        "l + a",
+        2
+      ]
+    ],
+    "merges": [
+      "h + e",
+      "t + he"
+    ]
+  },
+  "attempt": {
+    "texts": {
+      "A": "An employee was working from a ladder while installing roof trusses on a residential structure when they fell 9 feet off the ladder, resulting in neck, back, and leg injuries.",
+      "B": "An employee was dismantling scaffolding. As he knelt down to lower the frame, he was pulled to the ground by the weight of the frame, resulting in a laceration to the side of his head.",
+      "C": "An employee was setting up an extension ladder to access the roof of a house when the ladder contacted a power line, resulting in an electric shock and hospitalization."
+    },
+    "events": {
+      "A": "4332",
+      "B": "4330",
+      "C": "5122"
+    },
+    "shared_words": {
+      "AB": 0.15555555555555556,
+      "AC": 0.275,
+      "BC": 0.225
+    },
+    "word2vec": {
+      "AB": 0.937378466129303,
+      "AC": 0.9655182957649231,
+      "BC": 0.9466134905815125
+    },
+    "bert": {
+      "AB": 0.8684964179992676,
+      "AC": 0.9352075457572937,
+      "BC": 0.8723939657211304
+    }
+  },
+  "similarity_all": {
+    "reports": 26599,
+    "pairs": 199991,
+    "same_division_share": 0.32331954937972207,
+    "same_group_share": 0.10028451280307614,
+    "auc_division": {
+      "shared_words": 0.6376439075596868,
+      "word2vec": 0.7877246675841449,
+      "bert": 0.6649013576097044
+    },
+    "auc_group": {
+      "shared_words": 0.640781342709749,
+      "word2vec": 0.7679488300294675,
+      "bert": 0.6617229427040472
+    },
+    "median": {
+      "shared_words": 0.16,
+      "word2vec": 0.9339096546173096,
+      "bert": 0.8575646281242371
+    }
+  },
+  "masked": {
+    "test_cases": 1102,
+    "single_wordpiece": 956,
+    "bert_top1": 0.46098003629764067,
+    "bert_top5": 0.6234119782214156,
+    "baseline_word": "ladder",
+    "baseline_top1": 0.2159709618874773,
+    "baseline_top5": 0.38656987295825773,
+    "answers_top": {
+      "ladder": 238,
+      "roof": 73,
+      "trailer": 49,
+      "truck": 43,
+      "top": 28,
+      "forklift": 27,
+      "lift": 24,
+      "back": 23
+    },
+    "bert_guesses_top": {
+      "ladder": 231,
+      "roof": 124,
+      "top": 64,
+      "trailer": 60,
+      "truck": 57,
+      "building": 41,
+      "side": 38,
+      "ceiling": 30
+    },
+    "answers_all": {
+      "ladder": 238,
+      "roof": 73,
+      "trailer": 49,
+      "truck": 43,
+      "top": 28,
+      "forklift": 27,
+      "lift": 24,
+      "back": 23,
+      "second": 23,
+      "platform": 21,
+      "step": 21,
+      "dock": 21,
+      "scaffold": 19,
+      "side": 17,
+      "forks": 15,
+      "loading": 12,
+      "pallet": 12,
+      "third": 11,
+      "liftgate": 10,
+      "wall": 9,
+      "flatbed": 9,
+      "edge": 9,
+      "cart": 9,
+      "vehicle": 8,
+      "table": 8,
+      "horse": 8,
+      "fourth": 7,
+      "bottom": 7,
+      "crane": 6,
+      "bed": 6,
+      "jack": 6,
+      "tree": 6,
+      "last": 6,
+      "conveyor": 5,
+      "hook": 5,
+      "ramp": 5,
+      "hoist": 5,
+      "rack": 5,
+      "curb": 5,
+      "chair": 4,
+      "machine": 4,
+      "catwalk": 4,
+      "elevated": 4,
+      "steps": 4,
+      "deck": 4,
+      "scaffolding": 4,
+      "portable": 4,
+      "six": 3,
+      "skid": 3,
+      "first": 3,
+      "fixed": 3,
+      "bike": 3,
+      "nearby": 3,
+      "raised": 3,
+      "landing": 3,
+      "beam": 3,
+      "bumper": 3,
+      "plank": 3,
+      "extension": 3,
+      "scissor": 3,
+      "standing": 3,
+      "height": 3,
+      "two": 3,
+      "dolly": 3,
+      "tailgate": 3,
+      "upper": 3,
+      "porch": 2,
+      "concrete": 2,
+      "access": 2,
+      "riding": 2,
+      "one": 2,
+      "golf": 2,
+      "picker": 2,
+      "excavator": 2,
+      "mobile": 2,
+      "mower": 2,
+      "ceiling": 2,
+      "shelf": 2,
+      "lifting": 2,
+      "storage": 2,
+      "magnet": 2,
+      "rail": 2,
+      "rear": 2,
+      "manlift": 2,
+      "bucket": 2,
+      "pole": 2,
+      "tugger": 2,
+      "gate": 2,
+      "a": 2,
+      "stack": 2,
+      "tank": 2,
+      "pit": 2,
+      "residential": 2,
+      "seventh": 2,
+      "attic": 2,
+      "trusses": 2,
+      "fifth": 2,
+      "sawhorse": 2,
+      "i": 2,
+      "framing": 2,
+      "transport": 1,
+      "peg": 1,
+      "staircase": 1,
+      "footboard": 1,
+      "payoff": 1,
+      "positioner": 1,
+      "sector": 1,
+      "racks": 1,
+      "shopping": 1,
+      "u": 1,
+      "ladle": 1,
+      "piece": 1,
+      "garbage": 1,
+      "runners": 1,
+      "pile": 1,
+      "lid": 1,
+      "rolling": 1,
+      "tractor": 1,
+      "open": 1,
+      "post": 1,
+      "tug": 1,
+      "guardrail": 1,
+      "bundle": 1,
+      "stairway": 1,
+      "pickup": 1,
+      "rollers": 1,
+      "grain": 1,
+      "horizontal": 1,
+      "bicycle": 1,
+      "mandrel": 1,
+      "work": 1,
+      "delivery": 1,
+      "boom": 1,
+      "panel": 1,
+      "flask": 1,
+      "treads": 1,
+      "carriage": 1,
+      "stock": 1,
+      "running": 1,
+      "hoisting": 1,
+      "bus": 1,
+      "sifting": 1,
+      "stands": 1,
+      "steel": 1,
+      "customer": 1,
+      "kiln": 1,
+      "spreader": 1,
+      "operator": 1,
+      "gantry": 1,
+      "track": 1,
+      "board": 1,
+      "dozer": 1,
+      "boxing": 1,
+      "same": 1,
+      "sidewalk": 1,
+      "pedestal": 1,
+      "buggy": 1,
+      "boat": 1,
+      "mewp": 1,
+      "driver": 1,
+      "ducts": 1,
+      "power": 1,
+      "cooler": 1,
+      "racking": 1,
+      "equipment": 1,
+      "switcher": 1,
+      "walk": 1,
+      "cabin": 1,
+      "material": 1,
+      "stepladder": 1,
+      "quench": 1,
+      "fender": 1,
+      "grapple": 1,
+      "stairs": 1,
+      "building": 1,
+      "aircraft": 1,
+      "dumpster": 1,
+      "tipper": 1,
+      "canopy": 1,
+      "passing": 1,
+      "metal": 1,
+      "stool": 1,
+      "control": 1,
+      "barge": 1,
+      "atv": 1,
+      "end": 1,
+      "tanker": 1,
+      "skateboard": 1,
+      "stage": 1,
+      "balcony": 1,
+      "mezzanine": 1,
+      "rails": 1,
+      "spiral": 1,
+      "de": 1,
+      "jet": 1,
+      "backside": 1,
+      "gang": 1,
+      "walkway": 1,
+      "canyon": 1,
+      "container": 1,
+      "bracket": 1,
+      "holder": 1,
+      "ledge": 1,
+      "frame": 1,
+      "roller": 1,
+      "horses": 1,
+      "overhead": 1,
+      "seven": 1,
+      "empty": 1,
+      "crates": 1,
+      "rooftop": 1,
+      "front": 1,
+      "higher": 1,
+      "adjacent": 1,
+      "cutting": 1,
+      "eighth": 1,
+      "straddle": 1,
+      "retaining": 1,
+      "slump": 1,
+      "boiler": 1,
+      "aerial": 1,
+      "middle": 1,
+      "fixture": 1,
+      "sixth": 1
+    },
+    "bert_guesses_all": {
+      "ladder": 231,
+      "roof": 124,
+      "top": 64,
+      "trailer": 60,
+      "truck": 57,
+      "building": 41,
+      "side": 38,
+      "ceiling": 30,
+      "lift": 26,
+      "window": 23,
+      "loading": 19,
+      "platform": 17,
+      "back": 15,
+      "second": 14,
+      "bike": 13,
+      "wall": 10,
+      "crane": 10,
+      "tree": 10,
+      "dock": 9,
+      "two": 8,
+      "steel": 8,
+      "overhead": 8,
+      "cart": 7,
+      "pole": 6,
+      "bar": 6,
+      "machine": 6,
+      "first": 6,
+      "table": 6,
+      "horse": 5,
+      "edge": 5,
+      "step": 5,
+      "vehicle": 5,
+      "chair": 4,
+      "rack": 4,
+      "nearby": 4,
+      "bridge": 4,
+      "street": 4,
+      "ramp": 4,
+      "ground": 4,
+      "concrete": 4,
+      "metal": 3,
+      "bed": 3,
+      "main": 3,
+      "tractor": 3,
+      "atv": 3,
+      "work": 3,
+      "bus": 3,
+      "car": 3,
+      "upper": 3,
+      "beam": 2,
+      "center": 2,
+      "electric": 2,
+      "golf": 2,
+      "shelf": 2,
+      "ten": 2,
+      "rail": 2,
+      "third": 2,
+      "train": 2,
+      "pit": 2,
+      "road": 2,
+      "gate": 2,
+      "open": 2,
+      "base": 2,
+      "rope": 2,
+      "stack": 2,
+      "tank": 2,
+      "height": 2,
+      "power": 2,
+      "attic": 2,
+      "sitting": 2,
+      "storage": 2,
+      "stool": 2,
+      "stage": 2,
+      "end": 2,
+      "i": 2,
+      "dolly": 2,
+      "brick": 2,
+      "fence": 2,
+      "porch": 1,
+      "rough": 1,
+      "20": 1,
+      "shopping": 1,
+      "u": 1,
+      "mold": 1,
+      "wheel": 1,
+      "piece": 1,
+      "garbage": 1,
+      "union": 1,
+      "parking": 1,
+      "lid": 1,
+      "motor": 1,
+      "curb": 1,
+      "far": 1,
+      "post": 1,
+      "tire": 1,
+      "fork": 1,
+      "line": 1,
+      "grain": 1,
+      "mat": 1,
+      "delivery": 1,
+      "ski": 1,
+      "reactor": 1,
+      "coat": 1,
+      "hinges": 1,
+      "cotton": 1,
+      "running": 1,
+      "trigger": 1,
+      "milling": 1,
+      "pipe": 1,
+      "neighbor": 1,
+      "large": 1,
+      "bottom": 1,
+      "boxing": 1,
+      "floor": 1,
+      "jack": 1,
+      "maintenance": 1,
+      "steer": 1,
+      "boat": 1,
+      "lawn": 1,
+      "freight": 1,
+      "shaft": 1,
+      "container": 1,
+      "cooler": 1,
+      "elevated": 1,
+      "chain": 1,
+      "bolt": 1,
+      "switch": 1,
+      "circuit": 1,
+      "billboard": 1,
+      "baggage": 1,
+      "riding": 1,
+      "heat": 1,
+      "lower": 1,
+      "railing": 1,
+      "lifting": 1,
+      "office": 1,
+      "safe": 1,
+      "passing": 1,
+      "moving": 1,
+      "bunker": 1,
+      "barge": 1,
+      "box": 1,
+      "balcony": 1,
+      "frame": 1,
+      "trench": 1,
+      "utility": 1,
+      "re": 1,
+      "jet": 1,
+      "concession": 1,
+      "door": 1,
+      "ship": 1,
+      "mountain": 1,
+      "entrance": 1,
+      "holder": 1,
+      "hook": 1,
+      "deck": 1,
+      "blast": 1,
+      "washing": 1,
+      "trail": 1,
+      "employee": 1,
+      "three": 1,
+      "crates": 1,
+      "crate": 1,
+      "worker": 1,
+      "boom": 1,
+      "axle": 1,
+      "pickup": 1,
+      "slump": 1,
+      "other": 1,
+      "aerial": 1,
+      "fixture": 1
+    },
+    "bare_sentence": "The employee fell from a [MASK] and fractured his leg.",
+    "bare_top8": [
+      "building",
+      "window",
+      "roof",
+      "tree",
+      "car",
+      "balcony",
+      "bridge",
+      "ladder"
+    ],
+    "bare_ladder_rank": 8,
+    "plotted": {
+      "ladder": [
+        238,
+        231
+      ],
+      "roof": [
+        73,
+        124
+      ],
+      "trailer": [
+        49,
+        60
+      ],
+      "truck": [
+        43,
+        57
+      ],
+      "top": [
+        28,
+        64
+      ],
+      "forklift": [
+        27,
+        0
+      ],
+      "lift": [
+        24,
+        26
+      ],
+      "back": [
+        23,
+        15
+      ],
+      "building": [
+        1,
+        41
+      ],
+      "side": [
+        17,
+        38
+      ]
+    }
+  },
+  "screen": {
+    "resnet18": {
+      "C": 0.03,
+      "val_ap": 0.7370948470874679,
+      "all": {
+        "auc": 0.8415554674616079,
+        "ap": 0.6659046754776506,
+        "recall": 0.861576660459342,
+        "review": 0.5059778729478943,
+        "acc": 0.9064061384725196,
+        "prevalence": 0.14373661670235546,
+        "n": 11208
+      },
+      "deck": {
+        "auc": 0.8268986414760938,
+        "ap": 0.6545574306543193,
+        "recall": 0.9106753812636166,
+        "review": 0.6601731601731602,
+        "acc": 0.8874458874458875,
+        "prevalence": 0.16558441558441558,
+        "n": 2772
+      },
+      "wall": {
+        "auc": 0.8572635019523799,
+        "ap": 0.7444309721968776,
+        "recall": 0.9156414762741653,
+        "review": 0.6553094832481544,
+        "acc": 0.9170925610448609,
+        "prevalence": 0.16155593412833616,
+        "n": 3522
+      },
+      "pavement": {
+        "auc": 0.8347067473592786,
+        "ap": 0.5895616517327669,
+        "recall": 0.7701543739279588,
+        "review": 0.31196581196581197,
+        "acc": 0.9094424094424094,
+        "prevalence": 0.11864061864061864,
+        "n": 4914
+      }
+    },
+    "vit_b_16": {
+      "C": 0.01,
+      "val_ap": 0.8074819761044519,
+      "all": {
+        "auc": 0.8973519877765442,
+        "ap": 0.7668746687857423,
+        "recall": 0.877715704531347,
+        "review": 0.41059957173447537,
+        "acc": 0.922733761598858,
+        "prevalence": 0.14373661670235546,
+        "n": 11208
+      },
+      "deck": {
+        "auc": 0.8454402369104437,
+        "ap": 0.7111627083924632,
+        "recall": 0.8431372549019608,
+        "review": 0.4963924963924964,
+        "acc": 0.8971861471861472,
+        "prevalence": 0.16558441558441558,
+        "n": 2772
+      },
+      "wall": {
+        "auc": 0.9016215971723373,
+        "ap": 0.816556679431446,
+        "recall": 0.9226713532513181,
+        "review": 0.5576377058489494,
+        "acc": 0.9304372515616127,
+        "prevalence": 0.16155593412833616,
+        "n": 3522
+      },
+      "pavement": {
+        "auc": 0.9218783725608156,
+        "ap": 0.7604049554365768,
+        "recall": 0.8610634648370498,
+        "review": 0.2568172568172568,
+        "acc": 0.9316239316239316,
+        "prevalence": 0.11864061864061864,
+        "n": 4914
+      }
+    }
+  },
+  "verify": {
+    "max_abs": 4.440892098500626e-16,
+    "tokens": 197,
+    "dim": 768,
+    "heads": 12,
+    "block_weights": 7087872,
+    "blocks": 12,
+    "vit_weights": 85798656,
+    "resnet_weights": 11176512,
+    "mlp_weights": 4722432,
+    "millions": {
+      "block": 7.087872,
+      "vit": 85.798656,
+      "resnet": 11.176512
+    }
+  },
+  "positions": {
+    "neighbour_similarity": 0.7313395142555237,
+    "far_similarity": -0.10481199622154236,
+    "corr_with_distance": -0.3236628843251102
+  },
+  "maps": {
+    "tiles": [
+      "D/CD/7004-63.jpg",
+      "W/CW/7118-98.jpg",
+      "P/CP/002-100.jpg",
+      "P/CP/048-109.jpg"
+    ],
+    "p": [
+      0.9999994824131885,
+      0.9999997007223954,
+      0.9999540267536702,
+      0.0007577621215284619
+    ],
+    "threshold": 0.04958539365764904
+  },
+  "shuffle": {
+    "block": 32,
+    "blocks": 49,
+    "fixed_points": [
+      0,
+      1,
+      1
+    ],
+    "resnet18": {
+      "plain": {
+        "auc": 0.8404558454312132,
+        "ap": 0.6647861327136738,
+        "recall": 0.8609559279950342,
+        "review": 0.5022305496074233,
+        "acc": 0.9053354746609564,
+        "prevalence": 0.14373661670235546,
+        "n": 11208
+      },
+      "shuffled": [
+        {
+          "auc": 0.7832305473590022,
+          "ap": 0.5326332474149454,
+          "recall": 0.8553693358162632,
+          "review": 0.5988579586009993,
+          "acc": 0.8840114204139901,
+          "prevalence": 0.14373661670235546,
+          "n": 11208
+        },
+        {
+          "auc": 0.7896406433134915,
+          "ap": 0.5467533897914412,
+          "recall": 0.8566108007448789,
+          "review": 0.5791399000713776,
+          "acc": 0.8843683083511777,
+          "prevalence": 0.14373661670235546,
+          "n": 11208
+        },
+        {
+          "auc": 0.7868519071531186,
+          "ap": 0.5384893036083364,
+          "recall": 0.8497827436374923,
+          "review": 0.574768022840828,
+          "acc": 0.8843683083511777,
+          "prevalence": 0.14373661670235546,
+          "n": 11208
+        }
+      ],
+      "ap_drop": [
+        0.13215288529872837,
+        0.11803274292223265,
+        0.12629682910533746
+      ],
+      "review_rise": [
+        0.09662740899357602,
+        0.0769093504639543,
+        0.07253747323340465
+      ],
+      "cache_max_abs": 2.4318695068359375e-05,
+      "passes": 224368,
+      "ms_per_tile": 1.2459518163419039
+    },
+    "vit_b_16": {
+      "plain": {
+        "auc": 0.8973519877765442,
+        "ap": 0.7668746687857423,
+        "recall": 0.877715704531347,
+        "review": 0.41059957173447537,
+        "acc": 0.922733761598858,
+        "prevalence": 0.14373661670235546,
+        "n": 11208
+      },
+      "shuffled": [
+        {
+          "auc": 0.8666896668192464,
+          "ap": 0.7016694399737103,
+          "recall": 0.8901303538175046,
+          "review": 0.5053533190578159,
+          "acc": 0.9097073518915061,
+          "prevalence": 0.14373661670235546,
+          "n": 11208
+        },
+        {
+          "auc": 0.8674933138828106,
+          "ap": 0.7055565249769926,
+          "recall": 0.8783364369956549,
+          "review": 0.48545681655960027,
+          "acc": 0.9103319057815846,
+          "prevalence": 0.14373661670235546,
+          "n": 11208
+        },
+        {
+          "auc": 0.8692413513508095,
+          "ap": 0.7009730242473222,
+          "recall": 0.8888888888888888,
+          "review": 0.4988401142041399,
+          "acc": 0.9088151320485368,
+          "prevalence": 0.14373661670235546,
+          "n": 11208
+        }
+      ],
+      "ap_drop": [
+        0.06520522881203195,
+        0.06131814380874967,
+        0.06590164453842007
+      ],
+      "review_rise": [
+        0.09475374732334052,
+        0.0748572448251249,
+        0.0882405424696645
+      ],
+      "cache_max_abs": 0.0,
+      "passes": 224368,
+      "ms_per_tile": 5.374863871318549
+    }
+  },
+  "timing": {
+    "deck_tiles": 13620,
+    "deck_photos": 54,
+    "resnet18_deck_seconds": 16.969863738576734,
+    "vit_b_16_deck_seconds": 73.20564592735863,
+    "ratio": 4.313861740736548
+  },
+  "minutes": 37.2891454051
+}

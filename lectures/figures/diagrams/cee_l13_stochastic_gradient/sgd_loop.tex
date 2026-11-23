@@ -1,0 +1,48 @@
+% CEE Lecture 13, "one picture": the course picture with the optimizer as the focus step. The
+% decoder is Lecture 6's logistic model; its weights now come from a loop of shuffled batches,
+% one step per batch. The inset follows the first step of the lecture's SGD run; numbers from
+% numbers.tex (figure script).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes.
+  \node[data] (x) at (1.7,0) {inspection $\mathbf{x}$};
+  \node[op] (enc) at (6.0,0) {encoder\\\NWeights{} inputs, scaled};
+  \node[data] (z) at (9.3,0) {$\mathbf{z}$};
+  \node[op] (dec) at (12.0,0) {decoder\\$\sigma(\mathbf{w}^{\top}\mathbf{z})$};
+  \node[data] (p) at (14.6,0) {$p$};
+  \node[op] (dcd) at (17.4,0) {forecast\\$\sum p$ per state};
+  \node[data] (out) at (21.0,0) {drops};
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (dec);
+  \draw[flow] (dec) -- (p);
+  \draw[flow] (p) -- (dcd);
+  \draw[flow] (dcd) -- (out);
+
+  % Training: shuffled batches, one step each; the step is this lecture's focus.
+  \node[data] (train) at (2.5,2.6) {\NTrain{} inspections};
+  \node[op] (shuf) at (7.0,2.6) {shuffle\\each pass};
+  \node[data] (batch) at (10.6,2.6) {batch of \Batch};
+  \node[focus] (step) at (17.2,2.6) {SGD step\\$\mathbf{w}\leftarrow\mathbf{w}-\eta\,A_B^{\top}(\mathbf{p}_B-\mathbf{y}_B)/\Batch$};
+  \draw[flow] (train) -- (shuf);
+  \draw[flow] (shuf) -- (batch);
+  \draw[flow] (batch) -- (step);
+  \draw[train] ([xshift=-1.6cm]step.south) -- ++(0,-0.45) -| (dec.north);
+  \draw[flow] (step.east) -- ++(0.5,0) |- ([yshift=0.75cm]batch.north) -- (batch.north);
+  \node[note, anchor=south, text=alertc] at (15.4,3.98) {next batch: \StepsPerPass{} steps make one pass};
+
+  % Worked example: the first step of the run, from w = 0.
+  \node[insettitle] (ttl) at (0.0,-2.0) {Step 1 of the run: $\mathbf{w}=\mathbf{0}$, $\eta$ = \Eta};
+  \node[note, anchor=north west] (bv) at (0.0,-2.7) {\Batch{} shuffled inspections\\\key{\Drops{} dropped}};
+  \node[note, anchor=north] (pv) at (11.6,-2.7) {every $p$ = 0.5\\intercept's gradient:\\0.5 $-$ \Drops/\Batch{} = \key{\GZero}};
+  \node[note, anchor=north] (wv) at (16.3,-2.7) {after the step:\\$w_0$ = \key{\WZero}};
+  \node[note, anchor=north east] (lv) at (22.4,-2.7) {training loss:\\\LossBefore{} $\rightarrow$ \key{\LossAfter}};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(bv)(pv)(wv)(lv)] {};
+  \end{scope}
+  \draw[leader] (dec.south) -- ([yshift=0.2cm]dec.south |- pv.north);
+\end{tikzpicture}
+\end{document}

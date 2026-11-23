@@ -1,0 +1,62 @@
+% CEE Lecture 1, "one picture": the course picture that every later lecture reuses with one step
+% as its focus. Here no step is the focus; the inset follows the held-out design of the attempt
+% through the plain 5-NN pipeline. Numbers from numbers.tex (figures/cee_l01_framing.py).
+\documentclass[tikz,border=4pt]{standalone}
+\input{diagram_style}
+\input{numbers}
+\begin{document}
+\begin{tikzpicture}
+  % Spine: values are pills, steps are boxes.
+  \node[data] (x) at (0.95,0) {input $\mathbf{x}$};
+  \node[op, minimum width=3.4cm] (enc) at (4.55,0) {encoder\\$\mathbf{z}=f_{\phi}(\mathbf{x})$};
+  \node[data] (z) at (7.7,0) {$\mathbf{z}$};
+  \node[op, minimum width=3.7cm] (dec) at (11.1,0) {decoder\\$\hat{y}=g_{\theta}(\mathbf{z})$};
+  \node[data] (yhat) at (14.6,0) {$\hat{y}$};
+  \node[op, minimum width=2.5cm] (loss) at (17.4,0) {loss\\$\mathcal{L}(\hat{y},y)$};
+  \node[data] (y) at (20.45,0) {target $y$};
+  \draw[flow] (x) -- (enc);
+  \draw[flow] (enc) -- (z);
+  \draw[flow] (z) -- (dec);
+  \draw[flow] (dec) -- (yhat);
+  \draw[flow] (yhat) -- (loss);
+  \draw[flow] (y) -- (loss);
+
+  % The model groups the two learned steps.
+  \node[grouplabel] (mlabel) at ($(enc.north west)+(-0.2,0.85)$) {model};
+  \begin{scope}[on background layer]
+    \node[group, fit=(enc)(dec)(mlabel)] {};
+  \end{scope}
+
+  % Training signal: the label sits above the line so no arrow crosses it.
+  \draw[train] (loss.north) -- ++(0,1.55) -| (dec.north);
+  \draw[train] ($(loss.north)+(0,1.55)$) -| (enc.north);
+  \node[text=alertc, anchor=south] at (11.0,2.25)
+    {training adjusts $\phi$ and $\theta$ to lower the loss on \NTrain{} training tests};
+
+  % Worked example: one held-out design, column by column under the spine.
+  \node[insettitle] (ttl) at (0.0,-1.85) {One held-out design, \XAge{} days};
+  \node[anchor=north west, inner sep=2pt] (xv) at (0.0,-2.5) {%
+    \renewcommand{\arraystretch}{1.05}%
+    \begin{tabular}{@{}l@{\hspace{7pt}}r@{\hspace{14pt}}l@{\hspace{7pt}}r@{}}
+      \multicolumn{4}{@{}l}{proportions in kg/m³}\\
+      cement & \XCement & SP & \XSP\\
+      slag & \XSlag & coarse & \XCoarse\\
+      fly ash & \XFlyAsh & fine & \XFine\\
+      water & \XWater & age & \XAge{} d\\
+    \end{tabular}};
+  \node[note, anchor=north] (zv) at (7.75,-2.5)
+    {standardized:\\water \ZWater\\cement \ZCement\\and 6 more};
+  \node[note, anchor=north] (nv) at (11.3,-2.5)
+    {\key{\K} nearest tests\\in training, MPa:\\\NbrStrengths\\mean \Pred};
+  \node[note, anchor=north] (pv) at (14.6,-2.5) {$\hat{y}$ = \key{\Pred}\\MPa};
+  \node[note, anchor=north] (lv) at (18.6,-2.5)
+    {$y$ = \Meas{} MPa\\$(\hat{y}-y)^2$ = \SqErr\\$f'_c$ = \FC{} MPa:\\a wrong “yes”};
+  \begin{scope}[on background layer]
+    \node[inset, fit=(ttl)(xv)(zv)(nv)(pv)(lv)(y.east |- nv.south)] {};
+  \end{scope}
+  \draw[leader] (z.south) -- (zv.north);
+  \draw[leader] (dec.south) -- (dec.south |- nv.north);
+  \draw[leader] (yhat.south) -- (pv.north);
+  \draw[leader] (loss.south) -- (loss.south |- lv.north);
+\end{tikzpicture}
+\end{document}

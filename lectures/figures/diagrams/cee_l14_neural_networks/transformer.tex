@@ -1,0 +1,27 @@
+% CEE Lecture 14, "where it lives today": one transformer layer is attention plus an MLP of the
+% kind built in this lecture; with the usual 4x hidden width the MLP holds two-thirds of the
+% layer's weights (4 d^2 for attention's four projections, 8 d^2 for d -> 4d -> d).
+\documentclass[tikz,border=6pt]{standalone}
+\input{diagram_style}
+\begin{document}
+\begin{tikzpicture}
+  \node[data] (x) at (0,0) {tokens};
+  \node[op] (att) at (3.6,0) {attention\\$4d^2$ weights};
+  \node[focus] (mlp) at (8.4,0) {MLP: $d\rightarrow4d\rightarrow d$\\$8d^2$ weights};
+  \node[data] (out) at (12.6,0) {next layer};
+  \draw[flow] (x) -- (att);
+  \draw[flow] (att) -- (mlp);
+  \draw[flow] (mlp) -- (out);
+  \begin{scope}[on background layer]
+    \node[group, fit=(att)(mlp), inner ysep=22pt] (layer) {};
+  \end{scope}
+  \node[grouplabel] at ([xshift=6pt, yshift=-2pt]layer.north west) {one layer of many};
+  % weight shares
+  \fill[navy!25] (1.6,-2.2) rectangle ++(3.6,0.6);
+  \fill[navy] (5.2,-2.2) rectangle ++(7.2,0.6);
+  \node[note, anchor=east] at (1.5,-1.9) {weights};
+  \node[note, text=navy, anchor=east] at (3.45,-2.6) {attention, $\frac{1}{3}$};  % left of the backward line
+  \node[note, text=navy] at (8.8,-2.6) {MLP, $\frac{2}{3}$};
+  \draw[train] (12.6,-0.6) |- node[pos=0.75, below, text=alertc, font=\fontsize{13}{15}\selectfont] {the same backward pass, by PyTorch's autograd} (3.6,-3.6) -- (3.6,-0.6);
+\end{tikzpicture}
+\end{document}
